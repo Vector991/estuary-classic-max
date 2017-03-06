@@ -1,23 +1,31 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <includes>
 	<include name="OSDButton">
-		<textureradioonfocus colordiffuse="white">$PARAM[texture]</textureradioonfocus>
-		<textureradioonnofocus colordiffuse="black">$PARAM[texture]</textureradioonnofocus>
-		<textureradioofffocus colordiffuse="white">$PARAM[texture]</textureradioofffocus>
-		<textureradiooffnofocus colordiffuse="black">$PARAM[texture]</textureradiooffnofocus>
-		<textureradioondisabled colordiffuse="disabled">$PARAM[texture]</textureradioondisabled>
-		<textureradiooffdisabled colordiffuse="disabled">$PARAM[texture]</textureradiooffdisabled>
-		<texturefocus></texturefocus>
-		<width>125</width>
-		<animation center="77,62" effect="zoom" end="100" reversible="false" start="95" time="480" tween="back">Focus</animation>
-		<height>123</height>
-		<radiowidth>74</radiowidth>
-		<radioheight>74</radioheight>
-		<font></font>
-		<texturenofocus></texturenofocus>
-		<radioposx>0</radioposx>
-		<radioposy>0</radioposy>
+		<param name="color_on_focus">white</param>
+		<param name="color_off_focus">white</param>
+		<param name="color_on_nofocus">black</param>
+		<param name="color_off_nofocus">black</param>
+		
+		<definition>
+			<textureradioonfocus colordiffuse="$PARAM[color_on_focus]">$PARAM[texture]</textureradioonfocus>
+			<textureradioonnofocus colordiffuse="$PARAM[color_off_nofocus]">$PARAM[texture]</textureradioonnofocus>
+			<textureradioofffocus colordiffuse="$PARAM[color_off_focus]">$PARAM[texture]</textureradioofffocus>
+			<textureradiooffnofocus colordiffuse="$PARAM[color_on_nofocus]">$PARAM[texture]</textureradiooffnofocus>
+			<textureradioondisabled colordiffuse="disabled">$PARAM[texture]</textureradioondisabled>
+			<textureradiooffdisabled colordiffuse="disabled">$PARAM[texture]</textureradiooffdisabled>
+			<texturefocus></texturefocus>
+			<width>125</width>
+			<animation center="77,62" effect="zoom" end="100" reversible="false" start="95" time="480" tween="back">Focus</animation>
+			<height>123</height>
+			<radiowidth>74</radiowidth>
+			<radioheight>74</radioheight>
+			<font></font>
+			<texturenofocus></texturenofocus>
+			<radioposx>0</radioposx>
+			<radioposy>0</radioposy>
+		</definition>
 	</include>
+	
 	<include name="InfoDialogMetadata">
 		<control type="button" id="$PARAM[control_id]">
 			<width>660</width>

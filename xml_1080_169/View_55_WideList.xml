@@ -53,7 +53,7 @@
 					<scrolltime tween="cubic" easing="out">500</scrolltime>
 					<orientation>vertical</orientation>
 					<pagecontrol>551</pagecontrol>
-					<onleft condition="Control.IsVisible(55999)">55995</onleft>					
+					<onleft condition="Control.IsVisible(55999)">55994</onleft>					
 					<onleft>9000</onleft>
 					<onright>551</onright>
 					<onup>55</onup>
@@ -528,6 +528,7 @@
 		</control>
 	</include>
 	
+	<!-- Info Panel for music -->
 	<include name="55_ThumbInfoPanel">
 		<control type="group">
 			<visible>Container.Content(artists) | Container.Content(albums) | Container.Content(songs) </visible>
@@ -587,17 +588,6 @@
 				<visible>Container.Content(songs) + [Player.Playing | Player.Paused]</visible>
 				<onleft>9000</onleft>
 				<onright>55</onright>
-
-				
-				<control type="image">
-					<top>-22</top>
-					<left>-2</left>
-					<width>584</width>
-					<height>164</height>
-					<texture colordiffuse="cccccccc">colors/white.png</texture>
-					<bordertexture border="22">dialogs/dialog-bg.png</bordertexture>
-					<bordersize>22</bordersize>
-				</control>
 				
 				<control type="grouplist">
 					<orientation>horizontal</orientation>
@@ -609,40 +599,63 @@
 					<control type="radiobutton" id="55998">
 						<include content="OSDButton">
 							<param name="texture" value="icons/now-playing/fullscreen.png"/>
+							<param name="color_on_focus" value="button_focus" />
+							<param name="color_off_focus" value="button_focus" />
+							<param name="color_on_nofocus" value="grey" />
+							<param name="color_off_nofocus" value="grey" />							
 						</include>
 						<onclick>Fullscreen</onclick>
 						<onleft>9000</onleft>
-						<onright>55997</onright>							
-					</control>					
- 					<control type="radiobutton" id="55997">
-						<textureradioonfocus colordiffuse="white">osd/fullscreen/buttons/play.png</textureradioonfocus>
-						<textureradioonnofocus colordiffuse="black">osd/fullscreen/buttons/play.png</textureradioonnofocus>
-						<textureradioofffocus colordiffuse="white">osd/fullscreen/buttons/pause.png</textureradioofffocus>
-						<textureradiooffnofocus colordiffuse="black">osd/fullscreen/buttons/pause.png</textureradiooffnofocus>
-						<texturefocus></texturefocus>
-						<width>125</width>
-						<height>123</height>
-						<radiowidth>74</radiowidth>
-						<radioheight>74</radioheight>
-						<font></font>
-						<texturenofocus></texturenofocus>
-
+						<onright>55997</onright>		
+						<onright condition="Control.IsVisible(55996)">55996</onright>
+					</control>			
+					<control type="radiobutton" id="55997">
+						<include content="OSDButton">
+							<param name="texture" value="icons/now-playing/play.png"/>
+							<param name="color_on_focus" value="button_focus" />
+							<param name="color_off_focus" value="button_focus" />
+							<param name="color_on_nofocus" value="grey" />
+							<param name="color_off_nofocus" value="grey" />							
+						</include>
 						<onclick>PlayerControl(Play)</onclick>
 						<onleft>55998</onleft>
-						<onright>55996</onright>
-					</control>
+						<onright>55995</onright>	
+						<visible>!Player.Playing</visible>
+					</control>	
 					<control type="radiobutton" id="55996">
 						<include content="OSDButton">
-							<param name="texture" value="osd/fullscreen/buttons/stop.png"/>
+							<param name="texture" value="icons/now-playing/pause.png"/>
+							<param name="color_on_focus" value="button_focus" />
+							<param name="color_off_focus" value="button_focus" />
+							<param name="color_on_nofocus" value="grey" />
+							<param name="color_off_nofocus" value="grey" />							
+						</include>
+						<onclick>PlayerControl(Play)</onclick>
+						<onleft>55998</onleft>
+						<onright>55995</onright>	
+						<visible>Player.Playing</visible>
+					</control>					
+					<control type="radiobutton" id="55995">
+						<include content="OSDButton">
+							<param name="texture" value="icons/now-playing/stop.png"/>
+							<param name="color_on_focus" value="button_focus" />
+							<param name="color_off_focus" value="button_focus" />
+							<param name="color_on_nofocus" value="grey" />
+							<param name="color_off_nofocus" value="grey" />								
 						</include>
 						<onclick>PlayerControl(Stop)</onclick>
 						<onclick>SetFocus(55)</onclick>
 						<onleft>55997</onleft>
-						<onright>55995</onright>						
+						<onleft condition="Control.IsVisible(55996)">55996</onleft>
+						<onright>55994</onright>						
 					</control>
-					<control type="radiobutton" id="55995">
+					<control type="radiobutton" id="55994">
 						<include content="OSDButton">
-							<param name="texture" value="osd/fullscreen/buttons/next.png"/>
+							<param name="texture" value="icons/now-playing/next.png"/>
+							<param name="color_on_focus" value="button_focus" />
+							<param name="color_off_focus" value="button_focus" />
+							<param name="color_on_nofocus" value="grey" />
+							<param name="color_off_nofocus" value="grey" />								
 						</include>
 						<onclick>PlayerControl(Next)</onclick>
 						<visible>Integer.IsGreater(Playlist.Length(music),1)</visible>
