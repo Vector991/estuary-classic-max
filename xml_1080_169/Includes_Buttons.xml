@@ -343,6 +343,7 @@
 				<textureradiooffdisabled colordiffuse="disabled">$PARAM[icon]</textureradiooffdisabled>
 				<textureradioondisabled colordiffuse="disabled">$PARAM[icon]</textureradioondisabled>
 				<label></label>
+				<textwidth>1</textwidth>	<!-- textwidth set to 1 to remove button label of reserved kodi buttons..(weird behavior/bug) -->
 				<onclick>$PARAM[onclick_1]</onclick>
 				<onclick>$PARAM[onclick_2]</onclick>
 				<visible>$PARAM[visible]</visible>
