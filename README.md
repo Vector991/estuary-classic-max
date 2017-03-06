@@ -9,4 +9,4 @@ Initially, I had only wanted to slightly mod the home screen to my liking and pr
 
 
 Screenshots:
-<blockquote class="imgur-embed-pub" lang="en" data-id="a/PmRIl"><a href="//imgur.com/PmRIl">Estuary Class MAX</a></blockquote><script async src="//s.imgur.com/min/embed.js" charset="utf-8"></script>
+http://imgur.com/a/PmRIl
