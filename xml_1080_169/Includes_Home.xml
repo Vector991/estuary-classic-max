@@ -496,33 +496,33 @@
 							<top>18</top>
 							<width>304</width>
 							<height>290</height>
-							<texture>colors/black.png</texture>
+							<texture colordiffuse="bbbbbbbb">colors/black.png</texture>
 						</control>
 
-						<control type="image">
-							<left>20</left>
-							<top>20</top>
-							<width>300</width>
-							<height>180</height>
-							<aspectratio>scale</aspectratio>
-							<texture fallback="DefaultVideo.png" background="true">$PARAM[item_image]</texture>
-						</control>
 						<control type="label">
 							<left>30</left>
-							<top>200</top>
+							<top>20</top>
 							<width>280</width>
-							<height>30</height>
+							<height>35</height>
 							<label>$INFO[ListItem.TVShowTitle]</label>
 							<font>font23_title</font>
 							<shadowcolor>text_shadow</shadowcolor>
 							<align>center</align>
 							<aligny>center</aligny>
+						</control>		
+						<control type="image">
+							<left>20</left>
+							<top>55</top>
+							<width>300</width>
+							<height>180</height>
+							<aspectratio>scale</aspectratio>
+							<texture fallback="DefaultVideo.png" background="true">$PARAM[item_image]</texture>
 						</control>						
 						<control type="label">
 							<left>30</left>
-							<top>230</top>
+							<top>235</top>
 							<width>280</width>
-							<height>30</height>
+							<height>40</height>
 							<label>$PARAM[second_label]</label>
 							<font>font10</font>
 							<shadowcolor>text_shadow</shadowcolor>
@@ -530,7 +530,7 @@
 							<aligny>center</aligny>
 						</control>
 						<control type="label">
-							<top>260</top>
+							<top>265</top>
 							<left>30</left>
 							<width>140</width>
 							<height>40</height>
@@ -540,8 +540,8 @@
 							<aligny>center</aligny>
 						</control>		
 						<control type="label">
-							<top>260</top>
-							<right>30</right>
+							<top>265</top>
+							<right>35</right>
 							<width>140</width>
 							<height>40</height>
 							<label>$INFO[ListItem.Studio]</label>
@@ -594,12 +594,25 @@
 								<top>18</top>
 								<width>304</width>
 								<height>290</height>
-								<texture>colors/black.png</texture>
+								<texture colordiffuse="bbbbbbbb">colors/black.png</texture>
 							</control>
 							
+							<control type="label">
+								<left>30</left>
+								<top>20</top>
+								<width>280</width>
+								<height>35</height>
+								<label>$INFO[ListItem.TVShowTitle]</label>
+								<font>font23_title</font>
+								<textcolor>button_focus</textcolor>
+								<shadowcolor>text_shadow</shadowcolor>
+								<align>center</align>
+								<aligny>center</aligny>
+								<scroll>true</scroll>
+							</control>		
 							<control type="image">
 								<left>20</left>
-								<top>20</top>
+								<top>55</top>
 								<width>300</width>
 								<height>180</height>
 								<aspectratio>scale</aspectratio>
@@ -607,22 +620,9 @@
 							</control>
 							<control type="label">
 								<left>30</left>
-								<top>200</top>
+								<top>235</top>
 								<width>280</width>
-								<height>30</height>
-								<label>$INFO[ListItem.TVShowTitle]</label>
-								<font>font23_title</font>
-								<shadowcolor>text_shadow</shadowcolor>
-								<textcolor>button_focus</textcolor>
-								<align>center</align>
-								<aligny>center</aligny>
-								<scroll>true</scroll>
-							</control>						
-							<control type="label">
-								<left>30</left>
-								<top>230</top>
-								<width>280</width>
-								<height>30</height>
+								<height>40</height>
 								<label>$PARAM[second_label]</label>
 								<font>font10</font>
 								<shadowcolor>text_shadow</shadowcolor>
@@ -631,7 +631,7 @@
 								<scroll>true</scroll>
 							</control>
 							<control type="label">
-								<top>260</top>
+								<top>265</top>
 								<left>30</left>
 								<width>140</width>
 								<height>40</height>
@@ -641,8 +641,8 @@
 								<aligny>center</aligny>
 							</control>		
 							<control type="label">
-								<top>260</top>
-								<right>30</right>
+								<top>265</top>
+								<right>35</right>
 								<width>140</width>
 								<height>40</height>
 								<label>$INFO[ListItem.Studio]</label>
