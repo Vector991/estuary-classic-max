@@ -1,0 +1,305 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<includes>
+	<include name="SubmenuMovies">
+		<content>
+			<item id="1">
+				<onclick>ActivateWindow(videos,videodb://recentlyaddedmovies/,return)</onclick>
+				<thumb>icons/submenu/recentlyadded.png</thumb>
+				<label>$LOCALIZE[20386]</label>
+				<property name="subsub"></property>
+			</item>
+			<item id="2">
+				<onclick>ActivateWindow(videos,videodb://movies/genres/,return)</onclick>
+				<thumb>icons/submenu/genres.png</thumb>
+				<label>$LOCALIZE[135]</label>
+				<property name="subsub">genres</property>
+			</item>				
+			<item id="3">
+				<onclick>ActivateWindow(videos,videodb://movies/years/,return)</onclick>
+				<thumb>icons/submenu/years.png</thumb>
+				<label>$LOCALIZE[652]</label>
+				<property name="subsub">years</property>
+			</item>		
+			<item id="4">
+				<onclick>ActivateWindow(videos,videodb://movies/sets/,return)</onclick>
+				<thumb>icons/submenu/sets.png</thumb>
+				<label>$LOCALIZE[31075]</label>
+			</item>		
+			<item id="5">
+				<onclick>ActivateWindow(videos,videodb://movies/actors/,return)</onclick>
+				<thumb>icons/submenu/actors.png</thumb>
+				<label>$LOCALIZE[344]</label>
+			</item>		
+			<item id="6">
+				<onclick>ActivateWindow(videos,videodb://movies/tags/,return)</onclick>
+				<thumb>icons/submenu/tags.png</thumb>
+				<label>$LOCALIZE[20459]</label>
+				<property name="subsub">tags</property>
+			</item>		
+			<item id="7">
+				<onclick>ActivateWindow(videos,library://video/movies/,return)</onclick>
+				<thumb>icons/submenu/media.png</thumb>
+				<label>$LOCALIZE[31074]</label>
+			</item>		
+			<item id="8">
+				<onclick>UpdateLibrary(video)</onclick>
+				<thumb>icons/submenu/updatelibrary.png</thumb>
+				<label>$VAR[VideoLibraryScanLabel]</label>
+			</item>		
+		</content>
+	</include>
+	
+	<include name="SubmenuTVShows">
+		<content>
+			<item id="1">
+				<onclick>ActivateWindow(Videos,videodb://recentlyaddedepisodes/,return)</onclick>
+				<thumb>icons/submenu/recentlyadded.png</thumb>
+				<label>$LOCALIZE[20387]</label>
+			</item>	
+			<item id="2">
+				<onclick>ActivateWindow(Videos,videodb://tvshows/genres/,return)</onclick>
+				<thumb>icons/submenu/genres.png</thumb>
+				<label>$LOCALIZE[135]</label>
+				<property name="subsub">genres</property>
+			</item>				
+			<item id="3">
+				<onclick>ActivateWindow(Videos,videodb://tvshows/years/,return)</onclick>
+				<thumb>icons/submenu/years.png</thumb>
+				<label>$LOCALIZE[652]</label>
+				<property name="subsub">years</property>
+			</item>			
+			<item id="4">
+				<onclick>ActivateWindow(Videos,videodb://tvshows/actors/,return)</onclick>
+				<thumb>icons/submenu/actors.png</thumb>
+				<label>$LOCALIZE[344]</label>
+			</item>			
+			<item id="5">
+				<onclick>ActivateWindow(Videos,videodb://tvshows/tags/,return)</onclick>
+				<thumb>icons/submenu/tags.png</thumb>
+				<label>$LOCALIZE[20459]</label>
+				<property name="subsub">tags</property>
+			</item>	
+			<item id="6">
+				<onclick>UpdateLibrary(video)</onclick>
+				<thumb>icons/submenu/updatelibrary.png</thumb>
+				<label>$VAR[VideoLibraryScanLabel]</label>
+			</item>	
+		</content>
+	</include>
+	
+	<include name="SubmenuMusic">
+		<content>
+			<item id="1">
+				<onclick>ActivateWindow(Music, RecentlyAddedAlbums, return)</onclick>
+				<thumb>icons/submenu/recentlyadded.png</thumb>
+				<label>$LOCALIZE[359]</label>
+			</item>			
+			<item id="2">
+				<onclick>ActivateWindow(Music, Artists, return)</onclick>
+				<thumb>icons/submenu/artists.png</thumb>
+				<label>$LOCALIZE[133]</label>
+			</item>		
+			<item id="3">
+				<onclick>ActivateWindow(Music, Albums, return)</onclick>
+				<thumb>icons/submenu/albums.png</thumb>
+				<label>$LOCALIZE[132]</label>
+			</item>
+			<item id="4">
+				<onclick>ActivateWindow(music, Genres,return)</onclick>
+				<thumb>icons/submenu/genres.png</thumb>
+				<label>$LOCALIZE[135]</label>
+				<property name="subsub">genres</property>
+			</item>			
+			<item id="5">
+				<onclick>ActivateWindow(Music, Playlists, return)</onclick>
+				<thumb>icons/submenu/playlists.png</thumb>
+				<label>$LOCALIZE[136]</label>
+			</item>			
+			<item id="6">
+				<onclick>ActivateWindow(Music, Top100, return)</onclick>
+				<thumb>icons/submenu/top100.png</thumb>
+				<label>$LOCALIZE[271]</label>
+			</item>				
+			<item id="7">
+				<onclick>ActivateWindow(Music, Files, return)</onclick>
+				<thumb>icons/submenu/files.png</thumb>
+				<label>$LOCALIZE[744]</label>
+			</item>	
+			<item id="8">
+				<onclick>UpdateLibrary(music)</onclick>
+				<thumb>icons/submenu/updatelibrary.png</thumb>
+				<label>$VAR[MusicLibraryScanLabel]</label>
+			</item>						
+		</content>
+	</include>
+	
+	<include name="SubmenuAddons">
+		<content>
+			<item id="1">
+				<onclick>ActivateWindow(addonbrowser,addons://user/,return)</onclick>
+				<thumb>icons/submenu/recordings.png</thumb>
+				<label>$LOCALIZE[31146]</label>
+			</item>		
+			<item id="2">
+				<onclick>ActivateWindow(addonbrowser,addons://repos/,return)</onclick>
+				<thumb>icons/submenu/add-ons.png</thumb>
+				<label>$LOCALIZE[31147]</label>
+			</item>				
+			<item id="3">
+				<onclick>ActivateWindow(addonbrowser,addons://search/,return)</onclick>
+				<thumb>icons/submenu/tv-search.png</thumb>
+				<label>$LOCALIZE[137]</label>
+			</item>
+<!-- 			
+			<item id="4">
+				<onclick>ActivateWindow(systemsettings,addons)</onclick>
+				<thumb>icons/submenu/settings.png</thumb>
+				<label>$LOCALIZE[5]</label>
+			</item>		
+-->			
+		</content>
+	</include>
+	
+	<include name="SubmenuVideos">
+		<content>
+			<item id="1">
+				<onclick>ActivateWindow(Videos,Files,return)</onclick>
+				<thumb>icons/submenu/files.png</thumb>
+				<label>$LOCALIZE[744]</label>
+			</item>
+			<item id="2">
+				<onclick>ActivateWindow(Videos,special://videoplaylists/,return)</onclick>
+				<thumb>icons/submenu/playlists.png</thumb>
+				<label>$LOCALIZE[136]</label>
+			</item>			
+		</content>
+	</include>
+	
+	<include name="SubmenuTV">
+		<content>
+			<item id="1">
+				<onclick>ActivateWindow(TVChannels)"</onclick>
+				<thumb>icons/submenu/channels.png</thumb>
+				<label>$LOCALIZE[19019]</label>
+			</item>		
+			<item id="2">
+				<onclick>ActivateWindow(TVGuide)"</onclick>
+				<thumb>icons/submenu/guide.png</thumb>
+				<label>$LOCALIZE[19069]</label>
+			</item>
+			<item id="3">
+				<onclick>ActivateWindow(TVRecordings)"</onclick>
+				<thumb>icons/submenu/recordings.png</thumb>
+				<label>$LOCALIZE[19017]</label>
+			</item>
+			<item id="4">
+				<onclick>ActivateWindow(TVTimers)"</onclick>
+				<thumb>icons/submenu/timers.png</thumb>
+				<label>$LOCALIZE[19040]</label>
+			</item>
+			<item id="5">
+				<onclick>ActivateWindow(TVTimerRules)"</onclick>
+				<thumb>icons/submenu/timer-rules.png</thumb>
+				<label>$LOCALIZE[19138]</label>
+			</item>		
+			<item id="6">
+				<onclick>ActivateWindow(TVSearch)"</onclick>
+				<thumb>icons/submenu/tv-search.png</thumb>
+				<label>$LOCALIZE[137]</label>
+			</item>			
+		</content>
+	</include>
+	
+	<include name="SubmenuRadio">
+		<content>
+			<item id="1">
+				<onclick>ActivateWindow(RadioChannels)"</onclick>
+				<thumb>icons/submenu/channels.png</thumb>
+				<label>$LOCALIZE[19019]</label>
+			</item>		
+			<item id="2">
+				<onclick>ActivateWindow(RadioGuide)"</onclick>
+				<thumb>icons/submenu/guide.png</thumb>
+				<label>$LOCALIZE[19069]</label>
+			</item>	
+			<item id="3">
+				<onclick>ActivateWindow(RadioRecordings)"</onclick>
+				<thumb>icons/submenu/recordings.png</thumb>
+				<label>$LOCALIZE[19017]</label>
+			</item>	
+			<item id="4">
+				<onclick>ActivateWindow(RadioTimers)"</onclick>
+				<thumb>icons/submenu/timers.png</thumb>
+				<label>$LOCALIZE[19040]</label>
+			</item>		
+			<item id="5">
+				<onclick>ActivateWindow(RadioTimerRules)"</onclick>
+				<thumb>icons/submenu/timer-rules.png</thumb>
+				<label>$LOCALIZE[19138]</label>
+			</item>
+			<item id="6">
+				<onclick>ActivateWindow(RadioSearch)"</onclick>
+				<thumb>icons/submenu/tv-search.png</thumb>
+				<label>$LOCALIZE[137]</label>
+			</item>			
+		</content>
+	</include>
+	
+	<include name="SubmenuWeather">
+		<content>
+			<item id="1">
+				<onclick>Weather.Refresh"</onclick>
+				<thumb>icons/submenu/updatelibrary.png</thumb>
+				<label>$LOCALIZE[184]</label>
+			</item>
+			<item id="2">
+				<onclick>Weather.LocationPrevious"</onclick>
+				<thumb>icons/submenu/location-previous.png</thumb>
+				<label>$LOCALIZE[31077]</label>
+			</item>
+			<item id="3">
+				<onclick>Weather.LocationNext"</onclick>
+				<thumb>icons/submenu/location-next.png</thumb>
+				<label>$LOCALIZE[31078]</label>
+			</item>		
+			<item id="4">
+				<onclick>ActivateWindow(servicesettings,weather)"</onclick>
+				<thumb>icons/submenu/weather-settings.png</thumb>
+				<label>$LOCALIZE[1390]</label>
+			</item>			
+		</content>
+	</include>
+	
+	<include name="SubmenuSystem">
+		<content>
+			<item id="804">
+				<onclick>ActivateWindow(shutdownmenu)"</onclick>
+				<thumb>icons/submenu/power.png</thumb>
+				<label>$LOCALIZE[33060]</label>
+			</item>
+			<item id="802">
+				<onclick>ActivateWindow(settings)"</onclick>
+				<thumb>icons/submenu/settings.png</thumb>
+				<label>$LOCALIZE[21417]</label>
+			</item>				
+		</content>
+	</include>
+	
+	<include name="SubmenuVideoInfo">
+		<content>
+			<item id="8">
+				<thumb>icons/infodialogs/play.png</thumb>
+				<label>$LOCALIZE[208]</label>		
+				<visible>true</visible>
+				<onclick>noop</onclick>
+			</item>		
+			<item id="11">
+				<thumb>icons/infodialogs/trailer.png</thumb>
+				<label>$LOCALIZE[20410]</label>		
+				<visible>true</visible>
+				<onclick>noop</onclick>
+			</item>
+		</content>
+	</include>
+
+</includes>

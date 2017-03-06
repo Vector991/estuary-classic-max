@@ -1,0 +1,10 @@
+Estuary Classic MAX by Vector991, based on skin by phil65 & Piers..and Kodi team
+
+Estuary Artwork is licensed under a
+Creative Commons Attribution-ShareAlike 4.0 Unported License.
+You can find the license details here: <http://creativecommons.org/licenses/by-sa/4.0/>.
+
+Estuary Classic MAX code work is licensed under
+GNU General Public License (GPL), Version 3.0
+You can find the license details here: <https://www.gnu.org/licenses/gpl-3.0>.
+

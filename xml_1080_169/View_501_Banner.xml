@@ -1,0 +1,183 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<includes>
+	<include name="BannerInfoFlag">
+		<control type="group">
+			<top>$PARAM[posy]</top>
+			<control type="image">
+				<top>0</top>
+				<right>41</right>
+				<width>70</width>
+				<height>32</height>
+				<fadetime>300</fadetime>
+				<aspectratio align="center">keep</aspectratio>
+				<texture>$PARAM[icon]</texture>
+			</control>
+			<control type="label">
+				<right>41</right>
+				<top>35</top>
+				<width>70</width>
+				<height>32</height>
+				<align>center</align>
+				<font>font10</font>
+				<selectedcolor>white</selectedcolor>
+				<label fallback="">$INFO[$PARAM[infolabel]]</label>
+			</control>
+		</control>
+	</include>
+	
+	<include name="View_501_Banner">
+		<!--
+		<include content="UpDownArrows">
+			<param name="container_id" value="501" />
+			<param name="visible" value="!System.HasModalDialog" />
+		</include>
+		-->
+		
+		<control type="group">
+			<include>OpenClose_Right</include>
+			<left>0</left>
+			<top>0</top>
+			<visible>Control.IsVisible(501)</visible>
+			<include>Visible_Right</include>
+			
+			<control type="scrollbar" id="50188">
+				<right>20</right>
+				<top>100</top>
+				<width>40</width>
+				<height>905</height>
+				<onleft>501</onleft>
+				<onright>noop</onright>
+				<orientation>vertical</orientation>
+				<texturesliderbackground colordiffuse="22FFFFFF">colors/white.png</texturesliderbackground>
+				<animation effect="fade" start="0" end="100" time="200" delay="300">Visible</animation>
+				<animation effect="fade" start="100" end="0" time="200">Hidden</animation>
+			</control>
+			
+			<control type="group">
+				<top>100</top>
+
+				<control type="image">
+					<top>0</top>
+					<left>40</left>
+					<width>1780</width>
+					<height>50</height>
+					<texture colordiffuse="44444444">colors/black.png</texture>
+				</control>				
+
+				<control type="group">
+					<visible>!ListItem.IsParentFolder</visible>
+
+					<control type="label">
+						<left>40</left>
+						<top>0</top>
+						<width>1780</width>
+						<height>50</height>
+						<label>$VAR[VideoInfoMainLabelVar]</label>
+						<font>font45_title</font>
+						<shadowcolor>text_shadow</shadowcolor>
+						<aligny>center</aligny>
+						<align>center</align>
+					</control>
+					<control type="label">
+						<label>$INFO[ListItem.Property(WatchedEpisodes)] / $INFO[ListItem.Label2]</label>
+						<font>font13</font>
+						<left>60</left>
+						<top>0</top>
+						<width>500</width>
+						<height>50</height>						
+						<shadowcolor>text_shadow</shadowcolor>
+						<aligny>center</aligny>
+						<visible>!String.IsEmpty(ListItem.Label2)</visible>
+					</control>			
+					<control type="label">
+						<label>$INFO[ListItem.Studio]</label>
+						<font>font13</font>
+						<right>120</right>
+						<top>0</top>
+						<width>500</width>
+						<height>50</height>						
+						<shadowcolor>text_shadow</shadowcolor>
+						<aligny>center</aligny>
+						<align>right</align>
+						<visible>!String.IsEmpty(ListItem.Studio)</visible>
+					</control>	
+				</control>
+			</control>
+							
+			<control type="panel" id="501">
+				<left>40</left>
+				<top>160</top>
+				<width>1800</width>
+				<height>865</height>
+				<onleft>9000</onleft>
+				<onright>50188</onright>
+				<onup>501</onup>
+				<ondown>501</ondown>
+				<viewtype label="20020">wide</viewtype>
+				<preloaditems>2</preloaditems>
+				<pagecontrol>50188</pagecontrol>
+				<scrolltime tween="cubic" easing="out">500</scrolltime>
+				<visible>Container.Content(tvshows)</visible>
+				
+				<itemlayout height="130" width="600">
+					<control type="image">
+						<left>0</left>
+						<top>0</top>
+						<width>580</width>
+						<height>110</height>
+						<texture border="2" fallback="DefaultVideo.png" background="true">$VAR[BannerArtVar]</texture>
+					</control>
+					<control type="image">
+						<left>0</left>
+						<top>0</top>
+						<width>580</width>
+						<height>110</height>
+						<texture border="2" fallback="DefaultVideo.png" background="true">$VAR[BannerArtVar]</texture>
+						<aspectratio aligny="center">scale</aspectratio>
+						<bordertexture colordiffuse="border_alpha">colors/black.png</bordertexture>
+						<bordersize>2</bordersize>
+					</control>
+					<control type="image">
+						<left>545</left>
+						<top>76</top>
+						<width>32</width>
+						<height>32</height>
+						<texture colordiffuse="cccccccc">$VAR[ListWatchedIconVar]</texture>
+					</control>					
+					<!--
+					<control type="group">
+						<left>770</left>
+						<top>20</top>
+						<include>UserRatingCircle</include>
+					</control> 
+					-->
+				</itemlayout>
+				<focusedlayout height="130" width="600">
+					<control type="group">
+						<animation effect="zoom" end="104" center="300,65" time="200">Focus</animation>
+						
+						<control type="image">
+							<left>0</left>
+							<top>0</top>
+							<width>580</width>
+							<height>110</height>
+							<texture border="2" fallback="DefaultVideo.png" background="true">$VAR[BannerArtVar]</texture>
+							<aspectratio aligny="center">scale</aspectratio>
+							<bordertexture colordiffuse="button_focus">colors/white.png</bordertexture>
+							<bordersize>4</bordersize>
+						</control>
+						
+						<control type="image">
+							<left>545</left>
+							<top>76</top>
+							<width>32</width>
+							<height>32</height>
+							<texture colordiffuse="button_focus">$VAR[ListWatchedIconVar]</texture>
+						</control>						
+					</control>
+
+				</focusedlayout>
+			</control>
+		</control>
+	</include>
+</includes>

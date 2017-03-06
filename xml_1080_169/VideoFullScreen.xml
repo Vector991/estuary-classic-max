@@ -1,0 +1,57 @@
+<?xml version="1.0" encoding="utf-8"?>
+<window>
+	<defaultcontrol></defaultcontrol>
+	<controls>
+		<control type="group" id="0">
+			<control type="label" id="10">
+				<left>45</left>
+				<top>15</top>
+				<width>1770</width>
+				<height>100</height>
+				<label></label>
+				<font>font13</font>
+			</control>
+		</control>
+		
+		<control type="group" id="1">
+			<visible>Player.Caching</visible>
+			<animation delay="300" effect="fade" time="200">Visible</animation>
+			<animation effect="fade" delay="200" time="150">Hidden</animation>
+
+ 			<control type="image" id="1">
+				<centerleft>50%</centerleft>
+				<top>340</top>
+				<width>400</width>
+				<height>400</height>
+				<texture colordiffuse="button_focus">$INFO[Player.CacheLevel,dialogs/volume/progress/p,.png]</texture>
+			</control>
+			<control type="label" id="1">
+				<description>buffering value</description>
+				<label>$INFO[Player.CacheLevel]%</label>
+				<centerleft>50%</centerleft>
+				<top>340</top>
+				<width>400</width>
+				<height>400</height>
+				<aligny>center</aligny>
+				<align>center</align>
+				<font>Font45</font>
+				<textcolor>button_focus</textcolor>
+				<shadowcolor>black</shadowcolor>
+			</control>
+			<control type="label" id="2">
+				<description>buffering label</description>
+				<label>$LOCALIZE[15107]</label>
+				<centerleft>50%</centerleft>
+				<top>720</top>
+				<width>400</width>
+				<height>20</height>
+				<aligny>center</aligny>
+				<align>center</align>
+				<font>Font45</font>
+				<textcolor>button_focus</textcolor>
+				<shadowcolor>black</shadowcolor>
+			</control>
+		</control>
+		
+	</controls>
+</window>

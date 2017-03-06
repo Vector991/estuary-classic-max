@@ -1,0 +1,167 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<includes>
+	<include name="View_53_Shift">
+		<control type="group">
+			<description>Poster Viewtype</description>
+			
+			<include content="LeftRightArrows">
+				<param name="list_id" value="53" />
+				<param name="left_posx" value="10" />
+				<param name="right_posx" value="1880" />
+				<param name="posy" value="380" />
+			</include>
+			
+			<control type="scrollbar" id="5199">
+				<left>0</left>
+				<top>965</top>
+				<width>100%</width>
+				<height>40</height>
+				<texturesliderbackground colordiffuse="22FFFFFF">colors/white.png</texturesliderbackground>
+				<onup>53</onup>
+				<ondown>noop</ondown>
+				<orientation>horizontal</orientation>
+				<visible>Control.IsVisible(53)</visible>
+				<animation effect="fade" start="0" end="100" time="200" delay="300">Visible</animation>
+				<animation effect="fade" start="100" end="0" time="200">Hidden</animation>
+				<animation effect="slide" end="0,90" time="300" tween="sine" easing="inout" condition="$EXP[infodialog_active]">conditional</animation>
+			</control>
+			
+			<control type="group">
+				<visible>Control.IsVisible(53)</visible>
+				<include>Visible_Right</include>
+				<include>OpenClose_Right</include>
+				<top>400</top>
+				
+				<control type="image">
+					<left>0</left>
+					<top>440</top>
+					<width>1920</width>
+					<height>100</height>
+					<texture colordiffuse="66666666">colors/black.png</texture>
+				</control>
+				<control type="image">
+					<left>768</left>
+					<top>440</top>
+					<width>384</width>
+					<height>100</height>
+					<visible>Control.HasFocus(53)</visible>
+					<animation effect="fade" time="200">VisibleChange</animation>
+					<texture colordiffuse="button_focus">colors/white.png</texture>
+					<animation effect="slide" start="0,0" end="-384,0" time="300" tween="sine" easing="inout" condition="Integer.IsEqual(Container.Position,1) | Integer.IsEqual(Container.Position,0)">Conditional</animation>
+					<animation effect="slide" start="0,0" end="-384,0" time="300" tween="sine" easing="inout" condition="Integer.IsEqual(Container.Position,0)">Conditional</animation>
+					<animation effect="slide" start="0,0" end="384,0" time="300" tween="sine" easing="inout" condition="Integer.IsEqual(Container.Position,3) | Integer.IsEqual(Container.Position,4)">Conditional</animation>
+					<animation effect="slide" start="0,0" end="384,0" time="300" tween="sine" easing="inout" condition="Integer.IsEqual(Container.Position,4)">Conditional</animation>
+				</control>
+				
+				<control type="fixedlist" id="53">
+					<left>0</left>
+					<top>0</top>
+					<width>1920</width>
+					<height>540</height>
+					<focusposition>1</focusposition>
+					<movement>2</movement>
+					<pagecontrol>5199</pagecontrol>
+					<scrolltime tween="cubic" easing="out">500</scrolltime>
+					<orientation>horizontal</orientation>
+					<visible>Container.Content(movies) | Container.Content(sets) | Container.Content(tvshows) | Container.Content(seasons) | Container.Content(musicvideos) | Container.Content(episodes) | Container.Content(artists) | Container.Content(albums) | Container.Content(mixed) | Container.Content(images) | Container.Content(videos)</visible>
+					<onleft>53</onleft>
+					<onup>9000</onup>
+					<ondown>5199</ondown>
+					<onright>53</onright>
+					<preloaditems>1</preloaditems>
+					<viewtype label="31100">icon</viewtype>
+					
+					<itemlayout width="384">
+						<control type="group">
+							<control type="image">
+								<width>384</width>
+								<height>420</height>
+								<aspectratio align="center" aligny="bottom">keep</aspectratio>
+								<texture fallback="DefaultVideo.png">$VAR[ShiftThumbVar]</texture>
+								<bordertexture border="20">overlays/shadow.png</bordertexture>
+								<bordersize>20</bordersize>
+							</control>
+							<control type="textbox">
+								<left>20</left>
+								<top>440</top>
+								<width>340</width>
+								<height>100</height>
+								<align>center</align>
+								<aligny>center</aligny>
+								<label>$INFO[ListItem.Label]</label>
+								<font>font12</font>
+							</control>
+							<control type="group">
+								<left>169</left>
+								<top>380</top>
+								<include>UserRatingCircle</include>
+							</control>
+						</control>
+					</itemlayout>
+					<focusedlayout width="384">
+						<control type="image">
+							<width>384</width>
+							<height>420</height>
+							<aspectratio align="center" aligny="bottom">keep</aspectratio>
+							<texture fallback="DefaultVideo.png">$VAR[ShiftThumbVar]</texture>
+							<bordertexture border="20">overlays/shadow.png</bordertexture>
+							<bordersize>20</bordersize>
+						</control>			
+						<control type="textbox">
+							<left>20</left>
+							<top>440</top>
+							<width>340</width>
+							<height>100</height>
+							<align>center</align>
+							<aligny>center</aligny>
+							<label>$INFO[ListItem.Label]</label>
+							<font>font25_title</font>
+							<autoscroll time="3000" delay="3000" repeat="3000">True</autoscroll>
+						</control>
+						<control type="group">
+							<left>169</left>
+							<top>380</top>
+							<include>UserRatingCircle</include>
+						</control>
+					</focusedlayout>
+				</control>
+			</control>
+			
+			<control type="group">
+				<visible>Control.IsVisible(53)</visible>
+				<include>Visible_Right</include>
+				<include>OpenClose_Right</include>
+				
+				<control type="image">
+					<left>960</left>
+					<top>100</top>
+					<width>940</width>
+					<height>280</height>
+					<texture colordiffuse="33333333">colors/black.png</texture>
+				</control>
+				<control type="textbox" id="53300">
+					<left>980</left>
+					<top>120</top>
+					<width>900</width>
+					<height>240</height>
+					<label>$VAR[ShiftRightTextBoxVar]</label>
+					<font>font12</font>
+					<shadowcolor>text_shadow</shadowcolor>
+				</control>				
+				
+				<control type="textbox" id="53200">
+					<left>40</left>
+					<top>120</top>
+					<width>880</width>
+					<height>240</height>
+					<label>$VAR[ShiftLeftTextBoxVar]</label>
+					<font>font12</font>
+					<shadowcolor>text_shadow</shadowcolor>
+				</control>				
+
+			</control>
+			
+		</control>
+	</include>
+	
+</includes>

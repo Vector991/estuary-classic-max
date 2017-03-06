@@ -1,0 +1,341 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<includes>
+	<include name="View_51_Poster">
+		<control type="group">
+			<visible>Control.IsVisible(51)</visible>		
+			
+			<description>Poster Viewtype</description>
+			<top>83</top>
+			
+			<include content="LeftRightArrows">
+				<param name="list_id" value="51" />
+				<param name="left_posx" value="438" />
+				<param name="right_posx" value="1434" />
+				<param name="posy" value="240" />
+			</include>
+			
+			<control type="scrollbar" id="5188">
+				<left>0</left>
+				<top>12</top>
+				<width>100%</width>
+				<height>30</height>
+				<texturesliderbackground colordiffuse="22FFFFFF">colors/white.png</texturesliderbackground>
+				<onup>noop</onup>
+				<ondown>51</ondown>
+				<orientation>horizontal</orientation>
+				<animation effect="fade" start="0" end="100" time="200" delay="300">Visible</animation>
+				<animation effect="fade" start="100" end="0" time="200">Hidden</animation>
+				<animation effect="slide" end="0,90" time="300" tween="sine" easing="inout" condition="$EXP[infodialog_active]">conditional</animation>
+			</control>	
+	
+			<control type="group">
+				<include>Visible_Right</include>
+				<include>OpenClose_Right</include>
+				<top>40</top>
+				
+				<control type="fixedlist" id="51">
+					<visible>Container.Content(movies) | Container.Content(seasons) | Container.Content(sets) | Container.Content(tvshows)</visible>
+					<viewtype label="20021">icon</viewtype>
+					<left>186</left>
+					<top>20</top>
+					<width>1734</width>
+					<height>405</height>
+					<focusposition>0</focusposition>
+					<movement>0</movement>
+					<pagecontrol>5188</pagecontrol>
+					<scrolltime tween="cubic" easing="out">500</scrolltime>
+					<orientation>horizontal</orientation>
+					<onup>5188</onup>
+					<ondown>noop</ondown>
+					<onright>noop</onright>
+					<onleft>9000</onleft>
+					<hitrect x="20" y="20" w="426" h="661" />
+					<preloaditems>1</preloaditems>
+					
+					<itemlayout width="280">
+						<control type="image">
+							<left>0</left>
+							<top>0</top>
+							<width>260</width>
+							<height>394</height>
+							<aspectratio>scale</aspectratio>
+							<texture fallback="DefaultVideo.png">$VAR[ListPosterVar]</texture>
+						</control>
+						<control type="textbox">
+							<left>0</left>
+							<top>300</top>
+							<width>266</width>
+							<height>94</height>
+							<label>$INFO[ListItem.Label]</label>
+							<font>font25_title</font>
+							<shadowcolor>text_shadow</shadowcolor>
+							<align>center</align>
+							<aligny>center</aligny>
+							<visible>String.IsEmpty(ListItem.Art(poster)) + !Listitem.IsParentFolder</visible>
+						</control>
+						<control type="group">
+							<left>108</left>
+							<top>340</top>
+							<include>UserRatingCircle</include>
+						</control>
+					</itemlayout>
+					
+					<focusedlayout width="280">
+						<control type="image">
+							<left>0</left>
+							<top>0</top>
+							<width>260</width>
+							<height>394</height>
+							<aspectratio>scale</aspectratio>
+							<texture fallback="DefaultVideo.png">$VAR[ListPosterVar]</texture>
+							<animation effect="fade" time="300" start="100" end="0">Focus</animation>
+							
+						</control>
+						<control type="textbox">
+							<left>0</left>
+							<top>300</top>
+							<width>260</width>
+							<height>94</height>
+							<label>$INFO[ListItem.Label]</label>
+							<font>font25_title</font>
+							<shadowcolor>text_shadow</shadowcolor>
+							<align>center</align>
+							<aligny>center</aligny>
+							<visible>String.IsEmpty(ListItem.Art(poster)) + !Listitem.IsParentFolder</visible>
+						</control>
+					</focusedlayout>
+				</control>
+				
+				<!-- Clickable spots on list control to handle focus/leftright movement - not perfect but ok -->
+				<control type="button" id="51800">
+					<texturefocus border="8"></texturefocus>
+					<texturenofocus></texturenofocus>
+					<label></label>
+					<font></font>
+					<left>466</left>
+					<top>20</top>
+					<width>260</width>
+					<height>394</height>
+					<onclick>Control.Move(51,-1)</onclick>
+					<onclick>SetFocus(51)</onclick>
+					<visible>Control.IsVisible(51)</visible>
+				</control>				
+				<control type="button" id="51801">
+					<texturefocus border="8"></texturefocus>
+					<texturenofocus></texturenofocus>
+					<label></label>
+					<font></font>
+					<left>726</left>
+					<top>20</top>
+					<width>860</width>
+					<height>394</height>
+					<onclick>SetFocus(51)</onclick>
+					<visible>Control.IsVisible(51)</visible>
+				</control>					
+				<control type="button" id="51802">
+					<texturefocus border="8"></texturefocus>
+					<texturenofocus></texturenofocus>
+					<label></label>
+					<font></font>
+					<left>1586</left>
+					<top>20</top>
+					<width>334</width>
+					<height>394</height>
+					<onclick>Control.Move(51,1)</onclick>
+					<onclick>SetFocus(51)</onclick>
+					<visible>Control.IsVisible(51)</visible>
+				</control>	
+				
+				<!-- Left side focused item big poster  -->
+				<control type="image">
+					<left>0</left>
+					<top>0</top>
+					<width>466</width>
+					<height>701</height>
+					<fadetime>200</fadetime>
+					<aspectratio>scale</aspectratio>
+					<texture fallback="DefaultVideo.png" background="true">$VAR[PosterVar]</texture>
+					<bordertexture border="20">overlays/shadow.png</bordertexture>
+					<bordersize>20</bordersize>	
+				</control>				
+				<control type="image">
+					<texture colordiffuse="button_focus" border="8">buttons/thumbnail_focused.png</texture>
+					<left>20</left>
+					<top>20</top>
+					<width>426</width>
+					<height>661</height>
+					<visible>Control.HasFocus(51) | Control.HasFocus(51800) | Control.HasFocus(51802)</visible>
+				</control>
+				<control type="button" id="51805">
+					<texturefocus colordiffuse="button_focus" border="8">buttons/thumbnail_focused.png</texturefocus>
+					<texturenofocus></texturenofocus>
+					<label></label>
+					<font></font>
+					<left>20</left>
+					<top>20</top>
+					<width>426</width>
+					<height>661</height>
+					<onfocus>SetFocus(51)</onfocus>
+					<onclick>SetFocus(51)</onclick>
+				</control>	
+				<control type="group">
+					<left>201</left>
+					<top>649</top>
+					<include content="UserRatingCircle">
+						<param name="size" value="64" />
+						<param name="font" value="Font13" />
+					</include>
+				</control>				
+				
+				<!-- Video details -->
+				<control type="group">
+					<visible>!ListItem.IsParentFolder</visible>
+					
+					<control type="label">
+						<left>466</left>
+						<top>414</top>
+						<width>1486</width>
+						<height>60</height>
+						<label>$VAR[VideoInfoMainLabelVar]</label>
+						<font>font45_title</font>
+						<shadowcolor>text_shadow</shadowcolor>
+						<aligny>center</aligny>
+					</control>
+					<control type="label">
+						<label>$INFO[ListItem.Label2]</label>
+						<font>font13</font>
+						<left>20</left>
+						<top>700</top>
+						<width>426</width>
+						<height>60</height>						
+						<shadowcolor>text_shadow</shadowcolor>
+					</control>			
+					
+					<control type="image">
+						<left>466</left>
+						<top>490</top>
+						<width>820</width>
+						<height>390</height>
+						<texture colordiffuse="55555555">colors/black.png</texture>
+					</control>
+					<control type="textbox">
+						<left>486</left>
+						<top>510</top>
+						<width>780</width>
+						<height>350</height>
+						<font>font12</font>
+						<autoscroll time="8000" delay="2000" repeat="10000">!System.HasModalDialog</autoscroll>
+						<label>$INFO[ListItem.Plot]</label>
+						<shadowcolor>text_shadow</shadowcolor>
+					</control>					
+					
+					<control type="grouplist">
+						<orientation>vertical</orientation>
+						<left>1280</left>
+						<top>480</top>
+						<height>400</height>
+
+						<include content="InfoDialogMetadata">
+							<param name="control_id" value="147" />
+							<param name="label" value="$INFO[ListItem.Director,[COLOR button_focus]$LOCALIZE[20339]: [/COLOR]]" />
+							<param name="visible" value="!String.IsEmpty(ListItem.Director)" />
+						</include>
+						<include content="InfoDialogMetadata">
+							<param name="control_id" value="148" />
+							<param name="label" value="$INFO[ListItem.Writer,[COLOR button_focus]$LOCALIZE[20417]: [/COLOR]]" />
+							<param name="visible" value="!String.IsEmpty(ListItem.Writer)" />
+						</include>
+						<include content="InfoDialogMetadata">
+							<param name="control_id" value="149" />
+							<param name="label" value="[COLOR button_focus]$LOCALIZE[563]: [/COLOR]$INFO[ListItem.RatingAndVotes]" />
+							<param name="visible" value="!String.IsEmpty(ListItem.RatingAndVotes)" />
+						</include>
+						<include content="InfoDialogMetadata">
+							<param name="control_id" value="150" />
+							<param name="label" value="[COLOR button_focus]$LOCALIZE[515]: [/COLOR]$INFO[ListItem.Genre]" />
+							<param name="visible" value="!String.IsEmpty(ListItem.Genre) + Stringcompare(ListItem.DBType,movie)" />
+						</include>
+						<include content="InfoDialogMetadata">
+							<param name="control_id" value="151" />
+							<param name="label" value="[COLOR button_focus]$LOCALIZE[180]: [/COLOR]$INFO[ListItem.Duration] $LOCALIZE[31060]" />
+							<param name="visible" value="!String.IsEmpty(ListItem.Duration)" />
+						</include>
+						<include content="InfoDialogMetadata">
+							<param name="control_id" value="152" />
+							<param name="label" value="[COLOR button_focus]$LOCALIZE[21875]: [/COLOR]$INFO[ListItem.Country]" />
+							<param name="visible" value="!String.IsEmpty(ListItem.Country)" />
+						</include>
+						<include content="InfoDialogMetadata">
+							<param name="control_id" value="153" />
+							<param name="label" value="[COLOR button_focus]$LOCALIZE[29909]: [/COLOR]$INFO[ListItem.Studio]" />
+							<param name="visible" value="!String.IsEmpty(ListItem.Studio)" />
+						</include>
+						<include content="InfoDialogMetadata">
+							<param name="control_id" value="154" />
+							<param name="label" value="[COLOR button_focus]$LOCALIZE[20416]: [/COLOR]$INFO[ListItem.Premiered]" />
+							<param name="visible" value="!String.IsEmpty(ListItem.Premiered)" />
+						</include>
+						<include content="InfoDialogMetadata">
+							<param name="control_id" value="155" />
+							<param name="label" value="[COLOR button_focus]$LOCALIZE[31048]: [/COLOR]$INFO[ListItem.Season,, $LOCALIZE[36905]]$INFO[ListItem.Episode, (, $LOCALIZE[20453])]" />
+							<param name="visible" value="!String.IsEmpty(ListItem.Season) + !Stringcompare(ListItem.DBType,episode)" />
+						</include>
+						<include content="InfoDialogMetadata">
+							<param name="control_id" value="156" />
+							<param name="label" value="[COLOR button_focus]$LOCALIZE[31017]: [/COLOR]$INFO[ListItem.Mpaa]" />
+							<param name="visible" value="!String.IsEmpty(ListItem.Mpaa)" />
+						</include>
+						<include content="InfoDialogMetadata">
+							<param name="control_id" value="157" />
+							<param name="label" value="[COLOR button_focus]$LOCALIZE[20457]: [/COLOR]$INFO[ListItem.Set]" />
+							<param name="visible" value="!String.IsEmpty(ListItem.Set)" />
+						</include>
+						<include content="InfoDialogMetadata">
+							<param name="control_id" value="157" />
+							<param name="label" value="[COLOR button_focus]$LOCALIZE[20459]: [/COLOR]$INFO[ListItem.Tag]" />
+							<param name="visible" value="!String.IsEmpty(ListItem.Tag)" />
+						</include>
+						<include content="InfoDialogMetadata">
+							<param name="control_id" value="157" />
+							<param name="label" value="[COLOR button_focus]$LOCALIZE[126]: [/COLOR]$INFO[ListItem.Status]" />
+							<param name="visible" value="!String.IsEmpty(ListItem.Status)" />
+						</include>
+					</control>
+					
+					<control type="grouplist">
+						<visible>Skin.HasSetting(show_mediaflags) + Container.Content(movies)</visible>
+						<orientation>horizontal</orientation>
+						<left>10</left>
+						<top>836</top>
+						<width>500</width>
+						<itemgap>-4</itemgap>
+						
+						<include content="MediaFlag">
+							<param name="texture" value="$VAR[ResolutionFlagVar]" />
+						</include>					
+						<include content="MediaFlag">
+							<param name="texture" value="$INFO[ListItem.VideoCodec,flags/videocodec/,.png]" />
+						</include>					
+						<include content="MediaFlag">
+							<param name="texture" value="$INFO[ListItem.AudioChannels,flags/audiochannel/,.png]" />
+						</include>
+						<include content="MediaFlag">
+							<param name="texture" value="$INFO[ListItem.AudioCodec,flags/audiocodec/,.png]" />
+						</include>
+					</control>		
+
+					<control type="image">
+						<left>414</left>
+						<top>710</top>
+						<width>32</width>
+						<height>32</height>
+						<texture>$VAR[ListWatchedIconVar]</texture>
+					</control>					
+				</control>
+				
+			</control>
+		</control>
+	</include>
+	
+
+</includes>

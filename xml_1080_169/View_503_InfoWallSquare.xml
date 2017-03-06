@@ -1,0 +1,240 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<includes>
+
+	<include name="View_503_InfoWallSquare">
+		<!--
+		<include content="UpDownArrows">
+			<param name="container_id" value="54" />
+			<param name="visible" value="!System.HasModalDialog" />
+		</include>
+		-->
+		
+		<control type="group">
+			<left>0</left>
+			<top>83</top>
+			<include>OpenClose_Right</include>
+			<include>Visible_Right</include>
+			<visible>Control.IsVisible(503)</visible>
+			
+			<control type="scrollbar" id="53388">
+				<right>20</right>
+				<top>18</top>
+				<width>36</width>
+				<height>904</height>
+				<onleft>500</onleft>
+				<onright>noop</onright>
+				<orientation>vertical</orientation>
+				<texturesliderbackground colordiffuse="22FFFFFF">colors/white.png</texturesliderbackground>
+				<animation effect="fade" start="0" end="100" time="200" delay="300">Visible</animation>
+				<animation effect="fade" start="100" end="0" time="200">Hidden</animation>
+			</control>
+			
+			<!-- Top title bar -->
+			<control type="group">
+				<top>18</top>
+
+				<control type="image">
+					<top>0</top>
+					<left>20</left>
+					<width>1820</width>
+					<height>50</height>
+					<texture colordiffuse="44444444">colors/black.png</texture>
+				</control>				
+
+				<control type="group">
+					<visible>!ListItem.IsParentFolder</visible>
+
+					<control type="label">
+						<left>20</left>
+						<top>0</top>
+						<width>1820</width>
+						<height>50</height>
+						<label>$VAR[VideoInfoMainLabelVar]</label>
+						<font>font45_title</font>
+						<shadowcolor>text_shadow</shadowcolor>
+						<aligny>center</aligny>
+						<align>center</align>
+					</control>
+					<control type="label">
+						<label>$INFO[ListItem.Property(WatchedEpisodes)] / $INFO[ListItem.Label2]</label>
+						<font>font13</font>
+						<left>40</left>
+						<top>0</top>
+						<width>500</width>
+						<height>50</height>						
+						<shadowcolor>text_shadow</shadowcolor>
+						<aligny>center</aligny>
+						<visible>Container.Content(tvshows)</visible>
+					</control>			
+					<control type="label">
+						<label>$INFO[ListItem.Duration] / $INFO[ListItem.Rating]</label>
+						<font>font13</font>
+						<left>40</left>
+						<top>0</top>
+						<width>500</width>
+						<height>50</height>						
+						<shadowcolor>text_shadow</shadowcolor>
+						<aligny>center</aligny>
+						<visible>Container.Content(movies)</visible>
+					</control>					
+					<control type="label">
+						<label>$INFO[ListItem.Studio]</label>
+						<font>font13</font>
+						<right>100</right>
+						<top>0</top>
+						<width>500</width>
+						<height>50</height>						
+						<shadowcolor>text_shadow</shadowcolor>
+						<aligny>center</aligny>
+						<align>right</align>
+						<visible>!String.IsEmpty(ListItem.Studio)</visible>
+					</control>	
+				</control>
+			</control>			
+		
+			<!-- Left info panel -->
+			<control type="group">
+				<include>OpenClose_Left</include>
+				<visible>!ListItem.IsParentFolder</visible>
+				<include>Visible_Left</include>
+				
+				<control type="image">
+					<top>90</top>
+					<left>600</left>
+					<width>1</width>
+					<height>852</height>
+					<texture colordiffuse="88888888">colors/white.png</texture>
+				</control>
+				
+				<control type="group">
+					<visible>!String.IsEmpty(ListItem.DBID)</visible>
+					
+					<control type="image">
+						<left>-2</left>
+						<top>68</top>
+						<width>604</width>
+						<height>358</height>
+						<texture border="22">dialogs/dialog-bg.png</texture>
+					</control>
+					<control type="image">
+						<left>20</left>
+						<top>90</top>
+						<width>560</width>
+						<height>314</height>
+						<aspectratio>scale</aspectratio>
+						<fadetime>300</fadetime>
+						<texture background="true" fallback="">$VAR[ListInfoBoxImageVar]</texture>
+					</control>
+					
+					<control type="textbox">
+						<left>20</left>
+						<top>424</top>
+						<width>560</width>
+						<height>518</height>
+						<font>font12</font>
+						<label>$INFO[ListItem.Property(artist_description)]$INFO[ListItem.Property(album_description),[CR]]</label>
+						<autoscroll delay="10000" time="1500" repeat="5000">Skin.HasSetting(autoscroll)</autoscroll>
+					</control>
+					
+					<control type="textbox">
+						<left>20</left>
+						<top>424</top>
+						<width>560</width>
+						<height>60</height>
+						<font>font12</font>
+						<label>$LOCALIZE[19055]</label>
+						<visible>String.IsEmpty(Listitem.Property(artist_description)) + String.IsEmpty(Listitem.Property(album_description)) + !ListItem.IsParentFolder</visible>
+					</control>
+				</control>
+
+				
+				<!-- Collection -->
+				<control type="group">
+					<left>20</left>
+					<top>424</top>
+					<width>560</width>
+					<height>518</height>
+					<font>font12</font>
+					<visible>ListItem.IsCollection</visible> 
+					
+					<include content="InfoList">
+						<param name="height" value="518" />
+						<param name="width" value="560" />
+						<param name="sortby" value="year" />
+						<param name="sortorder" value="descending" />
+						<param name="font" value="font12" />
+					</include>
+				</control>
+				
+			</control>
+				
+			<!-- Right side thumb panel -->
+			<control type="panel" id="503">
+				<left>616</left>
+				<top>86</top>
+				<width>1224</width>
+				<height>868</height>
+				<onleft>9000</onleft>
+				<onright>53388</onright>
+				<onup>54</onup>
+				<ondown>54</ondown>
+				<viewtype label="31101">icon</viewtype>
+				<preloaditems>2</preloaditems>
+				<pagecontrol>53388</pagecontrol>
+				<scrolltime tween="cubic" easing="out">500</scrolltime>
+				<visible>Container.Content(albums) | Container.Content(artists) | Container.Content(images)</visible>
+				
+				<!-- Movies and TV Shows -->
+				<itemlayout height="360" width="306">
+					<include>InfoWallMusicLayout</include>
+					<control type="group">
+						<left>131</left>
+						<top>-10</top>
+						<include>UserRatingCircle</include>
+					</control>						
+				</itemlayout>
+				
+				<focusedlayout height="360" width="306">
+					<control type="group">
+						<animation effect="zoom" start="100" end="105" time="200" tween="sine" easing="inout" center="175,180">Focus</animation>
+						<animation effect="zoom" start="105" end="100" time="200" tween="sine" easing="inout" center="175,180">UnFocus</animation>
+						
+						<!-- Shadow -->
+						<control type="image">
+							<left>-8</left>
+							<top>-16</top>
+							<width>322</width>
+							<height>390</height>
+							<texture>dialogs/dialog-bg.png</texture>
+							<animation effect="fade" start="100" end="0" time="200">Unfocus</animation>
+							<bordertexture border="22">dialogs/dialog-bg.png</bordertexture>
+							<bordersize>22</bordersize>								
+						</control>	
+						
+						<include content="InfoWallMusicLayout">
+							<param name="fallback_image" value="DefaultMusicSongs.png" />
+						</include>
+					
+						<control type="image">
+							<left>14</left>
+							<top>6</top>
+							<width>278</width>
+							<height>348</height>
+							<texture border="8" colordiffuse="button_focus">buttons/thumbnail_focused.png</texture>
+							<animation effect="fade" start="100" end="0" time="200">Unfocus</animation>
+						</control>
+
+						<control type="group">
+							<left>131</left>
+							<top>-10</top>
+							<include>UserRatingCircle</include>
+						</control>						
+					</control>
+				</focusedlayout>
+			</control>
+			
+		</control>
+	</include>
+	
+
+</includes>

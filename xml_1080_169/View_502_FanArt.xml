@@ -1,0 +1,77 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<includes>
+	<include name="View_502_FanArt">
+		<!-- 		
+		<include content="UpDownArrows">
+			<param name="container_id" value="502" />
+			<param name="visible" value="!System.HasModalDialog" />
+		</include> 
+		-->
+		<control type="group">
+			<description>Fanart Viewtype</description>
+			<left>0</left>
+			<top>83</top>
+			
+			<control type="group">
+				<include>OpenClose_Right</include>
+				<visible>Control.IsVisible(502)</visible>
+				<include>Visible_Right</include>
+				
+				<control type="image">
+					<left>896</left>
+					<top>0</top>
+					<width>1</width>
+					<height>941</height>
+					<texture colordiffuse="88888888">colors/white.png</texture>
+				</control>
+				
+				<control type="image">
+					<left>892</left>
+					<top>-4</top>
+					<width>1032</width>
+					<height>543</height>
+					<fadetime>300</fadetime>
+					<texture fallback="DefaultVideo.png" background="true">$VAR[FanartImageVar]</texture>
+					<bordertexture border="22">dialogs/dialog-bg.png</bordertexture>
+					<bordersize>24</bordersize>
+					<aspectratio>scale</aspectratio>
+				</control>
+				
+				<control type="group">
+					<right>40</right>
+					<top>20</top>
+					<include>UserRatingCircle</include>
+				</control>
+				
+				<control type="image">
+					<left>916</left>
+					<top>544</top>
+					<width>984</width>
+					<height>378</height>
+					<texture colordiffuse="88888888">colors/black.png</texture>
+				</control>
+				
+				<control type="textbox">
+					<left>936</left>
+					<top>564</top>
+					<width>944</width>
+					<height>338</height>
+					<font>font12</font>
+					<label>$INFO[ListItem.Plot]</label>
+				</control>
+			</control>
+			
+			<control type="group">
+				<left>20</left>
+				<include>OpenClose_Left</include>
+				<visible>Control.IsVisible(502)</visible>
+				<include>Visible_Left</include>
+				
+				<include content="ListContainer">
+					<param name="list_id" value="502" />
+					<param name="viewtype_label" value="$LOCALIZE[20445]" />
+				</include>
+			</control>
+		</control>
+	</include>
+</includes>
