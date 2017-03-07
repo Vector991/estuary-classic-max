@@ -203,7 +203,7 @@
 					<width>650</width>
 					<aligny>center</aligny>
 					<label>$INFO[ListItem.Label]$VAR[PlayCountText]</label>
-					<font>font12</font>
+					<font>font13</font>
 					<shadowcolor>text_shadow</shadowcolor>
 				</control>
 				<control type="label">
@@ -213,7 +213,7 @@
 					<width>750</width>
 					<align>right</align>
 					<aligny>center</aligny>
-					<font>font12</font>
+					<font>font13</font>
 					<label>$VAR[ListLabel2Var]</label>
 					<textcolor>grey</textcolor>
 					<shadowcolor>text_shadow</shadowcolor>
@@ -258,7 +258,7 @@
 					<aligny>center</aligny>
 					<scroll>true</scroll>
 					<label>$INFO[ListItem.Label]$VAR[PlayCountText]</label>
-					<font>font25_title</font>
+					<font>font13</font>
 					<shadowcolor>text_shadow</shadowcolor>
 				</control>
 				<control type="label">
@@ -268,7 +268,7 @@
 					<width>750</width>
 					<align>right</align>
 					<aligny>center</aligny>
-					<font>font25_title</font>
+					<font>font13</font>
 					<label>$VAR[ListLabel2Var]</label>
 					<animation effect="fade" start="70" end="100" time="300" reversible="false">Focus</animation>
 					<shadowcolor>text_shadow</shadowcolor>
@@ -306,7 +306,7 @@
 					<aligny>center</aligny>
 					<scroll>true</scroll>
 					<label>$INFO[ListItem.Label]</label>
-					<font>font25_title</font>
+					<font>font13</font>
 					<shadowcolor>text_shadow</shadowcolor>
 					<textcolor>button_focus</textcolor>
 					<visible>!Control.HasFocus($PARAM[list_id])</visible>					
@@ -318,7 +318,7 @@
 					<width>750</width>
 					<align>right</align>
 					<aligny>center</aligny>
-					<font>font25_title</font>
+					<font>font13</font>
 					<label>$VAR[ListLabel2Var]</label>
 					<animation effect="fade" start="70" end="100" time="300" reversible="false">Focus</animation>
 					<shadowcolor>text_shadow</shadowcolor>
@@ -337,6 +337,11 @@
 			<onleft>$PARAM[list_id]</onleft>
 			<onright>$PARAM[list_id]</onright>
 			<orientation>vertical</orientation>
+			<texturesliderbackground colordiffuse="eeeeeeee">overlays/overlayfade.png</texturesliderbackground>
+			<texturesliderbar colordiffuse="grey">colors/white.png</texturesliderbar>
+			<texturesliderbarfocus colordiffuse="button_focus">colors/white.png</texturesliderbarfocus> 
+			<textureslidernib>colors/black.png</textureslidernib>
+			<textureslidernibfocus>colors/white.png</textureslidernibfocus>	  
 			<visible>true</visible>
 		</control>
 	</include>

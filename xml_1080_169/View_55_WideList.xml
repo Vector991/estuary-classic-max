@@ -42,8 +42,12 @@
 					<onleft>55</onleft>
 					<onright>noop</onright>
 					<orientation>vertical</orientation>
+					<texturesliderbackground colordiffuse="eeeeeeee">overlays/overlayfade.png</texturesliderbackground>
+					<texturesliderbar colordiffuse="grey">colors/white.png</texturesliderbar>
+					<texturesliderbarfocus colordiffuse="button_focus">colors/white.png</texturesliderbarfocus> 
+					<textureslidernib>colors/black.png</textureslidernib>
+					<textureslidernibfocus>colors/white.png</textureslidernibfocus>	  
 					<visible>true</visible>
-					<showonepage>false</showonepage>
 				</control>
 			
 				<control type="list" id="55">
@@ -82,9 +86,9 @@
 							<left>18</left>
 							<top>0</top>
 							<height>63</height>
-							<width>70</width>
+							<width>80</width>
 							<aligny>center</aligny>
-							<font>font25_title</font>
+							<font>font13</font>
 							<label>$INFO[ListItem.Year]</label>
 							<shadowcolor>text_shadow</shadowcolor>
 						</control>						
@@ -95,7 +99,7 @@
 							<width>1160</width>
 							<aligny>center</aligny>
 							<label>$INFO[ListItem.Label]$VAR[PlayCountText]</label>
-							<font>font25_title</font>
+							<font>font13</font>
 							<shadowcolor>text_shadow</shadowcolor>
 						</control>						
 						<control type="label">
@@ -105,7 +109,7 @@
 							<width>1150</width>
 							<aligny>center</aligny>
 							<align>right</align>
-							<font>font25_title</font>
+							<font>font13</font>
 							<label>$INFO[ListItem.Label2]</label>
 							<shadowcolor>text_shadow</shadowcolor>
 						</control>				
@@ -130,9 +134,9 @@
 							<left>18</left>
 							<top>0</top>
 							<height>63</height>
-							<width>70</width>
+							<width>80</width>
 							<aligny>center</aligny>
-							<font>font25_title</font>
+							<font>font13</font>
 							<label>$INFO[ListItem.Year]</label>
 							<shadowcolor>text_shadow</shadowcolor>
 							<textcolor>button_focus</textcolor>
@@ -145,7 +149,7 @@
 							<width>1160</width>
 							<aligny>center</aligny>
 							<label>$INFO[ListItem.Label]</label>
-							<font>font25_title</font>
+							<font>font13</font>
 							<shadowcolor>text_shadow</shadowcolor>
 							<textcolor>button_focus</textcolor>
 							<visible>!Control.hasFocus(55)</visible>
@@ -157,7 +161,7 @@
 							<width>1150</width>
 							<aligny>center</aligny>
 							<align>right</align>
-							<font>font25_title</font>
+							<font>font13</font>
 							<label>$INFO[ListItem.Label2]</label>
 							<shadowcolor>text_shadow</shadowcolor>
 							<textcolor>button_focus</textcolor>
@@ -179,9 +183,9 @@
 							<left>18</left>
 							<top>0</top>
 							<height>63</height>
-							<width>70</width>
+							<width>80</width>
 							<aligny>center</aligny>
-							<font>font12</font>
+							<font>font13</font>
 							<label>$INFO[ListItem.Year]</label>
 							<textcolor>grey</textcolor>
 							<shadowcolor>text_shadow</shadowcolor>
@@ -193,7 +197,7 @@
 							<width>1160</width>
 							<aligny>center</aligny>
 							<label>$INFO[ListItem.Label]$VAR[PlayCountText]</label>
-							<font>font12</font>
+							<font>font13</font>
 							<shadowcolor>text_shadow</shadowcolor>
 						</control>		
 						<control type="label">
@@ -203,7 +207,7 @@
 							<width>1150</width>
 							<aligny>center</aligny>
 							<align>right</align>
-							<font>font12</font>
+							<font>font13</font>
 							<label>$INFO[ListItem.Label2]</label>
 							<textcolor>grey</textcolor>
 							<shadowcolor>text_shadow</shadowcolor>
