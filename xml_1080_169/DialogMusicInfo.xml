@@ -51,14 +51,13 @@
 				
 				<control type="label">
 					<label>$INFO[Window.property(VideoNavLabel)]</label>
-					<top>80</top>
-					<font>font13</font>
+					<top>230</top>
+					<font>font10</font>
 					<width>100%</width>
-					<height>60</height>						
+					<height>40</height>						
 					<shadowcolor>text_shadow</shadowcolor>
 					<aligny>top</aligny>
-					<align>right</align>
-					<left>-20</left>
+					<visible>ControlGroup(9000).HasFocus</visible>
 				</control>	
 				
 				<!-- Title -->

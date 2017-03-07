@@ -70,8 +70,9 @@
 								<param name="size" value="64" />
 								<param name="font" value="Font13" />
 							</include>
-						</control>							
+						</control>		
 					</control>
+
 				</control>
 				
 				<control type="image">
@@ -88,6 +89,17 @@
 				<include>OpenClose_Right</include>
 				<left>600</left>
 			
+				<!-- Studio -->
+				<control type="image">
+					<top>20</top>
+					<right>20</right>
+					<width>160</width>
+					<height>130</height>
+					<texture>$INFO[ListItem.Studio,resource://resource.images.studios.white/,.png]</texture>
+					<aspectratio align="right" aligny="top">keep</aspectratio>						
+					<visible>!String.IsEmpty(ListItem.Studio)</visible>
+				</control>	
+				
 				<!-- Title -->
 				<control type="grouplist">
 					<left>0</left>
@@ -121,14 +133,13 @@
 				<!-- Navigation label -->
 				<control type="label">
 					<label>$INFO[Window.property(VideoNavLabel)]</label>
-					<top>80</top>
-					<font>font13</font>
+					<top>230</top>
+					<font>font10</font>
 					<width>100%</width>
-					<height>60</height>						
+					<height>40</height>						
 					<shadowcolor>text_shadow</shadowcolor>
 					<aligny>top</aligny>
-					<align>right</align>
-					<left>-20</left>
+					<visible>ControlGroup(5000).HasFocus</visible>
 				</control>	
 					
 				<!-- Actors slider -->
