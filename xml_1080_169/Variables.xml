@@ -438,5 +438,9 @@
 		<value condition="Library.IsScanningMusic">$LOCALIZE[13353]</value>
 		<value>$LOCALIZE[653]</value>
 	</variable>
+	<variable name="PlayCountText">
+		<value condition="Integer.IsGreater(ListItem.PlayCount,1)"> - $INFO[ListItem.PlayCount]x</value>
+		<value></value>		
+	</variable>	
 
 </includes>

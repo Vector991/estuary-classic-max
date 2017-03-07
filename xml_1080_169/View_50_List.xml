@@ -202,7 +202,7 @@
 					<height>63</height>
 					<width>650</width>
 					<aligny>center</aligny>
-					<label>$INFO[ListItem.Label]</label>
+					<label>$INFO[ListItem.Label]$VAR[PlayCountText]</label>
 					<font>font12</font>
 					<shadowcolor>text_shadow</shadowcolor>
 				</control>
@@ -257,7 +257,7 @@
 					<width>650</width>
 					<aligny>center</aligny>
 					<scroll>true</scroll>
-					<label>$INFO[ListItem.Label]</label>
+					<label>$INFO[ListItem.Label]$VAR[PlayCountText]</label>
 					<font>font25_title</font>
 					<shadowcolor>text_shadow</shadowcolor>
 				</control>

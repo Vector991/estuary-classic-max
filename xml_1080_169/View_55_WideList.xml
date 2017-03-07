@@ -94,7 +94,7 @@
 							<height>63</height>
 							<width>1160</width>
 							<aligny>center</aligny>
-							<label>$INFO[ListItem.Label]</label>
+							<label>$INFO[ListItem.Label]$VAR[PlayCountText]</label>
 							<font>font25_title</font>
 							<shadowcolor>text_shadow</shadowcolor>
 						</control>						
@@ -192,7 +192,7 @@
 							<height>63</height>
 							<width>1160</width>
 							<aligny>center</aligny>
-							<label>$INFO[ListItem.Label]</label>
+							<label>$INFO[ListItem.Label]$VAR[PlayCountText]</label>
 							<font>font12</font>
 							<shadowcolor>text_shadow</shadowcolor>
 						</control>		
@@ -565,12 +565,6 @@
 				<visible>String.IsEqual(ListItem.dbtype, album)</visible>
 			</control>	
 			
-			<control type="group">
-				<left>330</left>
-				<top>84</top>
-				<include>UserRatingCircle</include>
-			</control>
-			
 			<control type="textbox">
 				<left>20</left>
 				<top>660</top>
@@ -714,4 +708,5 @@
 		</control>
 	</include>
 	
+
 </includes>
