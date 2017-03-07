@@ -1012,8 +1012,9 @@
 	<!-- Channels widgets (square) -->
 	<include name="WidgetListChannels">
 		<param name="height">400</param>
-		<param name="item_limit">15</param>
+		<param name="item_limit">20</param>
 		<param name="icon">$INFO[ListItem.Icon]</param>
+		<param name="is_recording">false</param>
 		
 		<definition>
 			<control type="group">
@@ -1023,22 +1024,22 @@
 				<visible>Integer.IsGreater(Container($PARAM[list_id]).NumItems,0) | Container($PARAM[list_id]).IsUpdating</visible>
 				
 				<control type="label">
-					<width>900</width>
+					<width>1200</width>
 					<height>40</height>
 					<label>$PARAM[widget_header]</label>
 					<font>Font13</font>
 					<shadowcolor>text_shadow</shadowcolor>
 				</control>
 				<include content="LeftRightArrows">
-					<param name="left_posx" value="-40" />
-					<param name="posy" value="170" />
+					<param name="left_posx" value="-25" />
+					<param name="posy" value="160" />
 					<param name="list_id" value="$PARAM[list_id]" />
 				</include>
 				
 				<control type="panel" id="$PARAM[list_id]">
 					<top>40</top>
 					<width>1580</width>
-					<height>$PARAM[height]</height>
+					<height>260</height>
 					<scrolltime tween="cubic" easing="out">500</scrolltime>
 					<orientation>horizontal</orientation>
 					<onleft>9000</onleft>
@@ -1051,47 +1052,87 @@
 					<onback>PageUp</onback>
 					<preloaditems>2</preloaditems>
 					
-					<itemlayout width="340" height="340">
+					<itemlayout width="340" height="260">
 						<control type="image">
 							<left>20</left>
 							<top>20</top>
 							<width>300</width>
-							<height>300</height>
-							<texture colordiffuse="55555555">colors/black.png</texture>
+							<height>220</height>
+							<texture colordiffuse="33333333">colors/black.png</texture>
 						</control>
 						<control type="image">
+							<left>20</left>
 							<top>20</top>
-							<left>40</left>
-							<width>260</width>
-							<height>100</height>
-							<texture fallback="DefaultTVShows.png">$PARAM[icon]</texture>
-							<aspectratio aligny="center" align="center">keep</aspectratio>
-						</control>
+							<width>300</width>
+							<height>40</height>
+							<texture colordiffuse="88888888">colors/black.png</texture>
+						</control>						
 						<control type="label">
 							<left>30</left>
-							<top>120</top>
+							<top>20</top>
 							<width>280</width>
-							<height>60</height>
+							<height>40</height>
 							<label>$INFO[ListItem.Label]</label>
-							<font>font12</font>
+							<font>font23_title</font>
 							<shadowcolor>text_shadow</shadowcolor>
 							<align>center</align>
 							<aligny>center</aligny>
+							<visible>!$PARAM[is_recording]</visible>
+						</control>		
+						<control type="label">
+							<left>30</left>
+							<top>20</top>
+							<width>280</width>
+							<height>40</height>
+							<label>$INFO[ListItem.ChannelName]</label>
+							<font>font23_title</font>
+							<shadowcolor>text_shadow</shadowcolor>
+							<align>center</align>
+							<aligny>center</aligny>
+							<visible>$PARAM[is_recording]</visible>
+						</control>						
+						<control type="image">
+							<top>60</top>
+							<left>40</left>
+							<width>260</width>
+							<height>100</height>
+							<texture fallback="DefaultTVShows.png" border="10">$PARAM[icon]</texture>
+							<aspectratio aligny="center" align="center">keep</aspectratio>
+						</control>
+						<control type="image">
+							<left>20</left>
+							<top>160</top>
+							<width>300</width>
+							<height>80</height>
+							<texture colordiffuse="55555555">colors/black.png</texture>
 						</control>
 						<control type="textbox">
 							<left>30</left>
-							<top>200</top>
+							<top>160</top>
 							<width>280</width>
-							<height>100</height>
+							<height>80</height>
 							<label>[COLOR button_focus]$INFO[ListItem.StartTime,, - ]$INFO[ListItem.EndTime][/COLOR][CR]$INFO[ListItem.Title]</label>
 							<font>font12</font>
 							<shadowcolor>text_shadow</shadowcolor>
 							<align>center</align>
-							<aligny>top</aligny>
+							<aligny>center</aligny>
+							<visible>!$PARAM[is_recording]</visible>
 						</control>
+						<control type="textbox">
+							<left>30</left>
+							<top>160</top>
+							<width>280</width>
+							<height>80</height>
+							<label>[COLOR button_focus]$INFO[ListItem.DateTime][/COLOR][CR]$INFO[ListItem.Title]</label>
+							<font>font12</font>
+							<shadowcolor>text_shadow</shadowcolor>
+							<align>center</align>
+							<aligny>center</aligny>
+							<visible>$PARAM[is_recording]</visible>
+						</control>						
 					</itemlayout>
 					
-					<focusedlayout width="340" height="340">
+					<focusedlayout width="340" height="260">
 						<control type="group">
 							<depth>DepthContentPopout</depth>
 							<animation type="Focus">
@@ -1105,58 +1146,102 @@
 								<left>20</left>
 								<top>20</top>
 								<width>300</width>
-								<height>300</height>
-								<texture colordiffuse="55555555">colors/black.png</texture>
+								<height>220</height>
+								<texture colordiffuse="33333333">colors/black.png</texture>
 							</control>
+							<control type="image">
+								<left>20</left>
+								<top>20</top>
+								<width>300</width>
+								<height>40</height>
+								<texture colordiffuse="88888888">colors/black.png</texture>
+							</control>
+							<control type="label">
+								<left>30</left>
+								<top>20</top>
+								<width>280</width>
+								<height>40</height>
+								<label>$INFO[ListItem.Label]</label>
+								<font>font23_title</font>
+								<textcolor>button_focus</textcolor>
+								<shadowcolor>text_shadow</shadowcolor>
+								<align>center</align>
+								<aligny>center</aligny>
+								<visible>!$PARAM[is_recording]</visible>
+							</control>
+							<control type="label">
+								<left>30</left>
+								<top>20</top>
+								<width>280</width>
+								<height>40</height>
+								<label>$INFO[ListItem.ChannelName]</label>
+								<font>font23_title</font>
+								<shadowcolor>text_shadow</shadowcolor>
+								<align>center</align>
+								<aligny>center</aligny>
+								<visible>$PARAM[is_recording]</visible>
+							</control>							
+							<control type="image">
+								<top>60</top>
+								<left>40</left>
+								<width>260</width>
+								<height>100</height>
+								<texture fallback="DefaultTVShows.png" border="10">$PARAM[icon]</texture>
+								<aspectratio aligny="center" align="center">keep</aspectratio>
+							</control>
+							<control type="image">
+								<left>20</left>
+								<top>160</top>
+								<width>300</width>
+								<height>80</height>
+								<texture colordiffuse="55555555">colors/black.png</texture>
+							</control>							
+							<control type="textbox">
+								<left>30</left>
+								<top>160</top>
+								<width>280</width>
+								<height>80</height>
+								<label>[COLOR button_focus]$INFO[ListItem.StartTime,, - ]$INFO[ListItem.EndTime][/COLOR][CR]$INFO[ListItem.Title]</label>
+								<font>font12</font>
+								<shadowcolor>text_shadow</shadowcolor>
+								<align>center</align>
+								<aligny>center</aligny>
+								<visible>!$PARAM[is_recording]</visible>
+							</control>							
+							<control type="textbox">
+								<left>30</left>
+								<top>160</top>
+								<width>280</width>
+								<height>80</height>
+								<label>[COLOR button_focus]$INFO[ListItem.DateTime][/COLOR][CR]$INFO[ListItem.Title]</label>
+								<font>font12</font>
+								<shadowcolor>text_shadow</shadowcolor>
+								<align>center</align>
+								<aligny>center</aligny>
+								<visible>$PARAM[is_recording]</visible>
+							</control>				
+							
 							<control type="image">
 								<left>-3</left>
 								<top>-3</top>
 								<width>346</width>
-								<height>346</height>
+								<height>266</height>
 								<texture background="true" border="20" colordiffuse="black">overlays/shadow.png</texture>
 							</control>							
 							<control type="image">
 								<left>20</left>
 								<top>20</top>
 								<width>300</width>
-								<height>300</height>
+								<height>220</height>
 								<texture background="true" border="8" colordiffuse="button_focus">buttons/thumbnail_focused.png</texture>
 							</control>
-							<control type="image">
-								<top>20</top>
-								<left>40</left>
-								<width>260</width>
-								<height>100</height>
-								<texture fallback="DefaultTVShows.png">$PARAM[icon]</texture>
-								<aspectratio aligny="center" align="center">keep</aspectratio>
-							</control>
-							<control type="label">
-								<left>30</left>
-								<top>120</top>
-								<width>280</width>
-								<height>60</height>
-								<label>$INFO[ListItem.Label]</label>
-								<font>font12</font>
-								<shadowcolor>text_shadow</shadowcolor>
-								<align>center</align>
-								<aligny>center</aligny>
-							</control>
-							<control type="textbox">
-								<left>30</left>
-								<top>200</top>
-								<width>280</width>
-								<height>100</height>
-								<label>[COLOR button_focus]$INFO[ListItem.StartTime,, - ]$INFO[ListItem.EndTime][/COLOR][CR]$INFO[ListItem.Title]</label>
-								<font>font12</font>
-								<shadowcolor>text_shadow</shadowcolor>
-								<align>center</align>
-								<aligny>top</aligny>
-							</control>
+
 						</control>
 					</focusedlayout>
 					
 					<content sortby="$PARAM[sortby]" sortorder="$PARAM[sortorder]" target="$PARAM[widget_target]" limit="$PARAM[item_limit]">$PARAM[content_path]</content>
 				</control>
+				
 			</control>
 		</definition>
 	</include>
