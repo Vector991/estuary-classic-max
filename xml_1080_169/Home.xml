@@ -25,7 +25,7 @@
 			<include>HiddenObject</include>
 			<animation effect="fade" time="300" start="100" end="0">Focus</animation>
 			
-			<onfocus>2000</onfocus>
+			<onfocus>SetFocus(2000)</onfocus>
 			<onfocus condition="String.IsEqual(Container(9000).ListItem.Property(id), movies)">SetFocus(5900)</onfocus>
 			<onfocus condition="String.IsEqual(Container(9000).ListItem.Property(id), tvshows)">SetFocus(6900)</onfocus>
 			<onfocus condition="String.IsEqual(Container(9000).ListItem.Property(id), music)">SetFocus(7900)</onfocus>
