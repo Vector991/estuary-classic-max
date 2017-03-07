@@ -782,7 +782,7 @@
 			<top>0</top>
 			<width>$PARAM[DialogBackgroundWidth]</width>
 			<height>70</height>
-			<font>font20_title</font>
+			<font>font36_title</font>
 			<label>$PARAM[DialogHeaderLabel]</label>
 			<align>left</align>
 			<aligny>center</aligny>
