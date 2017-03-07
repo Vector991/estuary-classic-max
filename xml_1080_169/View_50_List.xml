@@ -330,9 +330,9 @@
 		
 		<!-- I like fat scrollbars!  Don't ever change -->
 		<control type="scrollbar" id="$PARAM[list_id]600">
-			<left>820</left>
+			<left>826</left>
 			<top>0</top>
-			<width>36</width>
+			<width>30</width>
 			<height>936</height>
 			<onleft>$PARAM[list_id]</onleft>
 			<onright>$PARAM[list_id]</onright>

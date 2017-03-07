@@ -37,7 +37,7 @@
 				<control type="scrollbar" id="551">
 					<right>20</right>
 					<top>0</top>
-					<width>40</width>
+					<width>30</width>
 					<height>936</height>
 					<onleft>55</onleft>
 					<onright>noop</onright>
