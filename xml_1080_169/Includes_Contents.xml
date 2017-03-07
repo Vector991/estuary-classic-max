@@ -247,23 +247,25 @@
 	
 	<include name="SubmenuWeather">
 		<content>
+			<!--
 			<item id="1">
-				<onclick>Weather.Refresh"</onclick>
+				<onclick>Action(Weather.Refresh)</onclick>
 				<thumb>icons/submenu/updatelibrary.png</thumb>
 				<label>$LOCALIZE[184]</label>
 			</item>
 			<item id="2">
-				<onclick>Weather.LocationPrevious"</onclick>
+				<onclick>Action(Weather.LocationPrevious)</onclick>
 				<thumb>icons/submenu/location-previous.png</thumb>
 				<label>$LOCALIZE[31077]</label>
 			</item>
 			<item id="3">
-				<onclick>Weather.LocationNext"</onclick>
+				<onclick>Weather.LocationNext</onclick>
 				<thumb>icons/submenu/location-next.png</thumb>
 				<label>$LOCALIZE[31078]</label>
 			</item>		
+			-->
 			<item id="4">
-				<onclick>ActivateWindow(servicesettings,weather)"</onclick>
+				<onclick>ActivateWindow(servicesettings,weather)</onclick>
 				<thumb>icons/submenu/weather-settings.png</thumb>
 				<label>$LOCALIZE[1390]</label>
 			</item>			

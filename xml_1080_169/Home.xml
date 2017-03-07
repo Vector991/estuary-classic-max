@@ -852,7 +852,8 @@
 						<control type="button" id="15001">
 							<include content="HiddenObject" />
 							<onfocus>SetFocus(15002)</onfocus>
-							<onfocus condition="String.IsEmpty(Weather.Plugin)">SetFocus(15900)</onfocus>
+							<onfocus condition="!String.IsEmpty(Weather.plugin) + Weather.IsFetched + !String.IsEmpty(Window(weather).Property(Daily.IsFetched))">SetFocus(15100)</onfocus>
+							<visible allowhiddenfocus="true">Control.HasFocus(15001)</visible>	
 						</control>
 						
 						<control type="grouplist" id="15002">
@@ -876,95 +877,184 @@
 								<param name="show_nav_label" value="true" />								
 							</include>
 							
-							<control type="group" id="16678">
-								<description>Weather info</description>
-								<height>380</height>
-								<visible>!String.IsEmpty(Weather.plugin)</visible>
-								<control type="image">
-									<top>2</top>
-									<left>320</left>
-									<width>1600</width>
-									<height>380</height>
-									<texture border="22">dialogs/dialog-bg.png</texture>
-								</control>
-								<control type="image">
-									<top>20</top>
-									<left>530</left>
-									<width>150</width>
-									<height>150</height>
-									<texture>$INFO[Weather.conditions]</texture>
-								</control>
-								<control type="label">
-									<left>990</left>
-									<top>110</top>
-									<aligny>center</aligny>
-									<height>24</height>
-									<width>800</width>
-									<align>right</align>
-									<font>font14</font>
-									<label>$INFO[Weather.Conditions] ∙ $INFO[Weather.Temperature]</label>
-								</control>
-								<control type="label">
-									<left>990</left>
-									<top>50</top>
-									<aligny>center</aligny>
-									<height>24</height>
-									<width>800</width>
-									<align>right</align>
-									<font>font35_title</font>
-									<label>$INFO[Weather.Location]</label>
-								</control>
-								<control type="grouplist">
-									<top>215</top>
-									<left>540</left>
-									<width>1330</width>
-									<orientation>horizontal</orientation>
-									<align>justify</align>
-									<itemgap>-50</itemgap>
-									<include content="WeatherIcon">
-										<param name="label" value="Window(weather).Property(Current.Wind)" />
-										<param name="texture" value="icons/weather/wind.png" />
-										<param name="header" value="404" />
-									</include>
-									<include content="WeatherIcon">
-										<param name="label" value="Window(weather).Property(Current.Humidity)" />
-										<param name="texture" value="icons/weather/humidity.png" />
-										<param name="header" value="406" />
-									</include>
-									<include content="WeatherIcon">
-										<param name="label" value="Window(weather).Property(Current.Precipitation)" />
-										<param name="texture" value="icons/weather/rain.png" />
-										<param name="header" value="33021" />
-									</include>
-									<include content="WeatherIcon">
-										<param name="label" value="Window(weather).Property(Today.Sunrise)" />
-										<param name="texture" value="icons/weather/sunrise.png" />
-										<param name="header" value="405" />
-									</include>
-									<include content="WeatherIcon">
-										<param name="label" value="Window(weather).Property(Today.Sunset)" />
-										<param name="texture" value="icons/weather/sunset.png" />
-										<param name="header" value="403" />
-									</include>
-								</control>
-							</control>
-							<include content="WeatherWidget">
-								<param name="content_include" value="HourlyItems" />
-								<param name="list_id" value="15100" />
-								<param name="onup_id" value="15900" />
-								<param name="ondown_id" value="15200" />
-								<param name="widget_header" value="$LOCALIZE[33036]"/>
-								<param name="visible" value="!String.IsEmpty(Window(weather).Property(Hourly.IsFetched))" />
-							</include>
-							<include content="WeatherWidget">
-								<param name="content_include" value="DailyItems" />
-								<param name="list_id" value="15200" />
-								<param name="onup_id" value="15100" />
-								<param name="ondown_id" value="15900" />
-								<param name="widget_header" value="$LOCALIZE[31019]"/>
-								<param name="visible" value="!String.IsEmpty(Window(weather).Property(Daily.IsFetched))" />
-							</include>
+							<control type="label">
+								<left>340</left>
+								<aligny>center</aligny>
+								<height>40</height>
+								<width>660</width>
+								<font>font45_title</font>
+								<label>$INFO[Weather.Location] ...</label>
+								<visible>!Weather.IsFetched</visible>
+							</control>							
+							
+							<control type="grouplist">
+								<orientation>horizontal</orientation>
+								<usecontrolcoords>true</usecontrolcoords>
+								<height>770</height>
+								<width>1580</width>
+								<left>340</left>
+								<visible>!String.IsEmpty(Weather.plugin) + Weather.IsFetched + [!String.IsEmpty(Window(weather).Property(Daily.IsFetched)) | !String.IsEmpty(Window(weather).Property(Daily.IsFetched))]</visible>
+								
+								<control type="group" id="16678">
+									<width>720</width>
+									
+									<control type="image">
+										<top>0</top>
+										<left>0</left>
+										<width>700</width>
+										<height>770</height>
+										<texture colordiffuse="33333333">colors/black.png</texture>
+									</control>
 
+									<control type="image">
+										<top>20</top>
+										<left>20</left>
+										<width>150</width>
+										<height>150</height>
+										<texture>$INFO[Weather.conditions]</texture>
+									</control>	
+									
+									<control type="label">
+										<left>190</left>
+										<top>40</top>
+										<aligny>center</aligny>
+										<height>40</height>
+										<width>660</width>
+										<font>font45_title</font>
+										<label>$INFO[Weather.Location]</label>
+									</control>							
+									<control type="label">
+										<left>190</left>
+										<top>100</top>
+										<aligny>center</aligny>
+										<height>40</height>
+										<width>660</width>
+										<font>font14</font>
+										<label>$INFO[Weather.Conditions] ∙ $INFO[Weather.Temperature]</label>
+									</control>					
+									<control type="group">
+										<left>190</left>
+										<top>160</top>
+										<width>660</width>
+										<height>70</height>
+										
+										<control type="image">
+											<width>70</width>
+											<height>70</height>
+											<texture>icons/weather/wind.png</texture>
+										</control>
+										<control type="label">
+											<left>100</left>
+											<width>500</width>
+											<font>font13</font>
+											<height>70</height>
+											<aligny>center</aligny>
+											<label>$INFO[Window(weather).Property(Current.wind)]</label>
+										</control>
+									</control>
+									
+									<control type="image">
+										<left>20</left>
+										<top>200</top>
+										<width>660</width>
+										<height>75</height>
+										<texture border="90,3,90,3">lists/separator.png</texture>
+									</control>				
+									
+									<control type="group">
+										<left>20</left>
+										<top>320</top>
+										<width>660</width>
+										<height>70</height>
+										<control type="image">
+											<width>70</width>
+											<height>70</height>
+											<texture colordiffuse="yellow">icons/weather/sunrise.png</texture>
+										</control>
+										<control type="label">
+											<left>100</left>
+											<width>220</width>
+											<font>font13</font>
+											<height>70</height>
+											<aligny>center</aligny>
+											<label>$INFO[Window(weather).Property(Today.Sunrise)]</label>
+										</control>
+										<control type="image">
+											<left>330</left>
+											<width>70</width>
+											<height>70</height>
+											<texture colordiffuse="darkgrey">icons/weather/sunset.png</texture>
+										</control>		
+										<control type="label">
+											<left>430</left>
+											<width>220</width>
+											<font>font13</font>
+											<height>70</height>
+											<aligny>center</aligny>
+											<label>$INFO[Window(weather).Property(Today.Sunset)]</label>
+										</control>
+									</control>
+									
+									<control type="group">
+										<left>20</left>
+										<top>480</top>
+										<width>660</width>
+										<height>70</height>
+										
+										<control type="image">
+											<width>70</width>
+											<height>70</height>
+											<texture>icons/weather/rain.png</texture>
+										</control>
+										<control type="label">
+											<left>100</left>
+											<width>220</width>
+											<font>font13</font>
+											<height>70</height>
+											<aligny>center</aligny>
+											<label>$INFO[Window(weather).Property(Current.Precipitation)]</label>
+										</control>
+										<control type="image">
+											<left>330</left>
+											<width>70</width>
+											<height>70</height>
+											<texture>icons/weather/humidity.png</texture>
+										</control>		
+										<control type="label">
+											<left>430</left>
+											<width>220</width>
+											<font>font13</font>
+											<height>70</height>
+											<aligny>center</aligny>
+											<label>$INFO[Window(weather).Property(Current.humidity)]</label>
+										</control>
+									</control>	
+
+								</control>
+
+								<include content="WeatherWidget">
+									<param name="content_include" value="DailyItems" />
+									<param name="list_id" value="15100" />
+									<param name="onup_id" value="15900" />
+									<param name="ondown_id" value="15100" />
+									<param name="onleft_id" value="9000" />
+									<param name="onright_id" value="15200" />									
+									<param name="widget_header" value="$LOCALIZE[31019]"/>
+									<param name="visible" value="!String.IsEmpty(Window(weather).Property(Daily.IsFetched))" />
+								</include>							
+
+								<include content="WeatherWidget">
+									<param name="content_include" value="HourlyItems" />
+									<param name="list_id" value="15200" />
+									<param name="onup_id" value="15900" />
+									<param name="ondown_id" value="15200" />
+									<param name="onleft_id" value="15100" />
+									<param name="onright_id" value="noop" />
+									<param name="widget_header" value="$LOCALIZE[33036]"/>
+									<param name="visible" value="!String.IsEmpty(Window(weather).Property(Hourly.IsFetched))" />
+								</include>								
+							</control>
+							
 							<include content="ImageWidget">
 								<param name="image_path" value="special://skin/extras/home-images/weather.jpg"/>
 								<param name="text_label" value="$LOCALIZE[31120]" />

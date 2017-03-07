@@ -1385,162 +1385,149 @@
 			</control>
 		</definition>
 	</include>
+	
 	<include name="WeatherWidget">
-		<control type="group">
-			<description>Square Weather Widget including header and arrows</description>
-			<height>432</height>
-			<left>0</left>
-			<top>0</top>
-			<visible>Integer.IsGreater(Container($PARAM[list_id]).NumItems,0) | Container($PARAM[list_id]).IsUpdating</visible>
-			<visible>$PARAM[visible]</visible>
-			<control type="image">
-				<left>445</left>
-				<top>230</top>
-				<width>28</width>
-				<height>28</height>
-				<texture flipx="true" colordiffuse="button_focus">overlays/arrowright.png</texture>
-				<animation effect="slide" start="30,0" end="0,0" time="200">VisibleChange</animation>
-				<animation effect="slide" start="-150" end="0" delay="640" time="320" tween="cubic">WindowOpen</animation>
-				<visible>Container($PARAM[list_id]).HasPrevious + Control.HasFocus($PARAM[list_id])</visible>
-			</control>
-			<control type="image">
-				<left>1840</left>
-				<top>230</top>
-				<width>28</width>
-				<height>28</height>
-				<texture colordiffuse="button_focus">overlays/arrowright.png</texture>
-				<animation effect="slide" start="-30,0" end="0,0" time="200">VisibleChange</animation>
-				<animation effect="slide" start="150" end="0" delay="640" time="320" tween="cubic">WindowOpen</animation>
-				<visible>Container($PARAM[list_id]).HasNext + Control.HasFocus($PARAM[list_id])</visible>
-			</control>
-			<control type="label">
-				<left>340</left>
-				<top>30</top>
-				<width>900</width>
-				<height>40</height>
-				<label>$PARAM[widget_header]</label>
-				<font>font14</font>
-				<shadowcolor>text_shadow</shadowcolor>
-			</control>
-			<control type="panel" id="$PARAM[list_id]">
-				<left>320</left>
-				<top>55</top>
-				<width>1365</width>
-				<height>400</height>
-				<scrolltime tween="cubic" easing="out">500</scrolltime>
-				<orientation>horizontal</orientation>
-				<onleft>9000</onleft>
-				<onright>noop</onright>
-				<onunfocus>SetProperty(listposition,$INFO[Container($PARAM[list_id]).Position],home)</onunfocus>
-				<onfocus>Control.Move($PARAM[list_id],-$INFO[Container($PARAM[list_id]).Position])</onfocus>
-				<onfocus>Control.Move($PARAM[list_id],$INFO[Window(home).Property(listposition)])</onfocus>
-				<onup>$PARAM[onup_id]</onup>
-				<ondown>$PARAM[ondown_id]</ondown>
-				<onback>PageUp</onback>
-				<onback>PageUp</onback>
-				<onback>PageUp</onback>
-				<onback>PageUp</onback>
-				<preloaditems>1</preloaditems>
-				<itemlayout width="273" height="400">
-					<control type="image">
-						<left>0</left>
-						<top>20</top>
-						<width>260</width>
-						<height>350</height>
-						<texture border="40">buttons/button-nofo.png</texture>
-					</control>
-					<control type="image">
-						<left>60</left>
-						<top>130</top>
-						<width>130</width>
-						<height>130</height>
-						<texture>$INFO[ListItem.Icon]</texture>
-					</control>
-					<control type="label">
-						<left>15</left>
-						<top>47</top>
-						<align>center</align>
-						<label>$INFO[ListItem.Label]</label>
-						<width>230</width>
-					</control>
-					<control type="label">
-						<left>15</left>
-						<top>80</top>
-						<align>center</align>
-						<font>font12</font>
-						<label>$INFO[ListItem.Property(ShortDate)]</label>
-						<width>230</width>
-					</control>
-					<control type="label">
-						<left>15</left>
-						<top>280</top>
-						<align>center</align>
-						<label>$INFO[ListItem.Label2]</label>
-						<font>font12</font>
-						<width>230</width>
-					</control>
-				</itemlayout>
-				<focusedlayout width="273" height="400">
-					<control type="group">
-						<depth>DepthContentPopout</depth>
-						<animation type="Focus">
-							<effect type="zoom" start="100" end="107" time="200" tween="sine" easing="inout" center="110,130" />
-						</animation>
-						<animation type="Unfocus">
-							<effect type="zoom" start="107" end="100" time="200" tween="sine" easing="inout" center="110,130" />
-						</animation>
+		<param name="onleft_id">9000</param>
+		<param name="onright_id">noop</param>
+		
+		<definition>
+			<control type="group">
+				<description>Square Weather Widget including header and arrows</description>
+				<height>770</height>
+				<width>420</width>
+				<left>0</left>
+				<top>0</top>
+				<visible>Integer.IsGreater(Container($PARAM[list_id]).NumItems,0) | Container($PARAM[list_id]).IsUpdating</visible>
+				<visible>$PARAM[visible]</visible>
+
+				<control type="image">
+					<height>770</height>
+					<width>400</width>
+					<texture colordiffuse="33333333">colors/black.png</texture>
+				</control>
+				<control type="image">
+					<height>60</height>
+					<width>400</width>
+					<texture colordiffuse="44444444">colors/black.png</texture>
+				</control>
+				
+				<control type="label">
+					<left>20</left>
+					<width>360</width>
+					<height>60</height>
+					<label>$PARAM[widget_header]</label>
+					<font>font13</font>
+					<aligny>center</aligny>
+					<shadowcolor>text_shadow</shadowcolor>
+				</control>
+				
+				<control type="panel" id="$PARAM[list_id]">
+					<top>60</top>
+					<width>400</width>
+					<height>700</height>
+					<scrolltime tween="cubic" easing="out">500</scrolltime>
+					<orientation>vertical</orientation>
+					<onleft>$PARAM[onleft_id]</onleft>
+					<onright>$PARAM[onright_id]</onright>
+					<onunfocus>SetProperty(listposition,$INFO[Container($PARAM[list_id]).Position],home)</onunfocus>
+					<onfocus>Control.Move($PARAM[list_id],-$INFO[Container($PARAM[list_id]).Position])</onfocus>
+					<onfocus>Control.Move($PARAM[list_id],$INFO[Window(home).Property(listposition)])</onfocus>
+					<onup>$PARAM[onup_id]</onup>
+					<ondown>$PARAM[ondown_id]</ondown>
+					<onback>PageUp</onback>
+					<preloaditems>1</preloaditems>
+					
+					<itemlayout width="400" height="120">
+					
 						<control type="image">
-							<left>0</left>
+							<left>20</left>
 							<top>20</top>
-							<width>260</width>
-							<height>350</height>
-							<texture border="40">buttons/button-nofo.png</texture>
-						</control>
-						<control type="image">
-							<left>0</left>
-							<top>20</top>
-							<width>260</width>
-							<height>350</height>
-							<texture border="40" colordiffuse="button_focus">buttons/button-fo.png</texture>
-							<animation effect="fade" start="100" end="0" time="0">Unfocus</animation>
-							<visible>Control.HasFocus($PARAM[list_id])</visible>
-						</control>
-						<control type="image">
-							<left>60</left>
-							<top>130</top>
-							<width>130</width>
-							<height>130</height>
+							<width>80</width>
+							<height>80</height>
 							<texture>$INFO[ListItem.Icon]</texture>
 						</control>
 						<control type="label">
-							<left>15</left>
-							<top>47</top>
-							<align>center</align>
-							<label>$INFO[ListItem.Label]</label>
-							<width>230</width>
-						</control>
-						<control type="label">
-							<left>15</left>
-							<top>80</top>
-							<align>center</align>
+							<left>140</left>
+							<top>60</top>
+							<height>40</height>
+							<aligny>center</aligny>
+							<label>$INFO[ListItem.Label] - $INFO[ListItem.Property(ShortDate)]</label>
 							<font>font12</font>
-							<label>$INFO[ListItem.Property(ShortDate)]</label>
-							<width>230</width>
+							<width>240</width>
 						</control>
 						<control type="label">
-							<left>15</left>
-							<top>280</top>
-							<align>center</align>
+							<left>140</left>
+							<top>20</top>
+							<height>40</height>
 							<label>$INFO[ListItem.Label2]</label>
+							<aligny>center</aligny>
 							<font>font12</font>
-							<width>230</width>
+							<width>240</width>
 						</control>
-					</control>
-				</focusedlayout>
-				<include>$PARAM[content_include]</include>
+						<control type="image">
+							<left>20</left>
+							<top>117</top>
+							<width>360</width>
+							<height>3</height>
+							<texture border="90,3,90,3">lists/separator.png</texture>
+						</control>					
+					</itemlayout>
+					<focusedlayout width="400" height="120">
+						<control type="group">
+							<depth>DepthContentPopout</depth>
+
+							<control type="image">
+								<left>-10</left>
+								<top>-10</top>
+								<width>420</width>
+								<height>140</height>
+								<texture border="40" colordiffuse="button_focus">buttons/button-fo.png</texture>
+								<animation effect="fade" start="100" end="0" time="0">Unfocus</animation>
+								<visible>Control.HasFocus($PARAM[list_id])</visible>
+							</control>						
+							<control type="image">
+								<left>20</left>
+								<top>20</top>
+								<width>80</width>
+								<height>80</height>
+								<texture>$INFO[ListItem.Icon]</texture>
+							</control>
+							<control type="label">
+								<left>140</left>
+								<top>60</top>
+								<height>40</height>
+								<aligny>center</aligny>
+								<label>$INFO[ListItem.Label] - $INFO[ListItem.Property(ShortDate)]</label>
+								<font>font12</font>
+								<width>240</width>
+							</control>
+							<control type="label">
+								<left>140</left>
+								<top>20</top>
+								<height>40</height>
+								<label>$INFO[ListItem.Label2]</label>
+								<aligny>center</aligny>
+								<font>font12</font>
+								<width>240</width>
+							</control>
+							<control type="image">
+								<left>20</left>
+								<top>117</top>
+								<width>360</width>
+								<height>3</height>
+								<texture border="90,3,90,3">lists/separator.png</texture>
+							</control>
+
+						</control>
+						
+					</focusedlayout>
+					<include>$PARAM[content_include]</include>
+				</control>
 			</control>
-		</control>
+			
+		</definition>
 	</include>
+	
 	<include name="HourlyItems">
 		<content>
 			<item>
