@@ -898,8 +898,8 @@
 					<!-- <label>$LOCALIZE[244]</label> -->
 
 					<onup>noop</onup>
-					<ondown condition="Window.IsActive(Home)">9000</ondown>
-					<ondown condition="!Window.IsActive(Home)">noop</ondown>
+					<ondown>noop</ondown>
+					<ondown condition="Window.IsActive(Home)">701</ondown>
 					<radioposx>50</radioposx>
 					<textoffsetx>0</textoffsetx>
 					<radioposy>0</radioposy>

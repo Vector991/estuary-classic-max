@@ -1002,11 +1002,26 @@
 						<left>0</left>
 						<top>120</top>
 
+						<include content="SubMenu">
+							<param name="list_id" value="701"/>
+							<param name="ondown_id" value="9000"/>
+							<param name="onup_id" value="14200"/>
+							<param name="onleft_id" value="noop"/>
+							<param name="visible" value="true"/>
+							<param name="content_name" value="SubmenuFavsSearch" />
+							<param name="menu_top" value="-16" />
+							<param name="menu_left" value="0" />
+							<param name="menu_width" value="320" />
+							<param name="menu_item_width" value="170" />
+							<param name="menu_item_height" value="110" />
+							<param name="menu_item_spacing" value="150" />
+						</include>
+					
 						<control type="list" id="9000">
 							<left>0</left>
-							<top>0</top>
+							<top>95</top>
 							<width>300</width>
-							<height>818</height>
+							<height>803</height>
 							<pagecontrol>70</pagecontrol>
 							<onfocus>ClearProperty(listposition,home)</onfocus>
 							<onright condition="String.IsEqual(Container(9000).ListItem.Property(id), movies) + Control.IsVisible(5000)">5000</onright>
@@ -1017,8 +1032,7 @@
 							<onright condition="String.IsEqual(Container(9000).ListItem.Property(id),livetv) + Control.IsVisible(12000)">12000</onright>
 							<onright condition="String.IsEqual(Container(9000).ListItem.Property(id),radio) + Control.IsVisible(13000)">13000</onright>
 							<onright condition="String.IsEqual(Container(9000).ListItem.Property(id),weather) + Control.IsVisible(15000)">15000</onright>
-							<onup>noop</onup>
-							<onup condition="Control.IsVisible(14200)">14200</onup>
+							<onup>701</onup>
 							<ondown>700</ondown>
 							<scrolltime tween="cubic" easing="out">500</scrolltime>
 							
@@ -1162,21 +1176,7 @@
 									<property name="id">weather</property>
 									<visible>!Skin.HasSetting(HomeMenuNoWeatherButton)</visible>
 								</item>
-								<item>
-									<label>$LOCALIZE[10134]</label>
-									<onclick>ActivateWindow(favourites)</onclick>
-									<thumb>icons/home/favourites.png</thumb>
-									<property name="id">favourites</property>
-									<visible>true</visible>
-								</item>							
-								<item>
-									<label>$LOCALIZE[31001]</label>
-									<onclick>ActivateWindow(1107)</onclick>
-									<thumb>icons/home/search.png</thumb>
-									<property name="id">search</property>
-									<visible>true</visible>
-								</item>
-							
+
 							</content>
 						</control>
 					</control>
