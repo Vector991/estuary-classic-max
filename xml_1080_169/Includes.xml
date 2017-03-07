@@ -834,17 +834,13 @@
 				<depth>DepthBars</depth>
 				<animation effect="fade" start="0" end="100" time="300" condition="[Window.Previous(fullscreenvideo) | Window.Previous(startup)] + !Window.IsVisible(1109)">WindowOpen</animation>
 
-				<!-- Bar background -->
 				<control type="image">
-					<left>0</left>
-					<top>0</top>
-					<width>110%</width>
-					<height>83</height>
-					<texture colordiffuse="44444444">frame/InfoBar.png</texture>
+					<width>100%</width>
+					<height>150</height>
+					<texture>overlays/overlayfade.png</texture>
+					<animation effect="rotate" end="180" center="960,75" time="0" condition="true">conditional</animation>
 					<animation effect="fade" start="100" end="0" time="300" condition="Window.Next(screencalibration)">WindowClose</animation>
-				</control>
-				
-
+				</control>				
 				
 				<!-- KODI logo! -->
 				<control type="group">
