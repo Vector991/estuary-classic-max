@@ -1020,7 +1020,7 @@
 						<control type="list" id="9000">
 							<left>0</left>
 							<top>95</top>
-							<width>300</width>
+							<width>320</width>
 							<height>803</height>
 							<pagecontrol>70</pagecontrol>
 							<onfocus>ClearProperty(listposition,home)</onfocus>
@@ -1041,7 +1041,7 @@
 									<control type="image">
 										<left>0</left>
 										<top>0</top>
-										<width>300</width>
+										<width>320</width>
 										<height>73</height>
 										<texture colordiffuse="button_focus">lists/focus.png</texture>
  									</control>
