@@ -12,8 +12,7 @@
 			<control type="image">
 				<width>100%</width>
 				<height>200</height>
-				<texture>overlays/overlayfade.png</texture>
-				<animation effect="rotate" end="180" center="960,100" time="0" condition="true">conditional</animation>
+				<texture flipy="true">overlays/overlayfade.png</texture>
 			</control>			
 
 			<control type="label">

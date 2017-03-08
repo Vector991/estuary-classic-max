@@ -330,12 +330,13 @@
 		
 		<!-- I like fat scrollbars!  Don't ever change -->
 		<control type="scrollbar" id="$PARAM[list_id]600">
+			<animation effect="fade" start="100" end="50" time="500" pulse="true" condition="Control.HasFocus($PARAM[list_id]600)">conditional</animation>
 			<left>826</left>
 			<top>0</top>
 			<width>30</width>
 			<height>936</height>
 			<onleft>$PARAM[list_id]</onleft>
-			<onright>$PARAM[list_id]</onright>
+			<onright>noop</onright>
 			<orientation>vertical</orientation>
 			<texturesliderbackground colordiffuse="eeeeeeee">overlays/overlayfade.png</texturesliderbackground>
 			<texturesliderbar colordiffuse="grey">colors/white.png</texturesliderbar>
@@ -344,6 +345,7 @@
 			<textureslidernibfocus>colors/white.png</textureslidernibfocus>	  
 			<visible>true</visible>
 		</control>
+			
 	</include>
 	
 	<!-- for widelist only? -->

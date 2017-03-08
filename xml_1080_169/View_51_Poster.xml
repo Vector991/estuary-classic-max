@@ -15,6 +15,7 @@
 			</include>
 			
 			<control type="scrollbar" id="5188">
+				<animation effect="fade" start="100" end="50" time="500" pulse="true" condition="Control.HasFocus(5188)">conditional</animation>
 				<left>0</left>
 				<top>12</top>
 				<width>100%</width>
@@ -23,8 +24,6 @@
 				<onup>noop</onup>
 				<ondown>51</ondown>
 				<orientation>horizontal</orientation>
-				<animation effect="fade" start="0" end="100" time="200" delay="300">Visible</animation>
-				<animation effect="fade" start="100" end="0" time="200">Hidden</animation>
 				<animation effect="slide" end="0,90" time="300" tween="sine" easing="inout" condition="$EXP[infodialog_active]">conditional</animation>
 			</control>	
 	
