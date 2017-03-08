@@ -728,6 +728,8 @@
 				<visible>Control.IsVisible($PARAM[list_id]) + Container($PARAM[list_id]).HasNext</visible>
 				<visible>false</visible>
 			</control>
+			<!-- Arrows used now only for visual cue -->
+			<!--
 			<control type="button" id="$PARAM[list_id]500">
 				<left>$PARAM[left_posx]</left>
 				<top>$PARAM[posy]</top>
@@ -748,6 +750,7 @@
 				<onclick>Control.Move($PARAM[list_id],1)</onclick>
 				<visible allowhiddenfocus="true">Container($PARAM[list_id]).HasNext + [Control.HasFocus($PARAM[list_id]) | Control.HasFocus($PARAM[list_id]501)]</visible>
 			</control>
+			-->
 		</definition>
 	</include>
 	<include name="DialogBackgroundCommons">
