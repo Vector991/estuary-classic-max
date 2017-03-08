@@ -168,9 +168,10 @@
 						</control>
 					</control>
 				</control>
+				
 				<control type="group">
 					<left>1220</left>
-					<top>180</top>
+					<top>83</top>
 					<visible>!String.IsEmpty(ListItem.Date)</visible>
 					<include>Visible_Right</include>
 					<include>OpenClose_Right</include>
@@ -180,15 +181,18 @@
 					</include>
 				</control>
 			</control>
+
 			<control type="group">
 				<include>MediaMenuCommon</include>
 				<include>PVRSideBar</include>
 			</control>
+
 			<include content="TopBar">
+			</include>
+
+			<include content="BottomBar">
 				<param name="breadcrumbs_label" value="$VAR[BreadcrumbsPVRSearchVar]" />
 				<param name="breadcrumbs_icon" value="icons/settings/tvguide.png" />
-			</include>
-			<include content="BottomBar">
 				<param name="info_visible" value="true" />
 			</include>
 		</control>

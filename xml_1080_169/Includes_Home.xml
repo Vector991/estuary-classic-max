@@ -1092,10 +1092,10 @@
 							<visible>$PARAM[is_recording]</visible>
 						</control>						
 						<control type="image">
-							<top>60</top>
+							<top>70</top>
 							<left>40</left>
 							<width>260</width>
-							<height>100</height>
+							<height>80</height>
 							<texture fallback="DefaultTVShows.png" border="10">$PARAM[icon]</texture>
 							<aspectratio aligny="center" align="center">keep</aspectratio>
 						</control>
@@ -1182,10 +1182,10 @@
 								<visible>$PARAM[is_recording]</visible>
 							</control>							
 							<control type="image">
-								<top>60</top>
+								<top>70</top>
 								<left>40</left>
 								<width>260</width>
-								<height>100</height>
+								<height>80</height>
 								<texture fallback="DefaultTVShows.png" border="10">$PARAM[icon]</texture>
 								<aspectratio aligny="center" align="center">keep</aspectratio>
 							</control>
