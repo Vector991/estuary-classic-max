@@ -53,7 +53,7 @@
 				<control type="list" id="55">
 					<left>0</left>
 					<width>1260</width>
-					<height>936</height>
+					<height>945</height>
 					<scrolltime tween="cubic" easing="out">500</scrolltime>
 					<orientation>vertical</orientation>
 					<pagecontrol>551</pagecontrol>

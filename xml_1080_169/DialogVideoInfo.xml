@@ -15,6 +15,20 @@
 				<param name="bare_bottom" value="true" />
 			</include>
 			
+			<!-- Filename and path -->
+			<control type="label">
+				<right>10</right>
+				<width>960</width>
+				<height>40</height>
+				<bottom>0</bottom>
+				<font>font10</font>
+				<textcolor>grey</textcolor>
+				<label>$INFO[ListItem.FileNameAndPath]</label>
+				<align>right</align>
+				<aligny>center</aligny>
+				<visible>Control.HasFocus(6)</visible>
+			</control>
+			
 			<!-- Left poster panel -->
 			<control type="group">
 				<top>20</top>
