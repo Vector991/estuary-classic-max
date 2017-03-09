@@ -70,16 +70,16 @@
 					<focusedlayout height="63">
 						<control type="image">
 							<left>0</left>
-							<top>0</top>
-							<width>1260</width>
-							<height>63</height>
-							<texture border="90,3,90,3">lists/separator.png</texture>
+							<top>63</top>
+							<width>1250</width>
+							<height>1</height>
+							<texture colordiffuse="44888888">colors/white.png</texture>
 						</control>					
 						<control type="image">
 							<left>0</left>
 							<top>0</top>
 							<width>1250</width>
-							<height>59</height>
+							<height>60</height>
 							<texture colordiffuse="button_focus">lists/focus.png</texture>
 							<visible>Control.HasFocus(55)</visible>
 						</control>
@@ -123,9 +123,9 @@
 						</control>						
 						<control type="image">
 							<left>1210</left>
-							<top>15</top>
 							<width>32</width>
-							<height>32</height>
+							<height>63</height>
+							<aspectratio align="center" aligny="center">center</aspectratio>
 							<visible>String.IsEmpty(ListItem.AddonVersion)</visible>
 							<texture>$VAR[ListWatchedIconVar]</texture>
 						</control>
@@ -168,17 +168,25 @@
 							<textcolor>button_focus</textcolor>
 							<visible>!Control.hasFocus(55)</visible>						
 						</control>					
-						
+						<control type="image">
+							<left>1210</left>
+							<width>32</width>
+							<height>63</height>
+							<visible>String.IsEmpty(ListItem.AddonVersion)</visible>
+							<aspectratio align="center" aligny="center">center</aspectratio>
+							<texture colordiffuse="button_focus">$VAR[ListWatchedIconVar]</texture>
+							<visible>!Control.hasFocus(55)</visible>
+						</control>						
 					</focusedlayout>
 					
 					<!-- <itemlayout height="63" condition="Container.Content(movies) | Container.Content(tvshows) | Container.Content(seasons) | Container.Content(episodes) | Container.Content(artists) | Container.Content(albums) | Container.Content(actors) | Container.Content(directors) | Container.Content(files) | Container.Content(mixed) | Container.Content(videos)"> -->
 					<itemlayout height="63">
 						<control type="image">
 							<left>0</left>
-							<top>0</top>
-							<width>1260</width>
-							<height>63</height>
-							<texture border="90,3,90,3">lists/separator.png</texture>
+							<top>63</top>
+							<width>1250</width>
+							<height>1</height>
+							<texture colordiffuse="44888888">colors/white.png</texture>
 						</control>
 						<control type="label">
 							<left>18</left>
@@ -222,10 +230,10 @@
 						</control>						
 						<control type="image">
 							<left>1210</left>
-							<top>15</top>
 							<width>32</width>
-							<height>32</height>
+							<height>63</height>
 							<visible>String.IsEmpty(ListItem.AddonVersion)</visible>
+							<aspectratio align="center" aligny="center">center</aspectratio>
 							<texture colordiffuse="grey">$VAR[ListWatchedIconVar]</texture>
 						</control>
 
