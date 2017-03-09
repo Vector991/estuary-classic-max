@@ -277,6 +277,151 @@
 		
 	</include>
 	
+
+	<!-- Compact version when small video window on screen -->
+	<include name="PVRInfoPanelCompact">
+
+		<control type="image">
+			<left>20</left>
+			<width>80</width>
+			<height>80</height>
+			<aspectratio aligny="top" align="center">keep</aspectratio>
+			<texture fallback="DefaultTVShows.png">$INFO[Listitem.Icon]</texture>
+			<fadetime>200</fadetime>
+		</control>
+		<control type="label">
+			<left>120</left>
+			<width>540</width>
+			<height>50</height>
+			<textcolor>button_focus</textcolor>
+			<font>font32_title</font>
+			<label>$INFO[ListItem.ChannelName]</label>
+		</control>		
+		
+		<control type="group">
+			<left>120</left>
+			<top>42</top>
+			
+			<control type="image">
+				<top>34</top>
+				<width>460</width>
+				<height>6</height>
+				<texture colordiffuse="ff333333">colors/white.png</texture>
+				<visible>ListItem.HasEpg</visible>				
+			</control>			
+			<control type="progress">
+				<top>33</top>
+				<width>460</width>
+				<height>1</height>
+				<texturebg></texturebg>
+				<midtexture colordiffuse="ffcccccc">colors/white.png</midtexture>
+				<visible>ListItem.HasEpg</visible>
+				<info>ListItem.Progress</info>
+			</control>
+			
+			<control type="label">
+				<width>460</width>
+				<height>40</height>
+				<font>font12</font>
+				<visible>!String.IsEqual(ListItem.StartTime,ListItem.EndTime)</visible>
+				<label>$INFO[ListItem.StartTime]</label>
+			</control>
+			<control type="label">
+				<width>460</width>
+				<height>40</height>
+				<align>right</align>
+				<font>font12</font>
+				<visible>!String.IsEqual(ListItem.StartTime,ListItem.EndTime)</visible>
+				<label>$INFO[ListItem.EndTime]</label>
+			</control>
+
+		</control>
+
+		<control type="group">
+			<top>100</top>
+			<left>20</left>
+			<width>640</width>
+			<height>722</height>
+			
+			<control type="image">
+				<width>640</width>
+				<height>522</height>
+				<texture colordiffuse="33333333">colors/black.png</texture>
+			</control>		
+			
+			<control type="label">
+				<top>20</top>
+				<left>20</left>
+				<width>600</width>
+				<textcolor>button_focus</textcolor>
+				<aligny>bottom</aligny>
+				<font>font30_title</font>
+				<label>$INFO[ListItem.EpgEventTitle]</label>
+			</control>
+			
+			<control type="label">
+				<top>65</top>
+				<left>20</left>
+				<width>600</width>
+				<height>40</height>
+				<font>font12</font>
+				<label>$INFO[ListItem.Genre,[COLOR button_focus]$LOCALIZE[515]:[/COLOR] ]</label>
+			</control>			
+			
+			<control type="textbox">
+				<top>120</top>
+				<left>20</left>
+				<width>600</width>
+				<height>340</height>
+				<font>font12</font>
+				<label>$INFO[ListItem.Plot]</label>
+				<autoscroll delay="8000" time="1500" repeat="10000">Skin.HasSetting(AutoScroll)</autoscroll>
+			</control>			
+			
+			<control type="image">
+				<left>20</left>
+				<top>460</top>
+				<width>600</width>
+				<height>3</height>
+				<texture border="90,3,90,3">lists/separator.png</texture>
+			</control>							
+			
+			<!-- Next -->
+			<control type="label">
+				<top>470</top>
+				<left>20</left>
+				<width>480</width>
+				<height>40</height>
+				<font>font12</font>
+				<label>$PARAM[bottom_label1]</label>
+				<scroll>true</scroll>
+			</control>
+			<control type="label">
+				<top>470</top>
+				<right>20</right>
+				<width>600</width>
+				<height>40</height>
+				<align>right</align>
+				<font>font12</font>
+				<label>$PARAM[bottom_label2]</label>
+			</control>			
+
+			<!-- No information avail... -->
+			<control type="textbox">
+				<top>470</top>
+				<width>600</width>
+				<left>20</left>
+				<height>50</height>
+				<font>font12</font>
+				<label>$LOCALIZE[19055]</label>
+				<visible>String.IsEmpty(Listitem.Plot) + String.IsEmpty(Listitem.Genre)</visible>
+			</control>
+			
+		</control>
+		
+	</include>
+	
+	
 	<variable name="PVRChannelLabel">
 		<value condition="String.IsEmpty(ListItem.Title)">$INFO[ListItem.Label]</value>
 		<value>$INFO[ListItem.Title]</value>

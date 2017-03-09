@@ -29,6 +29,7 @@
 						<height>942</height>
 						<scrolltime tween="cubic" easing="out">500</scrolltime>
 						<orientation>vertical</orientation>
+						<onleft condition="Control.IsVisible(55995)">55995</onleft>
 						<onleft>9000</onleft>
 						<onright>60</onright>
 						<onup>50</onup>
@@ -368,10 +369,104 @@
 						<texture colordiffuse="88888888">colors/white.png</texture>
 					</control>
 					
-					<include content="PVRInfoPanel">
-						<param name="bottom_label1" value="$INFO[ListItem.NextTitle,[COLOR button_focus]$LOCALIZE[19031]:[/COLOR] ]" />
-						<param name="bottom_label2" value="$INFO[ListItem.NextStartTime]" />
-					</include>
+					<control type="group">
+						<visible>!Player.Playing</visible>
+
+						<include content="PVRInfoPanel">
+							<param name="bottom_label1" value="$INFO[ListItem.NextTitle,[COLOR button_focus]$LOCALIZE[19031]:[/COLOR] ]" />
+							<param name="bottom_label2" value="$INFO[ListItem.NextStartTime]" />
+						</include>
+					</control>
+					
+					<control type="group">
+						<width>680</width>
+						<height>922</height>
+						<visible>Player.Playing</visible>
+						
+						<control type="videowindow">
+							<left>20</left>
+							<top>0</top>
+							<width>500</width>
+							<height>280</height>
+							<visible>!Player.HasAudio</visible>
+						</control>				
+						
+						<control type="image">
+							<left>20</left>
+							<top>0</top>
+							<width>500</width>
+							<height>280</height>
+							<aspectratio>keep</aspectratio>
+							<texture>DefaultAddonAudioEncoder.png</texture>
+							<visible>Player.HasAudio</visible>
+						</control>
+						
+						<!-- Player controls for quick pause/stop/next -->
+						<control type="group" id="55999">
+							<top>220</top>
+							<left>530</left>
+							<onleft>9000</onleft>
+							<onright>50</onright>
+							
+							<control type="grouplist">
+								<orientation>horizontal</orientation>
+								<width>140</width>
+								<onleft>9000</onleft>
+								<onright>50</onright>
+
+								<control type="radiobutton" id="55998">
+										<textureradioonfocus colordiffuse="button_focus">icons/now-playing/fullscreen.png</textureradioonfocus>
+										<textureradioonnofocus colordiffuse="grey">icons/now-playing/fullscreen.png</textureradioonnofocus>
+										<textureradioofffocus colordiffuse="button_focus">icons/now-playing/fullscreen.png</textureradioofffocus>
+										<textureradiooffnofocus colordiffuse="grey">icons/now-playing/fullscreen.png</textureradiooffnofocus>
+										<textureradioondisabled colordiffuse="disabled">icons/now-playing/fullscreen.png</textureradioondisabled>
+										<textureradiooffdisabled colordiffuse="disabled">icons/now-playing/fullscreen.png</textureradiooffdisabled>
+										<texturefocus></texturefocus>
+										<width>70</width>
+										<height>70</height>
+										<radiowidth>60</radiowidth>
+										<radioheight>60</radioheight>
+										<font></font>
+										<texturenofocus></texturenofocus>
+										<radioposx>5</radioposx>
+										<radioposy>0</radioposy>								
+										<onclick>Fullscreen</onclick>
+										<onright>55995</onright>		
+								</control>			
+								<control type="radiobutton" id="55995">
+									<textureradioonfocus colordiffuse="button_focus">icons/now-playing/stop.png</textureradioonfocus>
+									<textureradioonnofocus colordiffuse="grey">icons/now-playing/stop.png</textureradioonnofocus>
+									<textureradioofffocus colordiffuse="button_focus">icons/now-playing/stop.png</textureradioofffocus>
+									<textureradiooffnofocus colordiffuse="grey">icons/now-playing/stop.png</textureradiooffnofocus>
+									<textureradioondisabled colordiffuse="disabled">icons/now-playing/stop.png</textureradioondisabled>
+									<textureradiooffdisabled colordiffuse="disabled">icons/now-playing/stop.png</textureradiooffdisabled>
+									<texturefocus></texturefocus>
+									<width>70</width>
+									<height>70</height>
+									<radiowidth>60</radiowidth>
+									<radioheight>60</radioheight>
+									<font></font>
+									<texturenofocus></texturenofocus>
+									<radioposx>0</radioposx>
+									<radioposy>0</radioposy>	
+									<onclick>PlayerControl(Stop)</onclick>
+									<onclick>SetFocus(50)</onclick>
+									<onleft>55998</onleft>
+								</control>
+							</control>
+							
+						</control>						
+						<control type="group">
+							<top>300</top>
+							<height>622</height>
+							
+							<include content="PVRInfoPanelCompact">
+								<param name="bottom_label1" value="$INFO[ListItem.NextTitle,[COLOR button_focus]$LOCALIZE[19031]:[/COLOR] ]" />
+								<param name="bottom_label2" value="$INFO[ListItem.NextStartTime]" />
+							</include>							
+						</control>
+					</control>
+					
 				</control>
 				<!--
 				<include content="UpDownArrows">
