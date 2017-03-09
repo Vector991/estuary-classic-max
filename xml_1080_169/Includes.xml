@@ -1070,7 +1070,7 @@
 					<animation effect="fade" start="100" end="0" time="300">WindowClose</animation>
 					<animation effect="fade" time="400">VisibleChange</animation>
 					<texture background="true" colordiffuse="45FFFFFF">$VAR[MediaFanartVar]</texture>
-					<visible>!Player.HasMedia | !String.IsEmpty(Window(Videos).Property(PlayingBackgroundMedia))</visible>
+					<visible>!Player.HasMedia | Player.HasAudio | !String.IsEmpty(Window(Videos).Property(PlayingBackgroundMedia))</visible>
 				</control>
 			</control>
 		</definition>
