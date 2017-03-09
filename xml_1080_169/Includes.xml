@@ -1044,7 +1044,7 @@
 			<control type="videowindow">
 				<depth>DepthBackground</depth>
 				<include>FullScreenDimensions</include>
-				<visible>Player.HasVideo + !Slideshow.IsActive</visible>
+				<visible>Player.HasVideo + !Slideshow.IsActive + !Window.IsActive(tvchannels)</visible>
 			</control>
 			<control type="visualisation">
 				<include>FullScreenDimensions</include>
