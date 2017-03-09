@@ -44,11 +44,12 @@
 
 				<control type="image">
 					<left>0</left>
-					<top>0</top>
+					<top>-100</top>
 					<width>100%</width>
-					<height>160</height>
-					<texture colordiffuse="cccccccc">colors/white.png</texture>
-				</control>				
+					<height>260</height>
+					<texture colordiffuse="ffcccccc">overlays/overlayfadewhite.png</texture>
+				</control>
+				
 				<control type="label">
 					<left>30</left>
 					<top>-60</top>

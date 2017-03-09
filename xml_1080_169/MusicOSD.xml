@@ -24,11 +24,12 @@
 			
 			<control type="image">
 				<left>0</left>
-				<top>0</top>
+				<top>-100</top>
 				<width>100%</width>
-				<height>160</height>
-				<texture colordiffuse="cccccccc">colors/white.png</texture>
-			</control>				
+				<height>260</height>
+				<texture colordiffuse="ffcccccc">overlays/overlayfadewhite.png</texture>
+			</control>	
+				
 			<control type="label">
 				<left>30</left>
 				<top>-60</top>
@@ -42,7 +43,7 @@
 			<!-- Prev, Play, Stop, Next -->
 			<control type="grouplist" id="201">
 				<top>-10</top>
-				<left>-20</left>
+				<left>470</left>
 				<width>100%</width>
 				<height>123</height>
 				<align>left</align>
@@ -194,9 +195,9 @@
 				<onclick condition="Player.Forwarding | Player.Rewinding">PlayerControl(Play)</onclick>
 			</control>
 			<control type="label">
-				<left>0</left>
+				<left>1000</left>
 				<top>0</top>
-				<width>100%</width>
+				<width>300</width>
 				<height>100</height>
 				<align>center</align>
 				<aligny>center</aligny>
@@ -204,11 +205,12 @@
 				<font>Font45</font>
 				<textcolor>black</textcolor>
 			</control>			
+			
 			<control type="progress">
 				<animation effect="fade" end="0" time="200">WindowClose</animation>
-				<left>20</left>
+				<left>510</left>
 				<top>100</top>
-				<width>1880</width>
+				<width>1390</width>
 				<height>40</height>
 				<info>Player.ProgressCache</info>
 				<texturebg colordiffuse="black">colors/white50.png</texturebg>
@@ -218,9 +220,9 @@
 			</control>
 			<control type="progress" id="23">
 				<animation effect="fade" end="0" time="200">WindowClose</animation>
-				<left>20</left>
+				<left>510</left>
 				<top>100</top>
-				<width>1880</width>
+				<width>1390</width>
 				<height>40</height>
 				<info>Player.Progress</info>
 				<texturebg colordiffuse="black">colors/white50.png</texturebg>
@@ -228,9 +230,9 @@
 				<visible>!Player.ChannelPreviewActive | VideoPlayer.HasEpg</visible>
 			</control>			
 			<control type="slider">
-				<left>20</left>
+				<left>510</left>
 				<top>100</top>
-				<width>1880</width>
+				<width>1390</width>
 				<height>40</height>			
 				<onup>8010</onup>
 				<ondown>650</ondown>
@@ -242,9 +244,9 @@
 				<visible>!Control.HasFocus(87)</visible>
 			</control>
 			<control type="slider">
-				<left>20</left>
+				<left>510</left>
 				<top>100</top>
-				<width>1880</width>
+				<width>1390</width>
 				<height>40</height>
 				<onup>8010</onup>
 				<ondown>650</ondown>

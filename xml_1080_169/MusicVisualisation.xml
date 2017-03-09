@@ -45,64 +45,48 @@
 			<centerleft>50%</centerleft>
 			<width>1920</width>
 			
-			<control type="image">
-				<left>20</left>
-				<top>200</top>
+			<control type="group">
 				<include>OpenClose_Left</include>
-				<include>Visible_Left</include>
+				<include>Visible_Left</include>			
 				<visible>Player.ShowInfo | Window.IsActive(musicosd)</visible>
-				<width>470</width>
-				<height>470</height>
-				<fadetime>400</fadetime>
-				<texture fallback="DefaultAlbumCover.png" border="2">$INFO[MusicPlayer.Cover]</texture>
-				<bordertexture colordiffuse="border_alpha">colors/black.png</bordertexture>
-				<bordersize>4</bordersize>
+
+				<control type="image">
+					<left>20</left>
+					<bottom>20</bottom>
+					<width>470</width>
+					<height>470</height>
+					<fadetime>400</fadetime>
+					<texture fallback="DefaultAlbumCover.png" border="2">$INFO[MusicPlayer.Cover]</texture>
+					<bordertexture colordiffuse="border_alpha">colors/black.png</bordertexture>
+					<bordersize>4</bordersize>
+				</control>
+				<control type="label">
+					<left>20</left>
+					<bottom>490</bottom>
+					<width>470</width>
+					<height>40</height>
+					<aligny>center</aligny>
+					<align>center</align>
+					<label>$INFO[MusicPlayer.Artist]</label>
+					<font>font13</font>
+					<fadetime>400</fadetime>
+					<shadowcolor>black</shadowcolor>
+				</control>			
 			</control>
 			
 			<control type="group">
 				<visible>[Player.ShowInfo | Window.IsActive(musicosd)] + !Window.IsActive(playerprocessinfo)</visible>
 				<top>120</top>
 				
-				<control type="image">
-					<top>0</top>
-					<left>0</left>
-					<width>100%</width>
-					<height>60</height>
-					<texture colordiffuse="44444444">colors/black.png</texture>
-				</control>
-				
-				<control type="label">
-					<top>0</top>
-					<width>100%</width>
-					<height>60</height>
-					<align>center</align>
-					<aligny>center</aligny>
-					<label>$INFO[MusicPlayer.TrackNumber,,: ]$INFO[Player.Title]</label>
-					<font>font45_title</font>
-					<shadowcolor>black</shadowcolor>
-					<textcolor>button_focus</textcolor>
-				</control>
-				
-				<control type="label">
-					<left>20</left>
-					<top>0</top>
-					<width>600</width>
-					<height>60</height>
-					<aligny>center</aligny>
-					<label>$INFO[MusicPlayer.Artist]</label>
-					<font>font12</font>
-					<shadowcolor>black</shadowcolor>
-				</control>
-				
 				<control type="label">
 					<right>20</right>
 					<top>0</top>
-					<width>600</width>
+					<width>900</width>
 					<height>60</height>
 					<aligny>center</aligny>
 					<align>right</align>
 					<label>$INFO[MusicPlayer.Album]$INFO[MusicPlayer.Year, [,] ]</label>
-					<font>font12</font>
+					<font>font30_title</font>
 					<shadowcolor>black</shadowcolor>
 				</control>
 
@@ -178,9 +162,9 @@
 					<visible>!Window.IsActive(musicosd)</visible>			
 					
 					<control type="label">
-						<left>0</left>
+						<left>510</left>
 						<top>920</top>
-						<width>100%</width>
+						<width>1390</width>
 						<height>100</height>
 						<align>center</align>
 						<aligny>center</aligny>
@@ -189,9 +173,9 @@
 						<textcolor>white</textcolor>
 					</control>				
 					<control type="label">
-						<right>20</right>
+						<left>510</left>
 						<top>920</top>
-						<width>100%</width>
+						<width>1390</width>
 						<height>100</height>
 						<align>right</align>
 						<aligny>center</aligny>
@@ -204,9 +188,9 @@
 					</control>
 					<control type="progress">
 						<animation effect="fade" end="0" time="200">WindowClose</animation>
-						<left>20</left>
+						<left>510</left>
 						<top>1020</top>
-						<width>1880</width>
+						<width>1390</width>
 						<height>40</height>
 						<info>Player.ProgressCache</info>
 						<texturebg colordiffuse="grey">colors/white50.png</texturebg>
@@ -216,9 +200,9 @@
 					</control>
 					<control type="progress" id="23">
 						<animation effect="fade" end="0" time="200">WindowClose</animation>
-						<left>20</left>
+						<left>510</left>
 						<top>1020</top>
-						<width>1880</width>
+						<width>1390</width>
 						<height>40</height>
 						<info>Player.Progress</info>
 						<texturebg colordiffuse="grey">colors/white50.png</texturebg>
