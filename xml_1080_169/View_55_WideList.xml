@@ -491,7 +491,7 @@
 	
 	<include name="55_GenericInfoPanel">
 		<control type="group">
-			<visible>Container.Content(addons) | Container.Content(files) | Container.Content(actors) | Container.Content(images)</visible>
+			<visible>Container.Content(addons) | Container.Content(files) | Container.Content(actors) | Container.Content(images) | Container.Content()</visible>
 
 			<control type="image">
 				<left>-2</left>
@@ -500,7 +500,7 @@
 				<height>584</height>
 				<aspectratio>scale</aspectratio>
 				<texture fallback="DefaultFolder.png">$VAR[IconWallThumbVar]</texture>
-				<bordertexture border="22">dialogs/dialog-bg.png</bordertexture>
+				<bordertexture border="22" colordiffuse="88ffffff">dialogs/dialog-bg.png</bordertexture>
 				<bordersize>22</bordersize>
 			</control>				
 			
