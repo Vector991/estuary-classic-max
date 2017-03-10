@@ -20,7 +20,6 @@
 					<visible>Control.IsVisible(55)</visible>
 					<visible>Container.Content(addons) | Container.Content()</visible>
 					<include>Visible_Left</include>
-					<include>ListThumbInfoPanel</include>
 				</control>
 			</control>
 			<include>MediaMenuMouseOverlay</include>

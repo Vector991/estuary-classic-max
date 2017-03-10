@@ -19,7 +19,6 @@
 				<include>OpenClose_Left</include>
 				<include>Visible_Left</include>
 				<visible>Control.IsVisible(55)</visible>
-				<include>ListThumbInfoPanel</include>
 			</control>
 			
 			<include>MediaMenuMouseOverlay</include>
