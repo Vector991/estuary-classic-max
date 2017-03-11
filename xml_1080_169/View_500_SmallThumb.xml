@@ -173,28 +173,31 @@
 				</focusedlayout>
 				
 				<!-- Addons -->
-				<itemlayout height="360" width="350" condition="Container.Content(addons)">
+				<itemlayout height="360" width="305" condition="Container.Content(addons)">
 					<include content="InfoWallMusicLayout">
 						<param name="fallback_image" value="DefaultAddon.png" />
 					</include>
 				</itemlayout>
-				<focusedlayout height="360" width="350" condition="Container.Content(addons)">
+				<focusedlayout height="360" width="305" condition="Container.Content(addons)">
 					<control type="group">
 						<animation effect="zoom" start="100" end="107" time="200" tween="sine" easing="inout" center="160,180">Focus</animation>
 						<animation effect="zoom" start="107" end="100" time="200" tween="sine" easing="inout" center="160,180">UnFocus</animation>
+						
 						<include content="InfoWallMusicLayout">
 							<param name="fallback_image" value="DefaultAddon.png" />
 						</include>
+						
 						<control type="image">
-							<left>17</left>
-							<top>8</top>
-							<width>286</width>
-							<height>344</height>
+							<left>14</left>
+							<top>6</top>
+							<width>278</width>
+							<height>348</height>
 							<texture border="8" colordiffuse="button_focus">buttons/thumbnail_focused.png</texture>
 							<animation effect="fade" start="100" end="0" time="200">Unfocus</animation>
-						</control>
+						</control>						
 					</control>
 				</focusedlayout>
+				
 			</control>
 		</control>
 	</include>
