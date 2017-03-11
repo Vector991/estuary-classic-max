@@ -384,7 +384,7 @@
 				<control type="grouplist" id="4000">
 					<orientation>vertical</orientation>
 					<left>690</left>
-					<top>254</top>
+					<top>260</top>
 					<height>400</height>
 
 					<include content="InfoDialogMetadata">
@@ -468,9 +468,24 @@
 						<onleft>138</onleft>
 						<onright>138</onright>
 						<ondown>50</ondown>
+						<texturenofocus></texturenofocus>
 						<visible>Integer.IsGreater(Container(4000).NumItems,0)</visible>
 						<bordersize>0</bordersize>
 					</control>
+					<control type="image">
+						<left>0</left>
+						<top>20</top>
+						<width>714</width>
+						<height>460</height>
+						<texture colordiffuse="22ffffff">colors/black.png</texture>
+					</control>					
+					<control type="image">
+						<left>0</left>
+						<top>20</top>
+						<width>714</width>
+						<height>460</height>
+						<texture border="4" colordiffuse="eeffffff">overlays/frame1.png</texture>
+					</control>					
 					<control type="textbox">
 						<left>20</left>
 						<top>40</top>
@@ -489,7 +504,7 @@
 					<control type="grouplist">
 						<orientation>horizontal</orientation>
 						<left>730</left>
-						<top>680</top>
+						<top>688</top>
 						<width>466</width>
 
 						<include content="MediaFlag">
