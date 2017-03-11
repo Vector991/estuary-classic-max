@@ -193,8 +193,8 @@
 			<control type="image">
 				<width>640</width>
 				<height>722</height>
-				<texture colordiffuse="33333333">colors/black.png</texture>
-			</control>		
+				<texture border="4" colordiffuse="eeffffff">overlays/frame1.png</texture>
+			</control>
 			
 			<control type="label">
 				<top>20</top>
@@ -341,13 +341,13 @@
 			<top>100</top>
 			<left>20</left>
 			<width>640</width>
-			<height>722</height>
+			<height>522</height>
 			
 			<control type="image">
 				<width>640</width>
 				<height>522</height>
-				<texture colordiffuse="33333333">colors/black.png</texture>
-			</control>		
+				<texture border="4" colordiffuse="eeffffff">overlays/frame1.png</texture>
+			</control>			
 			
 			<control type="label">
 				<top>20</top>

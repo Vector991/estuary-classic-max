@@ -908,7 +908,7 @@
 										<left>0</left>
 										<width>700</width>
 										<height>770</height>
-										<texture colordiffuse="33333333">colors/black.png</texture>
+										<texture border="4" colordiffuse="eeffffff">overlays/frame1.png</texture>
 									</control>
 
 									<control type="image">
