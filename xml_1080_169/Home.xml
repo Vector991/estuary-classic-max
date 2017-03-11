@@ -119,9 +119,10 @@
 						
 						<control type="button" id="5001">
 							<include>HiddenObject</include>
-							<onfocus>SetFocus(5002)</onfocus>
+							<onfocus>SetFocus(5900)</onfocus>
 							<onfocus condition="Integer.IsGreater(Container(5200).NumItems,0)">SetFocus(5200)</onfocus>
 							<onfocus condition="Integer.IsGreater(Container(5100).NumItems,0)">SetFocus(5100)</onfocus>
+							<visible allowhiddenfocus="true">Control.HasFocus(5001)</visible>
 						</control>
 						
 						<control type="grouplist" id="5002">
@@ -228,9 +229,10 @@
 						<!-- Set initial focus in order of: recently added->in progress->sub menu -->
 						<control type="button" id="6001">
 							<include content="HiddenObject" />
-							<onfocus>SetFocus(6002)</onfocus>
+							<onfocus>SetFocus(6900)</onfocus>
 							<onfocus condition="Integer.IsGreater(Container(6200).NumItems,0)">SetFocus(6200)</onfocus>
 							<onfocus condition="Integer.IsGreater(Container(6100).NumItems,0)">SetFocus(6100)</onfocus>
+							<visible allowhiddenfocus="true">Control.HasFocus(6001)</visible>
 						</control>
 						
 						<control type="grouplist" id="6002">
@@ -336,9 +338,10 @@
 						
 						<control type="button" id="7001">
 							<include content="HiddenObject" />
-							<onfocus>SetFocus(7002)</onfocus>
+							<onfocus>SetFocus(7900)</onfocus>
 							<onfocus condition="Integer.IsGreater(Container(7200).NumItems,0)">SetFocus(7200)</onfocus>
 							<onfocus condition="Integer.IsGreater(Container(7100).NumItems,0)">SetFocus(7100)</onfocus>
+							<visible allowhiddenfocus="true">Control.HasFocus(7001)</visible>
 						</control>
 						
 						<control type="grouplist" id="7002">
@@ -456,8 +459,9 @@
 						
 						<control type="button" id="8001">
 							<include content="HiddenObject" />
-							<onfocus>SetFocus(8002)</onfocus>
+							<onfocus>SetFocus(8900)</onfocus>
 							<onfocus condition="Integer.IsGreater(Container(8100).NumItems,0)">SetFocus(8100)</onfocus>
+							<visible allowhiddenfocus="true">Control.HasFocus(8001)</visible>
 						</control>
 						
 						<control type="grouplist" id="8002">
@@ -578,8 +582,9 @@
 						
 						<control type="button" id="11001">
 							<include content="HiddenObject" />
-							<onfocus>SetFocus(11002)</onfocus>
+							<onfocus>SetFocus(11900)</onfocus>
 							<onfocus condition="Integer.IsGreater(Container(11100).NumItems,0)">SetFocus(11100)</onfocus>
+							<visible allowhiddenfocus="true">Control.HasFocus(11001)</visible>
 						</control>
 						
 						<control type="grouplist" id="11002">
