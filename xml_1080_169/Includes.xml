@@ -1347,7 +1347,7 @@
 
 		<definition>
 			<control type="group">
-				<animation type="Visible">
+				<animation type="VisibleChange">
 					<effect type="fade" start="0" end="100" time="200" />	
 					<effect type="slide" end="310, 0" time="200" />				
 				</animation>
@@ -1357,8 +1357,15 @@
 					<top>0</top>
 					<width>310</width>
 					<height>900</height>
-					<texture colordiffuse="eeeeeeee">colors/black.png</texture>
+					<texture colordiffuse="ff444444">colors/white.png</texture>
 				</control>			
+				<control type="image">
+					<left>0</left>
+					<top>0</top>
+					<width>310</width>
+					<height>900</height>
+					<texture colordiffuse="ffffffff" border="4">overlays/frame1.png</texture>
+				</control>				
 				<control type="label">
 					<top>10</top>
 					<left>10</left>
@@ -1397,9 +1404,16 @@
 					<left>10</left>
 					<width>290</width>
 					<height>170</height>
-					<aspectratio scalediffuse="false" align="left" aligny="top">keep</aspectratio>
+					<aspectratio scalediffuse="false" align="left" aligny="bottom">keep</aspectratio>
 					<texture>$INFO[Container($PARAM[id]).ListItem.Art(fanart)]</texture>
 				</control>
+				<control type="image">
+					<top>145</top>
+					<left>10</left>
+					<width>290</width>
+					<height>170</height>
+					<texture border="0,0,0,20">overlays/frame2.png</texture>
+				</control>				
 				<control type="textbox">
 					<top>330</top>
 					<left>10</left>

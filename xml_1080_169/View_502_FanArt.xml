@@ -34,8 +34,15 @@
 					<texture fallback="DefaultVideo.png" background="true">$VAR[FanartImageVar]</texture>
 					<bordertexture border="22">dialogs/dialog-bg.png</bordertexture>
 					<bordersize>24</bordersize>
-					<aspectratio>scale</aspectratio>
+					<aspectratio aligny="bottom">scale</aspectratio>
 				</control>
+				<control type="image">
+					<top>20</top>
+					<left>916</left>
+					<width>984</width>
+					<height>495</height>
+					<texture border="0,0,0,20">overlays/frame2.png</texture>
+				</control>				
 				
 				<control type="group">
 					<right>40</right>

@@ -128,7 +128,13 @@
 						<fadetime>300</fadetime>
 						<texture background="true" fallback="">$VAR[ListInfoBoxImageVar]</texture>
 					</control>
-					
+					<control type="image">
+						<top>90</top>
+						<left>20</left>
+						<width>560</width>
+						<height>314</height>
+						<texture border="0,0,0,20">overlays/frame2.png</texture>
+					</control>						
 					<control type="image">
 						<left>20</left>
 						<top>424</top>

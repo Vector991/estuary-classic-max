@@ -37,7 +37,7 @@
 				<top>-2</top>
 				<width>562</width>
 				<height>368</height>
-				<aspectratio aligny="top">scale</aspectratio>
+				<aspectratio aligny="bottom">scale</aspectratio>
 				<fadetime>300</fadetime>
 				<texture background="true" fallback="DefaultNoPreview.png">$VAR[ListInfoBoxImageVar]</texture>
 				<bordertexture border="22">dialogs/dialog-bg.png</bordertexture>
@@ -54,6 +54,13 @@
 				<texture>DefaultBackFanart.png</texture>
 				<visible>ListItem.IsParentFolder</visible>
 			</control>
+			<control type="image">
+				<top>20</top>
+				<left>896</left>
+				<width>518</width>
+				<height>324</height>
+				<texture border="0,0,0,20">overlays/frame2.png</texture>
+			</control>			
 			
 			<!-- Poster -->
 			<control type="image">

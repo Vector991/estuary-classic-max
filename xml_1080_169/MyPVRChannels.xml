@@ -390,6 +390,12 @@
 							<height>280</height>
 							<visible>!Player.HasAudio</visible>
 						</control>				
+						<control type="image">
+							<left>20</left>
+							<width>498</width>
+							<height>280</height>
+							<texture border="0,0,0,20">overlays/frame2.png</texture>
+						</control>						
 						
 						<control type="image">
 							<left>20</left>
