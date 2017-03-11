@@ -767,6 +767,7 @@
 							<bordersize>2</bordersize>
 						</control>
 						<control type="group">
+							<visible>String.IsEmpty(ListItem.AddonName)</visible>
 							<top>240</top>
 							<control type="image">
 								<left>20</left>
@@ -1710,7 +1711,7 @@
 						<aligny>center</aligny>
 						<textcolor>button_focus</textcolor>
 					</control>
-				</control>
+				</control>				
 				
 				<control type="grouplist">
 					<visible>Skin.HasSetting(show_mediaflags)</visible>
