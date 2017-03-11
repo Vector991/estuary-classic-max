@@ -355,6 +355,13 @@
 						<bordertexture border="22">dialogs/dialog-bg.png</bordertexture>
 						<bordersize>22</bordersize>
 					</control>						
+					<control type="image">
+						<top>103</top>
+						<left>20</left>
+						<width>540</width>
+						<height>304</height>
+						<texture border="0,0,0,20">overlays/frame2.png</texture>
+					</control>					
 					
 					<control type="group">
 						<visible>!ListItem.IsParentFolder</visible>

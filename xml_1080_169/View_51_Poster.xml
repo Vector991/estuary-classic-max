@@ -196,6 +196,7 @@
 						<width>1486</width>
 						<height>60</height>
 						<label>$VAR[VideoInfoMainLabelVar]</label>
+						<textcolor>button_focus</textcolor>
 						<font>font45_title</font>
 						<shadowcolor>text_shadow</shadowcolor>
 						<aligny>center</aligny>

@@ -63,6 +63,13 @@
 							<aspectratio>scale</aspectratio>
 							<texture>$INFO[ListItem.Thumb]</texture>
 						</control>
+						<control type="image">
+							<top>4</top>
+							<left>4</left>
+							<width>526</width>
+							<height>251</height>
+							<texture border="0,0,0,20">overlays/frame2.png</texture>
+						</control>						
 					</control>					
 					
 					<control type="group">
@@ -104,15 +111,27 @@
 				<left>600</left>
 			
 				<!-- Studio -->
-				<control type="image">
-					<top>20</top>
-					<right>20</right>
-					<width>160</width>
-					<height>130</height>
-					<texture>$INFO[ListItem.Studio,resource://resource.images.studios.white/,.png]</texture>
-					<aspectratio align="right" aligny="top">keep</aspectratio>						
-					<visible>!String.IsEmpty(ListItem.Studio)</visible>
-				</control>	
+				<control type="group">
+					<control type="image">
+						<top>24</top>
+						<right>16</right>
+						<width>160</width>
+						<height>130</height>
+						<texture colordiffuse="black">$INFO[ListItem.Studio,resource://resource.images.studios.white/,.png]</texture>
+						<aspectratio align="right" aligny="top">keep</aspectratio>						
+						<visible>!String.IsEmpty(ListItem.Studio)</visible>
+					</control>	
+
+					<control type="image">
+						<top>20</top>
+						<right>20</right>
+						<width>160</width>
+						<height>130</height>
+						<texture>$INFO[ListItem.Studio,resource://resource.images.studios.white/,.png]</texture>
+						<aspectratio align="right" aligny="top">keep</aspectratio>						
+						<visible>!String.IsEmpty(ListItem.Studio)</visible>
+					</control>	
+				</control>
 				
 				<!-- Title -->
 				<control type="grouplist">
@@ -122,13 +141,12 @@
 					<height>150</height>
 					<itemgap>0</itemgap>
 					<orientation>vertical</orientation>
-					<animation effect="fade" start="0" end="100" time="300" delay="300">WindowOpen</animation>
-					<animation effect="fade" start="100" end="0" time="200">WindowClose</animation>
 					
 					<control type="label">
 						<width>100%</width>
 						<height>80</height>
 						<label>$VAR[VideoInfoMainLabelVar]</label>
+						<textcolor>button_focus</textcolor>
 						<font>font45_title</font>
 						<shadowcolor>text_shadow</shadowcolor>
 						<aligny>center</aligny>
