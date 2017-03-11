@@ -117,7 +117,7 @@
 							<control type="image">
 								<width>$PARAM[menu_item_width]</width>
 								<height>$PARAM[menu_item_height]</height>
-								<texture border="20" colordiffuse="88888888">buttons/button-nofo.png</texture>
+								<texture border="20" colordiffuse="ddffffff">buttons/button-nofo1.png</texture>
 							</control>
 							<control type="image">
 								<width>$PARAM[menu_item_width]</width>
@@ -132,7 +132,7 @@
 							<control type="image">
 								<width>$PARAM[menu_item_width]</width>
 								<height>$PARAM[menu_item_height]</height>
-								<texture border="22" colordiffuse="button_focus">buttons/button-fo.png</texture>
+								<texture border="22" colordiffuse="button_focus">buttons/button-fo1.png</texture>
 							</control>
 							<control type="image">
 								<width>$PARAM[menu_item_width]</width>
