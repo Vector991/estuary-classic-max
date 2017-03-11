@@ -215,7 +215,7 @@
 						<top>490</top>
 						<width>820</width>
 						<height>390</height>
-						<texture colordiffuse="55555555">colors/black.png</texture>
+						<texture border="4" colordiffuse="eeffffff">overlays/frame1.png</texture>
 					</control>
 					<control type="textbox">
 						<left>486</left>
@@ -226,6 +226,18 @@
 						<autoscroll time="8000" delay="2000" repeat="10000">!System.HasModalDialog</autoscroll>
 						<label>$INFO[ListItem.Plot]</label>
 						<shadowcolor>text_shadow</shadowcolor>
+					</control>					
+					<control type="group">
+						<left>486</left>
+						<top>510</top>
+						<visible>ListItem.IsCollection</visible>
+						<include content="InfoList">
+							<param name="height" value="350" />
+							<param name="width" value="780" />
+							<param name="sortby" value="year" />
+							<param name="sortorder" value="descending" />
+							<param name="font" value="font12" />
+						</include>
 					</control>					
 					
 					<control type="grouplist">

@@ -136,7 +136,7 @@
 					<top>100</top>
 					<width>940</width>
 					<height>280</height>
-					<texture colordiffuse="33333333">colors/black.png</texture>
+					<texture border="4" colordiffuse="eeffffff" flipy="true">overlays/frame1.png</texture>
 				</control>
 				<control type="textbox" id="53300">
 					<left>980</left>
@@ -146,6 +146,18 @@
 					<label>$VAR[ShiftRightTextBoxVar]</label>
 					<font>font12</font>
 					<shadowcolor>text_shadow</shadowcolor>
+				</control>				
+				<control type="group">
+					<left>980</left>
+					<top>120</top>
+					<visible>ListItem.IsCollection</visible>
+					<include content="InfoList">
+						<param name="height" value="240" />
+						<param name="width" value="900" />
+						<param name="sortby" value="year" />
+						<param name="sortorder" value="descending" />
+						<param name="font" value="font12" />
+					</include>
 				</control>				
 				
 				<control type="textbox" id="53200">

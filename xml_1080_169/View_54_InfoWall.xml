@@ -118,11 +118,19 @@
 					<texture background="true" fallback="colors/black.png">$VAR[ListInfoBoxImageVar]</texture>
 				</control>
 				
-				<control type="textbox">
+				<control type="image">
 					<left>20</left>
 					<top>336</top>
 					<width>403</width>
-					<height>606</height>
+					<height>586</height>
+					<texture border="4" colordiffuse="eeffffff">overlays/frame1.png</texture>
+				</control>
+				
+				<control type="textbox">
+					<left>40</left>
+					<top>356</top>
+					<width>363</width>
+					<height>546</height>
 					<font>font12</font>
 					<visible>!ListItem.IsCollection</visible>
 					<label>$INFO[ListItem.Tagline,[B],[/B][CR]]$INFO[ListItem.Plot]</label>
@@ -130,9 +138,9 @@
 				</control>
 				
 				<control type="textbox">
-					<left>20</left>
-					<top>336</top>
-					<width>403</width>
+					<left>40</left>
+					<top>356</top>
+					<width>363</width>
 					<height>60</height>
 					<font>font12</font>
 					<label>$LOCALIZE[19055]</label>
@@ -140,22 +148,13 @@
 				</control>
 				
 				<!-- Collection -->
-				<control type="label">
-					<right>130</right>
-					<top>194</top>
-					<width>429</width>
-					<height>338</height>
-					<font>font13_title</font>
-					<label>$INFO[ListItem.Label]</label>
-					<visible>ListItem.IsCollection</visible>
-				</control>				
 				<control type="group">
-					<left>1350</left>
-					<top>244</top>
+					<left>40</left>
+					<top>356</top>
 					<visible>ListItem.IsCollection</visible>
 					<include content="InfoList">
-						<param name="height" value="322" />
-						<param name="width" value="429" />
+						<param name="height" value="546" />
+						<param name="width" value="363" />
 						<param name="sortby" value="year" />
 						<param name="sortorder" value="descending" />
 						<param name="font" value="font12" />

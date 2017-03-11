@@ -48,7 +48,7 @@
 					<top>544</top>
 					<width>984</width>
 					<height>378</height>
-					<texture colordiffuse="88888888">colors/black.png</texture>
+					<texture border="4" colordiffuse="eeffffff">overlays/frame1.png</texture>
 				</control>
 				
 				<control type="textbox">
@@ -59,6 +59,19 @@
 					<font>font12</font>
 					<label>$INFO[ListItem.Plot]</label>
 				</control>
+				
+				<control type="group">
+					<left>936</left>
+					<top>564</top>
+					<visible>ListItem.IsCollection</visible>
+					<include content="InfoList">
+						<param name="height" value="338" />
+						<param name="width" value="944" />
+						<param name="sortby" value="year" />
+						<param name="sortorder" value="descending" />
+						<param name="font" value="font12" />
+					</include>
+				</control>				
 			</control>
 			
 			<control type="group">

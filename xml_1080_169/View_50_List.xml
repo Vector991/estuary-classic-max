@@ -75,7 +75,7 @@
 				<top>364></top>
 				<width>518</width>
 				<height>560</height>
-				<texture colordiffuse="55555555">colors/black.png</texture>
+				<texture border="4" colordiffuse="eeffffff">overlays/frame1.png</texture>
 			</control>
 			
 			<control type="textbox">

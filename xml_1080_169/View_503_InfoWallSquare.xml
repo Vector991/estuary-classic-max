@@ -129,20 +129,26 @@
 						<texture background="true" fallback="">$VAR[ListInfoBoxImageVar]</texture>
 					</control>
 					
-					<control type="textbox">
+					<control type="image">
 						<left>20</left>
 						<top>424</top>
 						<width>560</width>
-						<height>518</height>
+						<height>498</height>
+						<texture border="4" colordiffuse="eeffffff">overlays/frame1.png</texture>
+					</control>					
+					<control type="textbox">
+						<left>40</left>
+						<top>444</top>
+						<width>520</width>
+						<height>458</height>
 						<font>font12</font>
 						<label>$INFO[ListItem.Property(artist_description)]$INFO[ListItem.Property(album_description),[CR]]</label>
 						<autoscroll delay="10000" time="1500" repeat="5000">Skin.HasSetting(autoscroll)</autoscroll>
 					</control>
-					
 					<control type="textbox">
-						<left>20</left>
-						<top>424</top>
-						<width>560</width>
+						<left>40</left>
+						<top>444</top>
+						<width>520</width>
 						<height>60</height>
 						<font>font12</font>
 						<label>$LOCALIZE[19055]</label>
@@ -153,16 +159,16 @@
 				
 				<!-- Collection -->
 				<control type="group">
-					<left>20</left>
-					<top>424</top>
-					<width>560</width>
-					<height>518</height>
+					<left>40</left>
+					<top>444</top>
+					<width>520</width>
+					<height>458</height>
 					<font>font12</font>
 					<visible>ListItem.IsCollection</visible> 
 					
 					<include content="InfoList">
-						<param name="height" value="518" />
-						<param name="width" value="560" />
+						<param name="height" value="458" />
+						<param name="width" value="520" />
 						<param name="sortby" value="year" />
 						<param name="sortorder" value="descending" />
 						<param name="font" value="font12" />
