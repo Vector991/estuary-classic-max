@@ -1404,7 +1404,7 @@
 					<left>10</left>
 					<width>290</width>
 					<height>170</height>
-					<aspectratio scalediffuse="false" align="left" aligny="bottom">keep</aspectratio>
+					<aspectratio aligny="bottom">scale</aspectratio>
 					<texture>$INFO[Container($PARAM[id]).ListItem.Art(fanart)]</texture>
 				</control>
 				<control type="image">
