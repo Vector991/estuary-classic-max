@@ -202,7 +202,9 @@
 				
 				<!-- Movies and TV Shows -->
 				<itemlayout height="360" width="306">
-					<include>InfoWallMusicLayout</include>
+					<include content="InfoWallMusicLayout">
+						<param name="fallback_image" value="DefaultMusicSongs.png" />
+					</include>				
 					<control type="group">
 						<left>131</left>
 						<top>-10</top>

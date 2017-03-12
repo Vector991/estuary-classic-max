@@ -569,7 +569,7 @@
 					<width>580</width>
 					<height>580</height>
 					<aspectratio aligny="center">scale</aspectratio>
-					<texture background="true" fallback="DefaultFolder.png">$VAR[IconWallThumbVar]</texture>
+					<texture background="true">$VAR[IconWallThumbVar]</texture>
 					<bordertexture border="22">dialogs/dialog-bg.png</bordertexture>
 					<bordersize>22</bordersize>					
 					<visible>String.IsEqual(ListItem.dbtype, artist)</visible>
@@ -610,7 +610,7 @@
 					<width>460</width>
 					<height>460</height>
 					<aspectratio aligny="center">scale</aspectratio>
-					<texture background="true" fallback="DefaultFolder.png">$VAR[IconWallThumbVar]</texture>
+					<texture background="true">$VAR[IconWallThumbVar]</texture>
 				</control>	
 				
 				<control type="image">
