@@ -327,6 +327,10 @@
 		<param name="visible" value="true" />
 		<definition>
 			<control type="radiobutton" id="$PARAM[id]">
+				<animation type="Focus">
+					<effect type="zoom" end="108,108" center="auto" time="150" delay="0"/>
+					<effect type="zoom" end="92,92" center="auto" time="150" delay="150"/>
+				</animation>			
 				<width>180</width>
 				<height>120</height>
 				<align>center</align>

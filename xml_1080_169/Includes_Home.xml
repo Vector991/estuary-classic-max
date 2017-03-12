@@ -129,6 +129,11 @@
 					</itemlayout>
 					
 					<focusedlayout width="$PARAM[menu_item_spacing]" height="$PARAM[menu_item_height]">
+						<control type="group">
+							<animation type="Focus">
+								<effect type="zoom" end="108,108" center="auto" time="150" delay="0"/>
+								<effect type="zoom" end="92,92" center="auto" time="150" delay="150"/>
+							</animation>
 							<control type="image">
 								<width>$PARAM[menu_item_width]</width>
 								<height>$PARAM[menu_item_height]</height>
@@ -151,6 +156,7 @@
 								<animation effect="rotate" end="-90" time="0" center="75,55" condition="true">conditional</animation>
 								<visible>!String.IsEmpty(ListItem.Property(subsub))</visible>
 							</control>
+						</control>
 					</focusedlayout>
 					
 					<include content="$PARAM[content_name]" />

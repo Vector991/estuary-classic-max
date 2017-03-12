@@ -40,6 +40,13 @@
 					<aspectratio>scale</aspectratio>
 					<texture fallback="special://skin/extras/home-images/music.jpg">$INFO[ListItem.Art(fanart)]</texture>
 				</control>				
+				<control type="image">
+					<left>20</left>
+					<top>554</top>
+					<width>510</width>
+					<height>285</height>
+					<texture border="0,0,0,20">overlays/frame2.png</texture>
+				</control>
 				
 			</control>
 			
@@ -76,6 +83,7 @@
 						<height>80</height>
 						<label>$INFO[ListItem.Artist]</label>
 						<font>font45_title</font>
+						<textcolor>button_focus</textcolor>
 						<shadowcolor>text_shadow</shadowcolor>
 						<aligny>center</aligny>
 						<visible>String.IsEqual(ListItem.DBType,artist)</visible>
@@ -83,8 +91,9 @@
 					<control type="label">
 						<width>100%</width>
 						<height>80</height>
-						<label>$INFO[ListItem.Album]$INFO[ListItem.Year, ([COLOR grey],[/COLOR])]</label>
+						<label>$INFO[ListItem.Album]$INFO[ListItem.Year, ([COLOR white],[/COLOR])]</label>
 						<font>font45_title</font>
+						<textcolor>button_focus</textcolor>
 						<shadowcolor>text_shadow</shadowcolor>
 						<aligny>center</aligny>
 						<visible>String.IsEqual(ListItem.DBType,album)</visible>
@@ -92,8 +101,9 @@
 					<control type="label">
 						<width>100%</width>
 						<height>80</height>
-						<label>[COLOR button_focus]$INFO[ListItem.TrackNumber]. [/COLOR]$INFO[ListItem.Title]</label>
+						<label>[COLOR white]$INFO[ListItem.TrackNumber]. [/COLOR]$INFO[ListItem.Title]</label>
 						<font>font45_title</font>
+						<textcolor>button_focus</textcolor>
 						<shadowcolor>text_shadow</shadowcolor>
 						<aligny>center</aligny>
 						<visible>String.IsEqual(ListItem.DBType,song) + !Window.IsActive(musicinformation)</visible>
@@ -141,16 +151,23 @@
 						<width>754</width>
 						<height>795</height>
 						<label></label>
+						<texturenofocus></texturenofocus>
 						<onclick>SetProperty(TextViewer_Header,$LOCALIZE[21821],home)</onclick>
 						<onclick>SetProperty(TextViewer_Text,$ESCVAR[MusicInfoTextboxVar],home)</onclick>
 						<onclick>ActivateWindow(1102)</onclick>
 					</control>
 					
-					<control type="label" id="400">
-						<left>20</left>
+					<control type="image">
 						<top>20</top>
+						<width>714</width>
+						<height>755</height>					
+						<texture border="4" colordiffuse="eeffffff">overlays/frame1.png</texture>
+					</control>
+					<control type="textbox" id="400">
+						<left>20</left>
+						<top>40</top>
 						<width>674</width>
-						<height>735</height>
+						<height>715</height>
 						<wrapmultiline>true</wrapmultiline>
 						<font>font13</font>
 						<label>$VAR[MusicInfoTextboxVar]</label>
@@ -158,7 +175,7 @@
 					</control>					
 					<control type="textbox">
 						<left>20</left>
-						<top>20</top>
+						<top>40</top>
 						<width>674</width>
 						<height>60</height>
 						<font>font13</font>
