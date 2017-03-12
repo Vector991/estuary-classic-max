@@ -559,57 +559,91 @@
 	<include name="55_ThumbInfoPanel">
 		<control type="group">
 			<visible>Container.Content(artists) | Container.Content(albums) | Container.Content(songs) </visible>
-
-			<control type="image">
-				<left>0</left>
-				<top>83</top>
-				<width>580</width>
-				<height>580</height>
-				<aspectratio aligny="center">scale</aspectratio>
-				<texture background="true" fallback="DefaultFolder.png">$VAR[IconWallThumbVar]</texture>
-				<visible>!String.IsEqual(ListItem.dbtype, artist) + !String.IsEqual(ListItem.dbtype, album) + !String.IsEqual(ListItem.dbtype, song)</visible>
-			</control>	
-			<control type="image">
-				<left>0</left>
-				<top>83</top>
-				<width>580</width>
-				<height>580</height>
-				<aspectratio aligny="center">scale</aspectratio>
-				<texture background="true" fallback="DefaultFolder.png">$VAR[IconWallThumbVar]</texture>
-				<bordertexture border="22">dialogs/dialog-bg.png</bordertexture>
-				<bordersize>22</bordersize>					
-				<visible>String.IsEqual(ListItem.dbtype, artist) | String.IsEqual(ListItem.dbtype, song)</visible>
-			</control>	
-			<control type="image">
-				<left>0</left>
-				<top>83</top>
-				<width>380</width>
-				<height>380</height>
-				<aspectratio aligny="center">scale</aspectratio>
-				<texture background="true" fallback="DefaultFolder.png">$VAR[IconWallThumbVar]</texture>
-				<bordertexture border="22">dialogs/dialog-bg.png</bordertexture>
-				<bordersize>22</bordersize>					
-				<visible>String.IsEqual(ListItem.dbtype, album)</visible>
-			</control>	
 			
-			<control type="image">
-				<left>20</left>
-				<top>660</top>
-				<width>540</width>
-				<height>345</height>
-				<texture border="4" colordiffuse="eeffffff">overlays/frame1.png</texture>
-				<visible>!String.IsEqual(ListItem.DBType,album)</visible>
-			</control>			
-			<control type="textbox">
-				<left>40</left>
-				<top>680</top>
-				<width>500</width>
-				<height>305</height>
-				<font>font12</font>
-				<autoscroll time="3000" delay="7000" repeat="5000">!System.HasModalDialog</autoscroll>
-				<label fallback="19055">$VAR[ListBoxInfoVar]</label>
-				<visible>!String.IsEqual(ListItem.DBType,album)</visible>
+			<control type="group">
+				<visible>String.IsEqual(ListItem.dbtype, artist)</visible>
+				
+				<control type="image">
+					<left>0</left>
+					<top>83</top>
+					<width>580</width>
+					<height>580</height>
+					<aspectratio aligny="center">scale</aspectratio>
+					<texture background="true" fallback="DefaultFolder.png">$VAR[IconWallThumbVar]</texture>
+					<bordertexture border="22">dialogs/dialog-bg.png</bordertexture>
+					<bordersize>22</bordersize>					
+					<visible>String.IsEqual(ListItem.dbtype, artist)</visible>
+				</control>	
+				
+				<control type="image">
+					<left>20</left>
+					<top>670</top>
+					<width>540</width>
+					<height>335</height>
+					<texture border="4" colordiffuse="eeffffff">overlays/frame1.png</texture>
+				</control>			
+				<control type="textbox">
+					<left>40</left>
+					<top>690</top>
+					<width>500</width>
+					<height>295</height>
+					<font>font12</font>
+					<autoscroll time="3000" delay="1500" repeat="5000">!System.HasModalDialog</autoscroll>
+					<label fallback="19055">$VAR[ListBoxInfoVar]</label>
+				</control>
 			</control>
+			
+			<control type="group">
+				<visible>String.IsEqual(ListItem.dbtype, song) | String.IsEqual(ListItem.dbtype, album)</visible>
+				
+				<control type="image">
+					<left>20</left>
+					<top>100</top>
+					<width>540</width>
+					<height>480</height>
+					<texture>frame/cd.png</texture>
+				</control>
+				
+				<control type="image">
+					<left>85</left>
+					<top>110</top>
+					<width>460</width>
+					<height>460</height>
+					<aspectratio aligny="center">scale</aspectratio>
+					<texture background="true" fallback="DefaultFolder.png">$VAR[IconWallThumbVar]</texture>
+				</control>	
+				
+				<control type="image">
+					<left>20</left>
+					<top>600</top>				
+					<width>540</width>
+					<height>405</height>
+					<texture border="4" colordiffuse="eeffffff">overlays/frame1.png</texture>
+					<visible>String.IsEqual(ListItem.DBType,album)</visible>
+				</control>			
+				
+				<control type="group">
+					<left>40</left>
+					<top>620</top>
+					<width>500</width>
+					<height>365</height>				
+
+					<control type="group">
+						<include content="InfoList">
+							<param name="list_id" value="43000" />
+							<param name="width" value="500" />
+							<param name="height" value="365" />
+							<param name="sortby" value="track" />
+							<param name="sortorder" value="ascending" />
+							<param name="item_label" value="$INFO[ListItem.Duration,[COLOR button_focus],[/COLOR]  -  ]$INFO[ListItem.Label]" />
+							<param name="font" value="font12" />
+							<param name="visible" value="String.IsEqual(ListItem.DBType,album)" />
+						</include>
+					</control>
+				</control>				
+			</control>
+			
+
 			
 			<!-- Player controls for quick pause/stop/next -->
 			<control type="group" id="55999">
@@ -695,34 +729,7 @@
 				
 			</control>
 			
-			<control type="image">
-				<left>20</left>
-				<top>463</top>				
-				<width>540</width>
-				<height>542</height>
-				<texture border="4" colordiffuse="eeffffff">overlays/frame1.png</texture>
-				<visible>String.IsEqual(ListItem.DBType,album)</visible>
-			</control>			
-			
-			<control type="group">
-				<left>40</left>
-				<top>483</top>
-				<width>500</width>
-				<height>502</height>				
 
-				<control type="group">
-					<include content="InfoList">
-						<param name="list_id" value="43000" />
-						<param name="width" value="500" />
-						<param name="height" value="502" />
-						<param name="sortby" value="track" />
-						<param name="sortorder" value="ascending" />
-						<param name="item_label" value="$INFO[ListItem.Duration,[COLOR button_focus],[/COLOR]  -  ]$INFO[ListItem.Label]" />
-						<param name="font" value="font12" />
-						<param name="visible" value="String.IsEqual(ListItem.DBType,album)" />
-					</include>
-				</control>
-			</control>
 			
 			<!-- Codec Info -->
 				
