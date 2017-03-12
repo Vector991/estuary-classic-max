@@ -114,9 +114,16 @@
 					<top>90</top>
 					<width>403</width>
 					<height>226</height>
-					<aspectratio aligny="top">scale</aspectratio>
+					<aspectratio aligny="bottom">scale</aspectratio>
 					<fadetime>300</fadetime>
 					<texture background="true" fallback="colors/black.png">$VAR[ListInfoBoxImageVar]</texture>
+				</control>
+				<control type="image">
+					<left>20</left>
+					<top>90</top>
+					<width>403</width>
+					<height>226</height>
+					<texture border="4">overlays/frame2.png</texture>
 				</control>
 				
 				<control type="image">
@@ -126,7 +133,6 @@
 					<height>586</height>
 					<texture border="4" colordiffuse="eeffffff">overlays/frame1.png</texture>
 				</control>
-				
 				<control type="textbox">
 					<left>40</left>
 					<top>356</top>
