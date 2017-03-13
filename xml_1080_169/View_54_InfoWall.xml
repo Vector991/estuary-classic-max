@@ -232,7 +232,7 @@
 				<preloaditems>2</preloaditems>
 				<pagecontrol>53388</pagecontrol>
 				<scrolltime tween="cubic" easing="out">500</scrolltime>
-				<visible>Container.Content(sets) | Container.Content(movies) | Container.Content(tvshows) | Container.Content(seasons) | Container.Content(episodes) | Container.Content(musicvideos)</visible>
+				<visible>Container.Content(sets) | Container.Content(movies) | Container.Content(tvshows) | Container.Content(seasons) | Container.Content(musicvideos)</visible>
 				
 				<!-- Movies and TV Shows -->
 				<itemlayout height="340" width="230" condition="Container.Content(movies) | Container.Content(tvshows) | Container.Content(seasons)">
