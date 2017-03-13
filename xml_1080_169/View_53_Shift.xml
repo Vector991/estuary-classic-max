@@ -2,14 +2,14 @@
 <includes>
 	<include name="View_53_Shift">
 		<control type="group">
-			<description>Poster Viewtype</description>
-			
+			<!--
 			<include content="LeftRightArrows">
 				<param name="list_id" value="53" />
 				<param name="left_posx" value="10" />
 				<param name="right_posx" value="1880" />
 				<param name="posy" value="380" />
 			</include>
+			-->
 			
 			<control type="scrollbar" id="5199">
 				<animation effect="fade" start="100" end="50" time="500" pulse="true" condition="Control.HasFocus(5199)">conditional</animation>
@@ -132,28 +132,29 @@
 				<include>OpenClose_Right</include>
 				
 				<control type="image">
-					<left>960</left>
+					<left>20</left>
 					<top>100</top>
-					<width>940</width>
+					<width>1880</width>
 					<height>280</height>
 					<texture border="4" colordiffuse="eeffffff" flipy="true">overlays/frame1.png</texture>
 				</control>
 				<control type="textbox" id="53300">
-					<left>980</left>
+					<left>40</left>
 					<top>120</top>
-					<width>900</width>
+					<width>800</width>
 					<height>240</height>
 					<label>$VAR[ShiftRightTextBoxVar]</label>
 					<font>font12</font>
 					<shadowcolor>text_shadow</shadowcolor>
+					<autoscroll delay="8000" time="1500" repeat="3000">Skin.HasSetting(AutoScroll)</autoscroll>
 				</control>				
 				<control type="group">
-					<left>980</left>
+					<left>40</left>
 					<top>120</top>
 					<visible>ListItem.IsCollection</visible>
 					<include content="InfoList">
 						<param name="height" value="240" />
-						<param name="width" value="900" />
+						<param name="width" value="800" />
 						<param name="sortby" value="year" />
 						<param name="sortorder" value="descending" />
 						<param name="font" value="font12" />
@@ -161,15 +162,33 @@
 				</control>				
 				
 				<control type="textbox" id="53200">
-					<left>40</left>
+					<left>880</left>
 					<top>120</top>
-					<width>880</width>
+					<width>1000</width>
 					<height>240</height>
 					<label>$VAR[ShiftLeftTextBoxVar]</label>
 					<font>font12</font>
 					<shadowcolor>text_shadow</shadowcolor>
 				</control>				
 
+				<control type="image">
+					<top>230</top>
+					<right>40</right>
+					<width>160</width>
+					<height>130</height>
+					<texture fallback="DefaultStudios.png">$INFO[ListItem.Studio,resource://resource.images.studios.coloured/,.png]</texture>
+					<aspectratio align="right" aligny="bottom">keep</aspectratio>						
+					<visible>!String.IsEmpty(ListItem.Studio) + System.HasAddon(resource.images.studios.coloured)</visible>
+				</control>
+				<control type="image">
+					<top>230</top>
+					<right>40</right>
+					<width>160</width>
+					<height>130</height>
+					<texture>$INFO[ListItem.Property(Album_Label),resource://resource.images.recordlabels.white/,.png]</texture>
+					<aspectratio align="right" aligny="bottom">keep</aspectratio>						
+					<visible>!String.IsEmpty(ListItem.Property(Album_Label)) + System.HasAddon(resource.images.recordlabels.white)</visible>
+				</control>
 			</control>
 			
 		</control>
