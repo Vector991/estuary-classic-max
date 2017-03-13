@@ -67,6 +67,16 @@
 					<visible>ControlGroup(9000).HasFocus</visible>
 				</control>	
 				
+				<control type="image">
+					<top>20</top>
+					<right>20</right>
+					<width>160</width>
+					<height>130</height>
+					<texture>$INFO[ListItem.Property(Album_Label),resource://resource.images.recordlabels.white/,.png]</texture>
+					<aspectratio align="right" aligny="top">keep</aspectratio>						
+					<visible>!String.IsEmpty(ListItem.Property(Album_Label)) + System.HasAddon(resource.images.recordlabels.white)</visible>
+				</control>				
+				
 				<!-- Title -->
 				<control type="grouplist">
 					<left>0</left>
