@@ -98,6 +98,20 @@
 		
 			<!-- Left info panel -->
 			<control type="group">
+				<visible>ListItem.IsParentFolder</visible>
+				
+				<control type="image">
+					<left>40</left>
+					<bottom>90</bottom>
+					<width>420</width>
+					<height>420</height>
+					<aspectratio aligny="bottom">keep</aspectratio>
+					<texture colordiffuse="66ffffff">max/headphone.png</texture>
+					<visible>Container.Content(albums) | Container.Content(artists)</visible>
+				</control>	
+			</control>
+			
+			<control type="group">
 				<include>OpenClose_Left</include>
 				<visible>!ListItem.IsParentFolder</visible>
 				<include>Visible_Left</include>

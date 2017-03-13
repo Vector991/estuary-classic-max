@@ -111,7 +111,7 @@
 				<left>1452</left>
 				<width>446</width>
 				<height>150</height>
-				<texture>$INFO[ListItem.Studio,resource://resource.images.studios.coloured/,.png]</texture>
+				<texture fallback="">$INFO[ListItem.Studio,resource://resource.images.studios.coloured/,.png]</texture>
 				<aspectratio align="center" aligny="bottom">keep</aspectratio>						
 				<visible>!String.IsEmpty(ListItem.Studio) + System.HasAddon(resource.images.studios.coloured)</visible>
 			</control>			
@@ -204,7 +204,7 @@
 						<height>40</height>
 						<font>Font12</font>
 						<align>right</align>
-						<label>$INFO[ListItem.Property(TotalSeasons)] Season(s)</label>
+						<label>$INFO[ListItem.Property(TotalSeasons)] $LOCALIZE[36905]</label>
 						<visible>Container.Content(tvshows)</visible>
 					</control>
 					<control type="label">
@@ -213,7 +213,7 @@
 						<height>40</height>
 						<font>Font12</font>
 						<align>right</align>
-						<label>$INFO[ListItem.Property(WatchedEpisodes)] / $INFO[ListItem.Property(TotalEpisodes)] Episodes</label>
+						<label>$INFO[ListItem.Property(WatchedEpisodes)] / $INFO[ListItem.Property(TotalEpisodes)] $LOCALIZE[20453]</label>
 						<visible>Container.Content(seasons)</visible>
 					</control>					
 					<control type="label">
