@@ -52,14 +52,36 @@
 				<texture border="0,0,0,20">overlays/frame2.png</texture>
 				<visible>!ListItem.IsParentFolder</visible>
 			</control>			
-			<control type="image">
-				<left>896</left>
-				<top>20</top>
-				<width>518</width>
-				<height>324</height>
-				<aspectratio aligny="top">keep</aspectratio>
-				<texture>DefaultFolderBack.png</texture>
+			
+			<control type="group">
 				<visible>ListItem.IsParentFolder</visible>
+				
+				<control type="image">
+					<left>896</left>
+					<top>20</top>
+					<width>518</width>
+					<height>324</height>
+					<aspectratio aligny="top">keep</aspectratio>
+					<texture>DefaultFolderBack.png</texture>
+				</control>
+				<control type="image">
+					<right>40</right>
+					<bottom>90</bottom>
+					<width>230</width>
+					<height>620</height>
+					<aspectratio aligny="bottom">keep</aspectratio>
+					<texture colordiffuse="66ffffff">max/tvremote.png</texture>
+					<visible>Container.Content(tvshows) | Container.Content(seasons) | Container.Content(episodes)</visible>
+				</control>	
+				<control type="image">
+					<right>40</right>
+					<bottom>90</bottom>
+					<width>600</width>
+					<height>400</height>
+					<aspectratio aligny="bottom">keep</aspectratio>
+					<texture colordiffuse="66ffffff">max/moviepopcorn.png</texture>
+					<visible>Container.Content(movies) | Container.Content(sets)</visible>
+				</control>				
 			</control>
 			
 			<!-- Poster -->
@@ -70,7 +92,7 @@
 				<height>714</height>
 				<fadetime>200</fadetime>
 				<aspectratio>scale</aspectratio>
-				<texture fallback="DefaultVideo.png" background="true">$VAR[PosterVar]</texture>
+				<texture background="true">$VAR[PosterVar]</texture>
 				<bordertexture border="22">dialogs/dialog-bg.png</bordertexture>
 				<bordersize>22</bordersize>				
 				<visible>!ListItem.IsParentFolder</visible>
