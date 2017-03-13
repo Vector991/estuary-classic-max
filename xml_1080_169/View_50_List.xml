@@ -45,22 +45,22 @@
 				<visible>!ListItem.IsParentFolder</visible>
 			</control>
 			<control type="image">
-				<left>896</left>
-				<top>20</top>
-				<width>518</width>
-				<height>324</height>
-				<aspectratio aligny="top">scale</aspectratio>
-				<fadetime>300</fadetime>
-				<texture>DefaultBackFanart.png</texture>
-				<visible>ListItem.IsParentFolder</visible>
-			</control>
-			<control type="image">
 				<top>20</top>
 				<left>896</left>
 				<width>518</width>
 				<height>324</height>
 				<texture border="0,0,0,20">overlays/frame2.png</texture>
+				<visible>!ListItem.IsParentFolder</visible>
 			</control>			
+			<control type="image">
+				<left>896</left>
+				<top>20</top>
+				<width>518</width>
+				<height>324</height>
+				<aspectratio aligny="top">keep</aspectratio>
+				<texture>DefaultFolderBack.png</texture>
+				<visible>ListItem.IsParentFolder</visible>
+			</control>
 			
 			<!-- Poster -->
 			<control type="image">
@@ -75,72 +75,142 @@
 				<bordersize>22</bordersize>				
 				<visible>!ListItem.IsParentFolder</visible>
 			</control>
-			
-			<!-- Plot -->
+			<control type="label">
+				<left>1454</left>
+				<top>700</top>
+				<width>446</width>
+				<height>200</height>					
+				<height>40</height>
+				<font>Font12</font>
+				<label>$INFO[ListItem.Genre]</label>
+			</control>			
 			<control type="image">
-				<left>896</left>
-				<top>364></top>
-				<width>518</width>
-				<height>560</height>
-				<texture border="4" colordiffuse="eeffffff">overlays/frame1.png</texture>
-			</control>
-			
-			<control type="textbox">
-				<left>916</left>
-				<top>384</top>
-				<width>478</width>
-				<height>520</height>
-				<font>font12</font>
-				<visible>!ListItem.IsCollection</visible>
-				<label>$INFO[ListItem.Tagline,[B],[/B][CR]]$INFO[ListItem.Plot]</label>
-				<autoscroll delay="8000" time="2000" repeat="10000">Skin.HasSetting(autoscroll)</autoscroll>
+				<bottom>75</bottom>
+				<left>1452</left>
+				<width>446</width>
+				<height>150</height>
+				<texture>$INFO[ListItem.Studio,resource://resource.images.studios.coloured/,.png]</texture>
+				<aspectratio align="center" aligny="bottom">keep</aspectratio>						
+				<visible>!String.IsEmpty(ListItem.Studio) + System.HasAddon(resource.images.studios.coloured)</visible>
 			</control>			
 			
-			<!-- Media Info, Flags -->
+			<!-- Plot -->
 			<control type="group">
-				<visible>Skin.HasSetting(show_mediaflags)</visible>
-
-				<control type="grouplist">
-					<orientation>vertical</orientation>
-					<left>1454</left>
-					<top>700</top>
-					<width>446</width>
-					<height>200</height>
+				<visible>!ListItem.IsParentFolder</visible>			
+				
+				<control type="image">
+					<left>896</left>
+					<top>364></top>
+					<width>518</width>
+					<height>560</height>
+					<texture border="4" colordiffuse="eeffffff">overlays/frame1.png</texture>
+				</control>
+				
+				<control type="textbox">
+					<left>916</left>
+					<top>384</top>
+					<width>478</width>
+					<height>400</height>
+					<font>font12</font>
+					<visible>!ListItem.IsCollection</visible>
+					<label>$INFO[ListItem.Tagline,[B],[/B][CR]]$INFO[ListItem.Plot]</label>
+					<autoscroll delay="8000" time="2000" repeat="10000">Skin.HasSetting(autoscroll)</autoscroll>
+				</control>			
+			</control>
+			
+			<!-- Additional video info -->
+			<control type="group">
+				<visible>!ListItem.IsParentFolder</visible>
+				<left>896</left>
+				<top>804</top>
+				
+				<control type="image">
+					<left>20</left>
+					<width>478</width>
+					<height>1</height>
+					<texture colordiffuse="ee888888">colors/white.png</texture>
+				</control>
+				
+				<control type="group">
+					<visible>Container.Content(movies) | Container.Content(episodes)</visible>
+					<top>10</top>
+					<width>518</width>
 					
 					<control type="label">
-						<height>40</height>
-						<font>Font12</font>
-						<label>$INFO[ListItem.Label]</label>
-						<visible>ListItem.IsCollection</visible>
-					</control>					
-					<control type="label">
-						<height>40</height>
-						<font>Font12</font>
-						<label>$INFO[ListItem.Genre]</label>
-					</control>
-					<control type="label">
-						<height>40</height>
-						<font>Font12</font>
-						<label>$INFO[ListItem.Premiered]</label>
-					</control>
-					<control type="label">
+						<left>20</left>
+						<width>230</width>
 						<height>40</height>
 						<font>Font12</font>
 						<label>$INFO[ListItem.Duration] $LOCALIZE[31060]</label>
 						<visible>Integer.IsGreater(ListItem.Duration, 0)</visible>
+					</control>				
+					<control type="label">
+						<right>20</right>
+						<width>230</width>
+						<height>40</height>
+						<font>Font12</font>
+						<align>right</align>
+						<label>$INFO[ListItem.Premiered]</label>
+						<visible>Container.Content(episodes)</visible>
+					</control>
+					<control type="label">
+						<right>20</right>
+						<width>230</width>
+						<height>40</height>
+						<font>Font12</font>
+						<align>right</align>
+						<label>$INFO[ListItem.RatingAndVotes]</label>
+						<visible>Container.Content(movies)</visible>
+					</control>					
+				</control>
+					
+				<control type="group">
+					<visible>Container.Content(tvshows) | Container.Content(seasons)</visible>
+					<top>10</top>
+					<width>518</width>
+					
+					<control type="label">
+						<left>20</left>
+						<width>230</width>
+						<height>40</height>
+						<font>Font12</font>
+						<label>$INFO[ListItem.Premiered]</label>
+					</control>				
+					<control type="label">
+						<right>20</right>
+						<width>230</width>
+						<height>40</height>
+						<font>Font12</font>
+						<align>right</align>
+						<label>$INFO[ListItem.Property(TotalSeasons)] Season(s)</label>
+						<visible>Container.Content(tvshows)</visible>
+					</control>
+					<control type="label">
+						<right>20</right>
+						<width>230</width>
+						<height>40</height>
+						<font>Font12</font>
+						<align>right</align>
+						<label>$INFO[ListItem.Property(WatchedEpisodes)] / $INFO[ListItem.Property(TotalEpisodes)] Episodes</label>
+						<visible>Container.Content(seasons)</visible>
 					</control>					
 					<control type="label">
-						<height>80</height>
-						<font>Font14</font>
+						<left>20</left>
+						<top>40</top>
+						<width>230</width>
+						<height>40</height>
+						<font>Font12</font>
 						<label>$INFO[ListItem.RatingAndVotes]</label>
 					</control>					
 				</control>
 				
 				<control type="grouplist">
+					<visible>Skin.HasSetting(show_mediaflags)</visible>
 					<orientation>horizontal</orientation>
-					<left>1450</left>
-					<top>880</top>
-					<width>466</width>
+					<left>20</left>
+					<top>60</top>
+					<width>478</width>
+					<itemgap>5</itemgap>
 					
 					<include content="MediaFlag">
 						<param name="texture" value="$VAR[ResolutionFlagVar]" />
@@ -154,7 +224,7 @@
 					<include content="MediaFlag">
 						<param name="texture" value="$INFO[ListItem.AudioCodec,flags/audiocodec/,.png]" />
 					</include>
-				</control>			
+				</control>				
 			</control>
 			
 			<!-- Sets -->
