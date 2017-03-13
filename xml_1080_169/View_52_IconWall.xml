@@ -1,24 +1,42 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <includes>
 	<include name="View_52_IconWall">
+		<!--
 		<include content="UpDownArrows">
 			<param name="container_id" value="52" />
 			<param name="visible" value="!System.HasModalDialog" />
 		</include>
-		
+		-->
 		<control type="group">
 			<visible>Control.IsVisible(52)</visible>
 			<include>OpenClose_Right</include>
 			<include>Visible_Right</include>
 			
+			<control type="scrollbar" id="52888">
+				<animation effect="fade" start="100" end="50" time="500" pulse="true" condition="Control.HasFocus(52888)">conditional</animation>
+				<right>20</right>
+				<top>100</top>
+				<width>30</width>
+				<height>905</height>
+				<onleft>52</onleft>
+				<onright>noop</onright>
+				<orientation>vertical</orientation>
+				<texturesliderbackground colordiffuse="eeeeeeee">overlays/overlayfade.png</texturesliderbackground>
+				<texturesliderbar colordiffuse="grey">colors/white.png</texturesliderbar>
+				<texturesliderbarfocus colordiffuse="button_focus">colors/white.png</texturesliderbarfocus> 
+				<textureslidernib>colors/black.png</textureslidernib>
+				<textureslidernibfocus>colors/white.png</textureslidernibfocus>	  
+				<visible>true</visible>
+			</control>			
+			
 			<control type="panel" id="52">
 				<left>100</left>
-				<top>163</top>
+				<top>83</top>
 				<width>1760</width>
-				<height>744</height>
+				<height>942</height>
 				<onleft>9000</onleft>
-				<onright>531</onright>
-				<pagecontrol>531</pagecontrol>
+				<onright>52888</onright>
+				<pagecontrol>52888</pagecontrol>
 				<onup>52</onup>
 				<ondown>52</ondown>
 				<scrolltime tween="cubic" easing="out">500</scrolltime>
