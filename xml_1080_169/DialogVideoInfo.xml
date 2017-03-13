@@ -129,7 +129,7 @@
 						<height>130</height>
 						<texture>$INFO[ListItem.Studio,resource://resource.images.studios.white/,.png]</texture>
 						<aspectratio align="right" aligny="top">keep</aspectratio>						
-						<visible>!String.IsEmpty(ListItem.Studio)</visible>
+						<visible>!String.IsEmpty(ListItem.Studio) + System.HasAddon(resource.images.studios.white)</visible>
 					</control>	
 				</control>
 				
