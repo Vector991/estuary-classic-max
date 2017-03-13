@@ -9,5 +9,5 @@ Initially, I had only wanted to slightly mod the home screen to my liking and pr
 
 
 Screenshots:
-http://imgur.com/a/3EXr4
+http://imgur.com/a/Ol8Bw
 
