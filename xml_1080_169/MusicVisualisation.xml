@@ -3,6 +3,7 @@
 	<defaultcontrol></defaultcontrol>
 	<backgroundcolor>background</backgroundcolor>
 	<controls>
+
 		<control type="visualisation">
 			<include>FullScreenDimensions</include>
 			<visible>Player.HasAudio</visible>
@@ -34,14 +35,14 @@
 		</control>		
 		
 		<control type="group">
-			<visible>String.IsEmpty(Visualisation.Name) + String.IsEmpty(Player.Art(fanart))</visible>
+			<animation effect="fade" start="100" end="bg_alpha" time="0" condition="Player.HasAudio">Conditional</animation>
+			<visible>String.IsEmpty(Player.Art(fanart))</visible>
 
 			<control type="image">
 				<texture colordiffuse="background">$VAR[GlobalFanartVar]</texture>
 				<width>100%</width>
 				<height>100%</height>
 				<aspectratio align="center">scale</aspectratio>
-				<visible>true</visible>
 			</control>
 			<control type="image">
 				<include>FullScreenDimensions</include>
@@ -81,7 +82,7 @@
 					<bottom>40</bottom>
 					<width>400</width>
 					<height>40</height>
-					<label>$ESCINFO[MusicPlayer.Artist]</label>
+					<label>$INFO[MusicPlayer.Artist]</label>
 					<font>font13</font>
 					<fadetime>400</fadetime>
 					<align>center</align>
