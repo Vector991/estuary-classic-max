@@ -27,6 +27,7 @@
 	<constant name="DepthContentPopout">0.10</constant>
 	<constant name="DepthBars">0.12</constant>
 	<constant name="DepthBackground">-0.80</constant>
+	<constant name="DepthBackgroundOveryay">-0.70</constant>
 	<constant name="DepthSideBlade">0.10</constant>
 	<constant name="bg_alpha">79</constant>
 	<expression name="infodialog_active">Window.IsActive(musicinformation) | Window.IsActive(songinformation) | Window.IsActive(movieinformation) | Window.IsActive(addoninformation) | Window.IsActive(pvrguideinfo) | Window.IsActive(pvrrecordinginfo) | Window.IsActive(pictureinfo) | Window.IsVisible(script-script.extendedinfo-DialogVideoInfo.xml) | Window.IsVisible(script-script.extendedinfo-DialogInfo.xml) | Window.IsVisible(script-script.extendedinfo-VideoList.xml)</expression>
@@ -1029,18 +1030,26 @@
 					<aspectratio>scale</aspectratio>
 					<animation effect="fade" start="100" end="bg_alpha" time="0" condition="Player.HasMedia + String.IsEmpty(Window(Videos).Property(PlayingBackgroundMedia))">Conditional</animation>
 					<animation effect="fade" start="0" end="100" time="300" condition="Window.Previous(fullscreenvideo) | Window.Previous(startup)">WindowOpen</animation>
-					<texture fallback="special://skin/extras/backgrounds/SKINDEFAULT.jpg">$VAR[GlobalFanartVar]</texture>
+					<texture colordiffuse="background">$VAR[GlobalFanartVar]</texture>
 				</control>
+				<control type="image">
+					<depth>DepthBackgroundOverlay</depth>
+					<include>FullScreenDimensions</include>
+					<aspectratio>scale</aspectratio>
+					<animation effect="fade" start="100" end="bg_alpha" time="0" condition="Player.HasMedia + String.IsEmpty(Window(Videos).Property(PlayingBackgroundMedia))">Conditional</animation>
+					<animation effect="fade" start="0" end="100" time="300" condition="Window.Previous(fullscreenvideo) | Window.Previous(startup)">WindowOpen</animation>
+					<texture colordiffuse="11FFFFFF">special://skin/extras/backgrounds/overlay1.png</texture>
+				</control>				
 				<!-- Background when no media playing -->
 				<control type="image">
-					<depth>DepthBackground</depth>
+					<depth>DepthBackgroundOverlay</depth>
 					<include>FullScreenDimensions</include>
 					<aspectratio>scale</aspectratio>
 					<fadetime>400</fadetime>
 					<animation effect="fade" start="0" end="100" time="400">WindowOpen</animation>
 					<animation effect="fade" start="100" end="0" time="300">WindowClose</animation>
 					<animation effect="fade" time="400">VisibleChange</animation>
-					<texture background="true" colordiffuse="45FFFFFF">$VAR[MediaFanartVar]</texture>
+					<texture background="true" colordiffuse="55FFFFFF">$VAR[MediaFanartVar]</texture>
 					<visible>!Player.HasMedia | Player.HasAudio | !String.IsEmpty(Window(Videos).Property(PlayingBackgroundMedia))</visible>
 				</control>
 			</control>

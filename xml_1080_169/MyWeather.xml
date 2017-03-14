@@ -25,10 +25,18 @@
 			<animation effect="zoom" center="auto" end="102,102" time="0" condition="Integer.IsGreater(System.StereoscopicMode,0)">conditional</animation>
 			<animation effect="fade" start="100" end="bg_alpha" time="0" condition="Player.HasMedia">Conditional</animation>
 			<animation effect="fade" start="0" end="100" time="300" condition="Window.Previous(fullscreenvideo) | Window.Previous(startup)">WindowOpen</animation>
-			<texture fallback="special://skin/extras/backgrounds/SKINDEFAULT.jpg">$VAR[GlobalFanartVar]</texture>
+			<texture colordiffuse="background">$VAR[GlobalFanartVar]</texture>
 		</control>
+		<control type="image">
+			<depth>DepthBackgroundOverlay</depth>
+			<include>FullScreenDimensions</include>
+			<aspectratio>scale</aspectratio>
+			<animation effect="fade" start="100" end="bg_alpha" time="0" condition="Player.HasMedia + String.IsEmpty(Window(Videos).Property(PlayingBackgroundMedia))">Conditional</animation>
+			<animation effect="fade" start="0" end="100" time="300" condition="Window.Previous(fullscreenvideo) | Window.Previous(startup)">WindowOpen</animation>
+			<texture colordiffuse="11FFFFFF">special://skin/extras/backgrounds/overlay1.png</texture>
+		</control>			
 		<control type="multiimage">
-			<depth>DepthBackground</depth>
+			<depth>DepthBackgroundOverlay</depth>
 			<include>FullScreenDimensions</include>
 			<aspectratio>scale</aspectratio>
 			<fadetime>400</fadetime>
@@ -676,10 +684,11 @@
 				</control>
 			</control>
 		</control>
-		<include content="TopBar">
+		<include content="TopBar" />
+
+		<include content="BottomBar">
 			<param name="breadcrumbs_label" value="$LOCALIZE[8]" />
 			<param name="breadcrumbs_icon" value="icons/settings/weather.png" />
 		</include>
-		<include>BottomBar</include>
 	</controls>
 </window>

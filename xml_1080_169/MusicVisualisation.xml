@@ -29,16 +29,25 @@
 			<fadetime>400</fadetime>
 			<animation effect="fade" start="0" end="100" time="400">WindowOpen</animation>
 			<animation effect="fade" start="100" end="0" time="300">WindowClose</animation>
-			<texture background="true" colordiffuse="44FFFFFF">$INFO[Player.Art(fanart)]</texture>
+			<texture background="true" colordiffuse="66FFFFFF">$INFO[Player.Art(fanart)]</texture>
 			<visible>!String.IsEmpty(Visualisation.Name)</visible>
 		</control>		
 		
-		<control type="image">
-			<texture fallback="special://skin/extras/backgrounds/SKINDEFAULT.jpg">$VAR[GlobalFanartVar]</texture>
-			<width>100%</width>
-			<height>100%</height>
-			<aspectratio align="center">scale</aspectratio>
-			<animation effect="fade" start="100" end="10" time="0" condition="!String.IsEmpty(Player.Art(fanart)) | !String.IsEmpty(Visualisation.Name)">Conditional</animation>
+		<control type="group">
+			<visible>String.IsEmpty(Visualisation.Name) + String.IsEmpty(Player.Art(fanart))</visible>
+
+			<control type="image">
+				<texture colordiffuse="background">$VAR[GlobalFanartVar]</texture>
+				<width>100%</width>
+				<height>100%</height>
+				<aspectratio align="center">scale</aspectratio>
+				<visible>true</visible>
+			</control>
+			<control type="image">
+				<include>FullScreenDimensions</include>
+				<aspectratio>scale</aspectratio>
+				<texture colordiffuse="11FFFFFF">special://skin/extras/backgrounds/overlay1.png</texture>
+			</control>		
 		</control>
 		
 		<control type="group">
