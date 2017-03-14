@@ -1027,10 +1027,7 @@
 				<animation effect="zoom" center="960,540" end="102,102" time="0" condition="Integer.IsGreater(System.StereoscopicMode,0)">conditional</animation>
 				<control type="image">
 					<depth>DepthBackground</depth>
-					<top>-10</top>
-					<left>-20</left>
-					<width>101%</width>
-					<height>101%</height>
+					<include>FullscreenDimensions</include>
 					<aspectratio>scale</aspectratio>
 					<animation effect="fade" start="100" end="bg_alpha" time="0" condition="Player.HasMedia + String.IsEmpty(Window(Videos).Property(PlayingBackgroundMedia))">Conditional</animation>
 					<animation effect="fade" start="0" end="100" time="300" condition="Window.Previous(fullscreenvideo) | Window.Previous(startup)">WindowOpen</animation>

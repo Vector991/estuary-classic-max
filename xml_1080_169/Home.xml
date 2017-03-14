@@ -9,10 +9,7 @@
 		<!-- Show fanart background unless custom global background is enabled -->
 		<control type="multiimage">
 			<depth>DepthBackgroundFanart</depth>
-			<top>-10</top>
-			<left>-20</left>
-			<width>101%</width>
-			<height>101%</height>
+			<include>FullscreenDimensions</include>
 			<aspectratio>scale</aspectratio>
 			<fadetime>400</fadetime>
 			<animation effect="zoom" center="auto" end="102,102" time="0" condition="Integer.IsGreater(System.StereoscopicMode,0)">conditional</animation>
