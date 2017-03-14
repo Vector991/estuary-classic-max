@@ -8,7 +8,7 @@
 		
 		<!-- Show fanart background unless custom global background is enabled -->
 		<control type="multiimage">
-			<depth>DepthBackground</depth>
+			<depth>DepthBackgroundFanart</depth>
 			<include>FullScreenDimensions</include>
 			<aspectratio>scale</aspectratio>
 			<fadetime>400</fadetime>
@@ -16,7 +16,7 @@
 			<animation effect="fade" start="0" end="100" time="200">WindowOpen</animation>
 			<animation effect="fade" start="100" end="0" time="200">WindowClose</animation>
 			<animation effect="fade" time="200">VisibleChange</animation>
-			<imagepath background="true" colordiffuse="55FFFFFF">$VAR[HomeFanartVar]</imagepath>
+			<imagepath background="true" colordiffuse="77FFFFFF">$VAR[HomeFanartVar]</imagepath>
 			<visible>!Player.HasMedia + !Skin.HasSetting(use_custom_bg)</visible>
 		</control>
 
