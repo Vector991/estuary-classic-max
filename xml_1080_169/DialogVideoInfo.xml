@@ -6,6 +6,8 @@
 	<onunload>ClearProperty(infobackground,home)</onunload>
 
 	<controls>
+		<include content="DefaultBackground" />
+		
 		<control type="group">
 			<centerleft>50%</centerleft>
 			<width>1920</width>

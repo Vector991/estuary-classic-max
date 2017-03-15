@@ -547,3 +547,19 @@ msgstr "min"
 msgctxt "#31133"
 msgid "Hide"
 msgstr "Hide"
+
+msgctxt "#31200"
+msgid "In Cinema Movies"
+msgstr ""
+
+msgctxt "#31201"
+msgid "Upcoming Cinema Movies"
+msgstr ""
+
+msgctxt "#31202"
+msgid "Install ExtendedInfo Addon"
+msgstr ""
+
+msgctxt "#31203"
+msgid "Retrieving..."
+msgstr ""

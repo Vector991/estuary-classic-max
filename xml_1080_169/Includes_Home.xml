@@ -182,11 +182,13 @@
 	<!-- Movies widget -->
 	<include name="WidgetListMovies">
 		<param name="item_limit">25</param>
-
+		<param name="panel_width">1580</param>
+		<param name="panel_left">340</param>
+		
 		<definition>
 			<control type="group">
 				<visible>Integer.IsGreater(Container($PARAM[list_id]).NumItems,0) | Container($PARAM[list_id]).IsUpdating</visible>
-				<left>340</left>
+				<left>$PARAM[panel_left]</left>
 				<height>400</height>
 				
 				<control type="label">
@@ -205,7 +207,7 @@
 				
 				<control type="panel" id="$PARAM[list_id]">
 					<top>40</top>
-					<width>1580</width>
+					<width>$PARAM[panel_width]</width>
 					<height>340</height>
 					<scrolltime tween="cubic" easing="out">500</scrolltime>
 					<orientation>horizontal</orientation>

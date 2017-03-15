@@ -1095,6 +1095,26 @@
 					<texture colordiffuse="55555555">colors/white.png</texture>
 				</control>				
 				
+				<control type="group">
+					<visible>Control.HasFocus(9000) + String.IsEqual(Container(9000).ListItem.Property(id), movies)</visible>
+					
+					<control type="image">
+						<left>20</left>
+						<width>40</width>
+						<height>55</height>
+						<aspectratio align="center" aligny="center">keep</aspectratio>
+						<texture>frame/menu-nofo.png</texture>
+					</control>
+					
+					<control type="label">
+						<left>70</left>
+						<width>900</width>
+						<height>55</height>
+						<aligny>center</aligny>
+						<label>$LOCALIZE[31200]</label>
+					</control>
+				</control>
+				
 				<!-- Bread Crumbs -->
 				<control type="grouplist">
 					<width>900</width>

@@ -1,0 +1,78 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<window id="1120">
+	<defaultcontrol always="true">16000</defaultcontrol>
+	<backgroundcolor>background</backgroundcolor>
+	
+	<controls>
+		<include>DefaultBackground</include>
+		
+		<control type="group" id="16000">
+			
+			<control type="button">
+				<visible>!System.HasAddon(script.extendedinfo)</visible>
+				<top>100</top>
+				<width>500</width>
+				<font>font12</font>
+				<height>110</height>
+				<label>$LOCALIZE[31202]</label>
+				<align>center</align>
+				<aligny>center</aligny>
+			</control>
+			
+			<control type="group" id="16001">
+				<defaultcontrol>16100</defaultcontrol>
+				<visible>System.HasAddon(script.extendedinfo)</visible>
+				<top>100</top>
+				<height>925</height>
+				<width>1920</width>
+
+				<control type="grouplist" id="16002">
+					<orientation>vertical</orientation>
+					<height>925</height>
+					<scrolltime tween="cubic" easing="out">350</scrolltime>
+					<usecontrolcoords>true</usecontrolcoords>
+
+					<control type="label">
+						<visible>Container(16100).IsUpdating</visible>
+						<left>20</left>
+						<height>80</height>
+						<font>font13</font>
+						<label>$LOCALIZE[31203]</label>
+					</control>					
+					
+					<include content="WidgetListMovies">
+						<param name="content_path" value="plugin://script.extendedinfo?info=incinemamovies"/>
+						<param name="widget_header" value="$LOCALIZE[31200]"/>
+						<param name="widget_target" value="videos"/>
+						<param name="list_id" value="16100"/>
+						<param name="onup_id" value="noop"/>
+						<param name="ondown_id" value="16200"/>
+						<param name="panel_width" value="1900" />
+						<param name="panel_left" value="20" />
+						<param name="sortby" value="Premiered" />
+						<param name="sortorder" value="descending" />
+					</include>		
+					<include content="WidgetListMovies">
+						<param name="content_path" value="plugin://script.extendedinfo?info=upcomingmovies"/>
+						<param name="widget_header" value="$LOCALIZE[31201]"/>
+						<param name="widget_target" value="videos"/>
+						<param name="list_id" value="16200"/>
+						<param name="onup_id" value="16100"/>
+						<param name="ondown_id" value="noop"/>
+						<param name="panel_width" value="1900" />
+						<param name="panel_left" value="20" />
+						<param name="sortby" value="Premiered" />
+						<param name="sortorder" value="descending" />						
+					</include>			
+				</control>
+				
+			</control>
+		</control>
+		
+		<include content="TopBar" />
+		
+		<include content="BottomBar">
+			<param name="bare_bottom" value="true" />
+		</include>
+	</controls>
+</window>

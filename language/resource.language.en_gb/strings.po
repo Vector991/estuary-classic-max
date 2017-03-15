@@ -763,3 +763,19 @@ msgstr ""
 msgctxt "#31151"
 msgid "Numeric keypad"
 msgstr ""
+
+msgctxt "#31200"
+msgid "In Cinema Movies"
+msgstr ""
+
+msgctxt "#31201"
+msgid "Upcoming Cinema Movies"
+msgstr ""
+
+msgctxt "#31202"
+msgid "Install ExtendedInfo Addon"
+msgstr ""
+
+msgctxt "#31203"
+msgid "Retrieving..."
+msgstr ""

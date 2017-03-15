@@ -1129,6 +1129,8 @@
 							<onright condition="String.IsEqual(Container(9000).ListItem.Property(id),livetv) + Control.IsVisible(12000)">12000</onright>
 							<onright condition="String.IsEqual(Container(9000).ListItem.Property(id),radio) + Control.IsVisible(13000)">13000</onright>
 							<onright condition="String.IsEqual(Container(9000).ListItem.Property(id),weather) + Control.IsVisible(15000)">15000</onright>
+							
+							<onleft condition="String.IsEqual(Container(9000).ListItem.Property(id), movies)">ActivateWindow(1120)</onleft>
 							<onup>701</onup>
 							<ondown>700</ondown>
 							<scrolltime tween="cubic" easing="out">500</scrolltime>
