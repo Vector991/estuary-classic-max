@@ -17,6 +17,7 @@
 				<label>$LOCALIZE[31202]</label>
 				<align>center</align>
 				<aligny>center</aligny>
+				<onclick>InstallAddon(script.extendedinfo)</onclick>
 			</control>
 			
 			<control type="group" id="16001">
