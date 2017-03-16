@@ -409,4 +409,212 @@
 
 		</content>	
 	</include>
+	
+	<include name="VideoInfoDetailsContent">
+		<content>
+			<!--
+			<item>
+				<label>Title</label>
+				<onclick>noop</onclick>
+				<property name="ItemValue">$INFO[ListItem.Title]</property>
+			</item>
+			<item>
+				<label>Year</label>
+				<onclick>noop</onclick>
+				<property name="ItemValue">$INFO[ListItem.Year]</property>
+			</item>			
+			<item>
+				<label>Director</label>
+				<onclick>noop</onclick>
+				<property name="ItemValue">$INFO[ListItem.Director]</property>
+				<visible>!IsEmpty(ListItem.Director)</visible>
+			</item>			
+			<item>
+				<label>Folder Name</label>
+				<onclick>noop</onclick>
+				<property name="ItemValue">$INFO[ListItem.FolderName]</property>
+				<visible>!IsEmpty(ListItem.FolderName)</visible>
+			</item>		
+			<item>
+				<label>Rating</label>
+				<onclick>noop</onclick>
+				<property name="ItemValue">$INFO[ListItem.Rating]</property>
+				<visible>!IsEmpty(ListItem.Rating)</visible>
+			</item>
+			<item>
+				<label>Writer</label>
+				<onclick>noop</onclick>
+				<property name="ItemValue">$INFO[ListItem.Writer]</property>
+				<visible>!IsEmpty(ListItem.Writer)</visible>
+			</item>			
+			<item>
+				<label>Cast</label>
+				<onclick>noop</onclick>
+				<property name="ItemValue">$INFO[ListItem.Cast]</property>
+				<visible>!IsEmpty(ListItem.Cast)</visible>
+			</item>	
+			<item>
+				<label>Cast and Role</label>
+				<onclick>noop</onclick>
+				<property name="ItemValue">$ESCINFO[ListItem.CastAndRole]</property>
+				<visible>!IsEmpty(ListItem.CastAndRole)</visible>
+			</item>
+			<item>
+				<label>Mpaa</label>
+				<onclick>noop</onclick>
+				<property name="ItemValue">$INFO[ListItem.Mpaa]</property>
+				<visible>!IsEmpty(ListItem.Mpaa)</visible>
+			</item>
+			-->
+			<item>
+				<label>Original Title</label>
+				<onclick>noop</onclick>
+				<property name="ItemValue">$INFO[ListItem.OriginalTitle]</property>
+			</item>			
+			<item>
+				<label>Premiered</label>
+				<onclick>noop</onclick>
+				<property name="ItemValue">$INFO[ListItem.Premiered]</property>
+				<visible>!IsEmpty(ListItem.Premiered)</visible>
+			</item>		
+			<item>
+				<label>Genre</label>
+				<onclick>noop</onclick>
+				<property name="ItemValue">$INFO[ListItem.Genre]</property>
+				<visible>!IsEmpty(ListItem.Genre)</visible>
+			</item>
+			<item>
+				<label>Country</label>
+				<onclick>noop</onclick>
+				<property name="ItemValue">$INFO[ListItem.Country]</property>
+				<visible>!IsEmpty(ListItem.Country)</visible>
+			</item>		
+			<item>
+				<label>Filename</label>
+				<onclick>noop</onclick>
+				<property name="ItemValue">$INFO[ListItem.Filename]</property>
+				<visible>!IsEmpty(ListItem.Filename)</visible>
+			</item>		
+			<item>
+				<label>Path</label>
+				<onclick>noop</onclick>
+				<property name="ItemValue">$ESCINFO[ListItem.Path]</property>
+				<visible>!IsEmpty(ListItem.Path)</visible>
+			</item>
+			<item>
+				<label>Folder Path</label>
+				<onclick>noop</onclick>
+				<property name="ItemValue">$ESCINFO[ListItem.FolderPath]</property>
+				<visible>!IsEmpty(ListItem.FolderPath)</visible>
+			</item>				
+			<item>
+				<label>Date</label>
+				<onclick>noop</onclick>
+				<property name="ItemValue">$INFO[ListItem.Date]</property>
+				<visible>!IsEmpty(ListItem.Date)</visible>
+			</item>	
+			<item>
+				<label>Date Added</label>
+				<onclick>noop</onclick>
+				<property name="ItemValue">$INFO[ListItem.DateAdded]</property>
+				<visible>!IsEmpty(ListItem.DateAdded)</visible>
+			</item>
+			<item>
+				<label>Size</label>
+				<onclick>noop</onclick>
+				<property name="ItemValue">$INFO[ListItem.Size]</property>
+				<visible>!IsEmpty(ListItem.Size)</visible>
+			</item>	
+			<item>
+				<label>User Rating</label>
+				<onclick>noop</onclick>
+				<property name="ItemValue">$INFO[ListItem.UserRating]</property>
+				<visible>!IsEmpty(ListItem.UserRating)</visible>
+			</item>		
+			<item>
+				<label>DBType</label>
+				<onclick>noop</onclick>
+				<property name="ItemValue">$INFO[ListItem.DBType]</property>
+				<visible>!IsEmpty(ListItem.DBType)</visible>
+			</item>	
+			<item>
+				<label>DBID</label>
+				<onclick>noop</onclick>
+				<property name="ItemValue">$INFO[ListItem.DBID]</property>
+				<visible>!IsEmpty(ListItem.DBID)</visible>
+			</item>				
+			<item>
+				<label>Top 250</label>
+				<onclick>noop</onclick>
+				<property name="ItemValue">$ESCINFO[ListItem.Top250]</property>
+				<visible>!IsEmpty(ListItem.Top250)</visible>
+			</item>		
+			<item>
+				<label>Trailer</label>
+				<onclick>noop</onclick>
+				<property name="ItemValue">$ESCINFO[ListItem.Trailer]</property>
+				<visible>!IsEmpty(ListItem.Trailer)</visible>
+			</item>	
+			<item>
+				<label>IMDB No.</label>
+				<onclick>noop</onclick>
+				<property name="ItemValue">$INFO[ListItem.IMDBNumber]</property>
+				<visible>!IsEmpty(ListItem.IMDBNumber)</visible>
+			</item>		
+			<item>
+				<label>Percent Played</label>
+				<onclick>noop</onclick>
+				<property name="ItemValue">$INFO[ListItem.PercentPlayed]</property>
+				<visible>!IsEmpty(ListItem.PercentPlayed)</visible>
+			</item>			
+			<item>
+				<label>Play Count</label>
+				<onclick>noop</onclick>
+				<property name="ItemValue">$INFO[ListItem.PlayCount]</property>
+				<visible>!IsEmpty(ListItem.PlayCount)</visible>
+			</item>	
+			<item>
+				<label>Last Played</label>
+				<onclick>noop</onclick>
+				<property name="ItemValue">$INFO[ListItem.LastPlayed]</property>
+				<visible>!IsEmpty(ListItem.LastPlayed)</visible>
+			</item>		
+			<item>
+				<label>Subtitle Language</label>
+				<onclick>noop</onclick>
+				<property name="ItemValue">$INFO[ListItem.SubtitleLanguage]</property>
+				<visible>!IsEmpty(ListItem.SubtitleLanguage)</visible>
+			</item>		
+			<item>
+				<label>Show Status</label>
+				<onclick>noop</onclick>
+				<property name="ItemValue">$INFO[ListItem.Status]</property>
+				<visible>!IsEmpty(ListItem.Status)</visible>
+			</item>
+			<item>
+				<label>Tag</label>
+				<onclick>noop</onclick>
+				<property name="ItemValue">$INFO[ListItem.Tag]</property>
+				<visible>!IsEmpty(ListItem.Tag)</visible>
+			</item>
+			<item>
+				<label>Season</label>
+				<onclick>noop</onclick>
+				<property name="ItemValue">$INFO[ListItem.Season]</property>
+				<visible>!IsEmpty(ListItem.Season)</visible>
+			</item>	
+			<item>
+				<label>Total Seasons</label>
+				<onclick>noop</onclick>
+				<property name="ItemValue">$INFO[ListItem.Property(TotalSeasons)]</property>
+				<visible>!IsEmpty(ListItem.Property(TotalSeasons))</visible>
+			</item>
+			<item>
+				<label>Total Episodes</label>
+				<onclick>noop</onclick>
+				<property name="ItemValue">$INFO[ListItem.Property(TotalEpisodes)]</property>
+				<visible>!IsEmpty(ListItem.Property(TotalEpisodes))</visible>
+			</item>			
+		</content>	
+	</include>
 </includes>
