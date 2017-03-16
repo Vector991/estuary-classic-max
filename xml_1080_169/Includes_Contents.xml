@@ -80,6 +80,11 @@
 				<property name="subsub">tags</property>
 			</item>	
 			<item id="6">
+				<onclick>ActivateWindow(videos,library://video/tvshows/,return)</onclick>
+				<thumb>icons/submenu/media.png</thumb>
+				<label>$LOCALIZE[31074]</label>
+			</item>			
+			<item id="7">
 				<onclick>UpdateLibrary(video)</onclick>
 				<thumb>icons/submenu/updatelibrary.png</thumb>
 				<label>$VAR[VideoLibraryScanLabel]</label>
