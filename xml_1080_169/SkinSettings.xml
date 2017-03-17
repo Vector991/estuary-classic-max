@@ -2,6 +2,8 @@
 <window>
 	<defaultcontrol>9000</defaultcontrol>
 	<backgroundcolor>background</backgroundcolor>
+	<onunload>RunScript(script.skinshortcuts,type=buildxml&amp;mainmenuID=9000)</onunload>
+	
 	<controls>
 		<include>DefaultBackground</include>
 		<control type="multiimage">
@@ -38,7 +40,8 @@
 					<height>700</height>
 					<onleft>10000</onleft>
 					<onright condition="Container(9000).HasFocus(1)">620</onright>
-					<onright condition="Container(9000).HasFocus(2)">611</onright>
+					<onright condition="Container(9000).HasFocus(2) + System.HasAddon(script.skinshortcuts)">630</onright>
+					<onright condition="Container(9000).HasFocus(2) + !System.HasAddon(script.skinshortcuts)">611</onright>
 					<onup>9000</onup>
 					<ondown>9000</ondown>
 					<include content="DefaultSimpleListLayout">
@@ -181,12 +184,32 @@
 					<onup>610</onup>
 					<ondown>610</ondown>
 					<visible>Container(9000).HasFocus(2)</visible>
+					
+					<control type="button" id="630">
+						<width>400</width>
+						<height>100</height>
+						<align>center</align>
+						<aligny>center</aligny>
+						<label>Customize</label>
+						<onclick>RunScript(script.skinshortcuts,type=manage&amp;group=mainmenu)</onclick>
+						<visible>System.HasAddon(script.skinshortcuts)</visible>
+					</control>
+					<control type="button" id="631">
+						<width>400</width>
+						<height>100</height>
+						<align>center</align>
+						<aligny>center</aligny>
+						<label>Reset</label>
+						<onclick>RunScript(script.skinshortcuts,type=resetall)</onclick>
+						<visible>System.HasAddon(script.skinshortcuts)</visible>
+					</control>					
 					<control type="radiobutton" id="611">
 						<label>$LOCALIZE[342]</label>
 						<width>1256</width>
 						<include>DefaultSettingButton</include>
 						<selected>!Skin.HasSetting(HomeMenuNoMovieButton)</selected>
 						<onclick>Skin.ToggleSetting(HomeMenuNoMovieButton)</onclick>
+						<visible>!System.HasAddon(script.skinshortcuts)</visible>
 					</control>
 					<control type="radiobutton" id="612">
 						<label>$LOCALIZE[20343]</label>
@@ -194,6 +217,7 @@
 						<include>DefaultSettingButton</include>
 						<selected>!Skin.HasSetting(HomeMenuNoTVShowButton)</selected>
 						<onclick>Skin.ToggleSetting(HomeMenuNoTVShowButton)</onclick>
+						<visible>!System.HasAddon(script.skinshortcuts)</visible>
 					</control>
 					<control type="radiobutton" id="613">
 						<label>$LOCALIZE[2]</label>
@@ -201,6 +225,7 @@
 						<include>DefaultSettingButton</include>
 						<selected>!Skin.HasSetting(HomeMenuNoMusicButton)</selected>
 						<onclick>Skin.ToggleSetting(HomeMenuNoMusicButton)</onclick>
+						<visible>!System.HasAddon(script.skinshortcuts)</visible>
 					</control>
 					<control type="radiobutton" id="614">
 						<label>$LOCALIZE[24001]</label>
@@ -208,6 +233,7 @@
 						<include>DefaultSettingButton</include>
 						<selected>!Skin.HasSetting(HomeMenuNoProgramsButton)</selected>
 						<onclick>Skin.ToggleSetting(HomeMenuNoProgramsButton)</onclick>
+						<visible>!System.HasAddon(script.skinshortcuts)</visible>
 					</control>
 					<control type="radiobutton" id="615">
 						<label>$LOCALIZE[1]</label>
@@ -215,6 +241,7 @@
 						<include>DefaultSettingButton</include>
 						<selected>!Skin.HasSetting(HomeMenuNoPicturesButton)</selected>
 						<onclick>Skin.ToggleSetting(HomeMenuNoPicturesButton)</onclick>
+						<visible>!System.HasAddon(script.skinshortcuts)</visible>
 					</control>
 					<control type="radiobutton" id="616">
 						<label>$LOCALIZE[3]</label>
@@ -222,6 +249,7 @@
 						<include>DefaultSettingButton</include>
 						<selected>!Skin.HasSetting(HomeMenuNoVideosButton)</selected>
 						<onclick>Skin.ToggleSetting(HomeMenuNoVideosButton)</onclick>
+						<visible>!System.HasAddon(script.skinshortcuts)</visible>
 					</control>
 					<control type="radiobutton" id="617">
 						<label>$LOCALIZE[8]</label>
@@ -229,6 +257,7 @@
 						<include>DefaultSettingButton</include>
 						<selected>!Skin.HasSetting(HomeMenuNoWeatherButton)</selected>
 						<onclick>Skin.ToggleSetting(HomeMenuNoWeatherButton)</onclick>
+						<visible>!System.HasAddon(script.skinshortcuts)</visible>
 					</control>
 					<control type="radiobutton" id="618">
 						<label>$LOCALIZE[19020]</label>
@@ -236,6 +265,7 @@
 						<include>DefaultSettingButton</include>
 						<selected>!Skin.HasSetting(HomeMenuNoTVButton)</selected>
 						<onclick>Skin.ToggleSetting(HomeMenuNoTVButton)</onclick>
+						<visible>!System.HasAddon(script.skinshortcuts)</visible>
 					</control>
 					<control type="radiobutton" id="619">
 						<label>$LOCALIZE[19021]</label>
@@ -243,6 +273,7 @@
 						<include>DefaultSettingButton</include>
 						<selected>!Skin.HasSetting(HomeMenuNoRadioButton)</selected>
 						<onclick>Skin.ToggleSetting(HomeMenuNoRadioButton)</onclick>
+						<visible>!System.HasAddon(script.skinshortcuts)</visible>
 					</control>
 				</control>
 				<control type="textbox" id="6">

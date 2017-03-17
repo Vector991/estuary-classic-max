@@ -2,6 +2,7 @@
 <window>
 	<defaultcontrol>9000</defaultcontrol>
 	<backgroundcolor>background</backgroundcolor>
+	<onload>RunScript(script.skinshortcuts,type=buildxml&amp;mainmenuID=9000)</onload>
 	
 	<controls>
 		<include>DefaultBackground</include>
@@ -26,14 +27,14 @@
 			<animation effect="fade" time="300" start="100" end="0">Focus</animation>
 			
 			<onfocus>SetFocus(2000)</onfocus>
-			<onfocus condition="String.IsEqual(Container(9000).ListItem.Property(id), movies)">SetFocus(5900)</onfocus>
-			<onfocus condition="String.IsEqual(Container(9000).ListItem.Property(id), tvshows)">SetFocus(6900)</onfocus>
-			<onfocus condition="String.IsEqual(Container(9000).ListItem.Property(id), music)">SetFocus(7900)</onfocus>
-			<onfocus condition="String.IsEqual(Container(9000).ListItem.Property(id), addons)">SetFocus(8900)</onfocus>
-			<onfocus condition="String.IsEqual(Container(9000).ListItem.Property(id), video)">SetFocus(11900)</onfocus>
-			<onfocus condition="String.IsEqual(Container(9000).ListItem.Property(id), livetv)">SetFocus(12900)</onfocus>
-			<onfocus condition="String.IsEqual(Container(9000).ListItem.Property(id), radio)">SetFocus(13900)</onfocus>
-			<onfocus condition="String.IsEqual(Container(9000).ListItem.Property(id), weather)">SetFocus(15900)</onfocus>
+			<onfocus condition="String.IsEqual(Container(9000).ListItem.Property(DefaultID), movies)">SetFocus(5900)</onfocus>
+			<onfocus condition="String.IsEqual(Container(9000).ListItem.Property(DefaultID), tvshows)">SetFocus(6900)</onfocus>
+			<onfocus condition="String.IsEqual(Container(9000).ListItem.Property(DefaultID), music)">SetFocus(7900)</onfocus>
+			<onfocus condition="String.IsEqual(Container(9000).ListItem.Property(DefaultID), addons)">SetFocus(8900)</onfocus>
+			<onfocus condition="String.IsEqual(Container(9000).ListItem.Property(DefaultID), video)">SetFocus(11900)</onfocus>
+			<onfocus condition="String.IsEqual(Container(9000).ListItem.Property(DefaultID), livetv)">SetFocus(12900)</onfocus>
+			<onfocus condition="String.IsEqual(Container(9000).ListItem.Property(DefaultID), radio)">SetFocus(13900)</onfocus>
+			<onfocus condition="String.IsEqual(Container(9000).ListItem.Property(DefaultID), weather)">SetFocus(15900)</onfocus>
 			
 			<onfocus condition="Container(5900).HasFocus(2) + Library.HasContent(movies)">SetFocus(5010)</onfocus>
 			<onfocus condition="Container(5900).HasFocus(3) + Library.HasContent(movies)">SetFocus(5020)</onfocus>
@@ -114,7 +115,7 @@
 					<!-- Movies Widgets -->
 					<control type="group" id="5000">
 						<defaultcontrol>5001</defaultcontrol>
-						<visible>String.IsEqual(Container(9000).ListItem.Property(id), movies)</visible>
+						<visible>String.IsEqual(Container(9000).ListItem.Property(DefaultID), movies)</visible>
 						<include>Visible_Right_Delayed</include>
 						
 						<control type="button" id="5001">
@@ -223,7 +224,7 @@
 					
 					<!-- TV Shows Widgets -->
 					<control type="group" id="6000">
-						<visible>String.IsEqual(Container(9000).ListItem.Property(id), tvshows)</visible>
+						<visible>String.IsEqual(Container(9000).ListItem.Property(DefaultID), tvshows)</visible>
 						<include>Visible_Right_Delayed</include>
 						
 						<!-- Set initial focus in order of: recently added->in progress->sub menu -->
@@ -333,7 +334,7 @@
 
 					<!-- Music Widgets -->
 					<control type="group" id="7000">
-						<visible>String.IsEqual(Container(9000).ListItem.Property(id),music)</visible>
+						<visible>String.IsEqual(Container(9000).ListItem.Property(DefaultID),music)</visible>
 						<include>Visible_Right_Delayed</include>
 						
 						<control type="button" id="7001">
@@ -454,7 +455,7 @@
 					
 					<!-- Addon widgets -->
 					<control type="group" id="8000">
-						<visible>String.IsEqual(Container(9000).ListItem.Property(id),addons)</visible>
+						<visible>String.IsEqual(Container(9000).ListItem.Property(DefaultID),addons)</visible>
 						<include>Visible_Right_Delayed</include>
 						
 						<control type="button" id="8001">
@@ -577,7 +578,7 @@
 					
 					<!-- Videos Widgets -->
 					<control type="group" id="11000">
-						<visible>String.IsEqual(Container(9000).ListItem.Property(id),video)</visible>
+						<visible>String.IsEqual(Container(9000).ListItem.Property(DefaultID),video)</visible>
 						<include>Visible_Right_Delayed</include>
 						
 						<control type="button" id="11001">
@@ -643,7 +644,7 @@
 					
 					<!-- TV Widgets -->
 					<control type="group" id="12000">
-						<visible>String.IsEqual(Container(9000).ListItem.Property(id),livetv)</visible>
+						<visible>String.IsEqual(Container(9000).ListItem.Property(DefaultID),livetv)</visible>
 						<include>Visible_Right_Delayed</include>
 						
 						<control type="button" id="12001">
@@ -749,7 +750,7 @@
 					
 					<!-- Radio Widgets -->
 					<control type="group" id="13000">
-						<visible>String.IsEqual(Container(9000).ListItem.Property(id),radio)</visible>
+						<visible>String.IsEqual(Container(9000).ListItem.Property(DefaultID),radio)</visible>
 						<include>Visible_Right_Delayed</include>
 						
 						<control type="button" id="13001">
@@ -851,7 +852,7 @@
 					
 					<!-- Weather Widgets -->
 					<control type="group" id="15000">
-						<visible>String.IsEqual(Container(9000).ListItem.Property(id),weather)</visible>
+						<visible>String.IsEqual(Container(9000).ListItem.Property(DefaultID),weather)</visible>
 						<include>Visible_Right_Delayed</include>
 						
 						<control type="button" id="15001">
@@ -1073,7 +1074,7 @@
 					</control>
 					
 					<control type="group" id="4000">
-						<visible>String.IsEqual(Container(9000).ListItem.Property(id),pictures)</visible>
+						<visible>String.IsEqual(Container(9000).ListItem.Property(DefaultID),pictures)</visible>
 						<include>Visible_Right_Delayed</include>
 						<control type="grouplist" id="4001">
 							<orientation>vertical</orientation>
@@ -1118,19 +1119,19 @@
 							<left>0</left>
 							<top>95</top>
 							<width>320</width>
-							<height>803</height>
+							<height>708</height>
 							<pagecontrol>70</pagecontrol>
 							<onfocus>ClearProperty(listposition,home)</onfocus>
-							<onright condition="String.IsEqual(Container(9000).ListItem.Property(id), movies) + Control.IsVisible(5000)">5000</onright>
-							<onright condition="String.IsEqual(Container(9000).ListItem.Property(id), tvshows) + Control.IsVisible(6000)">6000</onright>
-							<onright condition="String.IsEqual(Container(9000).ListItem.Property(id), music) + Control.IsVisible(7000)">7000</onright>
-							<onright condition="String.IsEqual(Container(9000).ListItem.Property(id),addons) + Control.IsVisible(8000)">8000</onright>
-							<onright condition="String.IsEqual(Container(9000).ListItem.Property(id),video) + Control.IsVisible(11000)">11000</onright>
-							<onright condition="String.IsEqual(Container(9000).ListItem.Property(id),livetv) + Control.IsVisible(12000)">12000</onright>
-							<onright condition="String.IsEqual(Container(9000).ListItem.Property(id),radio) + Control.IsVisible(13000)">13000</onright>
-							<onright condition="String.IsEqual(Container(9000).ListItem.Property(id),weather) + Control.IsVisible(15000)">15000</onright>
+							<onright condition="String.IsEqual(Container(9000).ListItem.Property(DefaultId), movies) + Control.IsVisible(5000)">5000</onright>
+							<onright condition="String.IsEqual(Container(9000).ListItem.Property(DefaultId), tvshows) + Control.IsVisible(6000)">6000</onright>
+							<onright condition="String.IsEqual(Container(9000).ListItem.Property(DefaultID), music) + Control.IsVisible(7000)">7000</onright>
+							<onright condition="String.IsEqual(Container(9000).ListItem.Property(DefaultID),addons) + Control.IsVisible(8000)">8000</onright>
+							<onright condition="String.IsEqual(Container(9000).ListItem.Property(DefaultID),video) + Control.IsVisible(11000)">11000</onright>
+							<onright condition="String.IsEqual(Container(9000).ListItem.Property(DefaultID),livetv) + Control.IsVisible(12000)">12000</onright>
+							<onright condition="String.IsEqual(Container(9000).ListItem.Property(DefaultID),radio) + Control.IsVisible(13000)">13000</onright>
+							<onright condition="String.IsEqual(Container(9000).ListItem.Property(DefaultID),weather) + Control.IsVisible(15000)">15000</onright>
 							
-							<onleft condition="String.IsEqual(Container(9000).ListItem.Property(id), movies)">ActivateWindow(1120)</onleft>
+							<onleft condition="String.IsEqual(Container(9000).ListItem.Property(DefaultID), movies)">ActivateWindow(1120)</onleft>
 							<onup>701</onup>
 							<ondown>700</ondown>
 							<scrolltime tween="cubic" easing="out">500</scrolltime>
@@ -1150,7 +1151,7 @@
 										<top>0</top>
 										<width>73</width>
 										<height>73</height>
-										<texture>$INFO[ListItem.Art(thumb)]</texture>
+										<texture>$INFO[ListItem.icon]</texture>
 									</control>
 									<control type="image">
 										<left>0</left>
@@ -1163,11 +1164,12 @@
 										<left>85</left>
 										<top>-2</top>
 										<height>73</height>
-										<width>200</width>
+										<width>230</width>
 										<aligny>center</aligny>
-										<font>font14</font>
+										<font>font13</font>
 										<label>$INFO[ListItem.Label]</label>
 										<shadowcolor>text_shadow</shadowcolor>
+										<scroll>true</scroll>
 									</control>
 									<animation type="Focus">
 										<effect type="fade" start="35" end="100" delay="0"/>
@@ -1191,9 +1193,9 @@
 									<left>85</left>
 									<top>-2</top>
 									<height>73</height>
-									<width>200</width>
+									<width>230</width>
 									<aligny>center</aligny>
-									<font>font14</font>
+									<font>font13</font>
 									<label>$INFO[ListItem.Label]</label>
 									<shadowcolor>text_shadow</shadowcolor>
 								</control>
@@ -1202,11 +1204,14 @@
 									<top>0</top>
 									<width>73</width>
 									<height>73</height>
-									<texture>$INFO[ListItem.Art(thumb)]</texture>
+									<texture>$INFO[ListItem.icon]</texture>
 								</control>
 							</itemlayout>
 							
-							<include content="HomeMenu" />
+							<content>
+								<include>skinshortcuts-mainmenu</include>
+								<include file="includes_HomeMenu.xml" condition="!System.HasAddon(script.skinshortcuts)">HomeMenu</include>
+							</content>
 						</control>
 						
 					</control>
