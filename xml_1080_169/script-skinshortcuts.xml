@@ -23,8 +23,33 @@
 				<param name="DialogHeaderLabel" value="" />
 				<param name="DialogHeaderId" value="1" />
 			</include>
-			
 
+			<control type="label" id="500">
+				<width>1500</width>
+				<height>60</height>
+				<aligny>center</aligny>
+				<align>center</align>
+				<font>font32_title</font>
+				<label>32071</label>
+			</control>	
+			
+			<control type="button" id="401">
+				<include>HiddenObject</include>
+				<visible>false</visible>
+			</control>
+			<control type="button" id="309">
+				<include>HiddenObject</include>
+				<visible>false</visible>
+			</control>
+			<control type="button" id="310">
+				<include>HiddenObject</include>
+				<visible>false</visible>
+			</control>
+			<control type="button" id="312">
+				<include>HiddenObject</include>
+				<visible>false</visible>
+			</control>
+			
 			<control type="group" id="200">
 				<defaultcontrol>211</defaultcontrol>
 				<left>20</left>
@@ -328,7 +353,6 @@
 					<top>-10</top>
 					<width>100</width>
 					<height>80</height>
-					<onclick>-</onclick>
 					<texturefocus border="24" colordiffuse="button_focus">buttons/button-fo.png</texturefocus>
 					<texturenofocus border="20">buttons/button-nofo.png</texturenofocus>
 					<onleft>noop</onleft>
@@ -347,7 +371,6 @@
 					<top>-10</top>
 					<width>100</width>
 					<height>80</height>
-					<onclick>-</onclick>
 					<texturefocus border="24" colordiffuse="button_focus">buttons/button-fo.png</texturefocus>
 					<texturenofocus border="20">buttons/button-nofo.png</texturenofocus>
 					<onleft>102</onleft>
