@@ -547,4 +547,270 @@
 			</item>			
 		</content>	
 	</include>
+	
+	<include name="MusicInfoDetailsContent">
+		<content>
+			<item>
+				<label>Filename</label>
+				<onclick>noop</onclick>
+				<property name="ItemValue">$INFO[ListItem.Filename]</property>
+				<visible>!IsEmpty(ListItem.Filename)</visible>
+			</item>		
+			<item>
+				<label>Path</label>
+				<onclick>noop</onclick>
+				<property name="ItemValue">$ESCINFO[ListItem.Path]</property>
+				<visible>!IsEmpty(ListItem.Path)</visible>
+			</item>
+			<item>
+				<label>Folder Path</label>
+				<onclick>noop</onclick>
+				<property name="ItemValue">$ESCINFO[ListItem.FolderPath]</property>
+				<visible>!IsEmpty(ListItem.FolderPath)</visible>
+			</item>		
+			<item>
+				<label>Genre</label>
+				<onclick>noop</onclick>
+				<property name="ItemValue">$INFO[ListItem.Genre]</property>
+				<visible>!IsEmpty(ListItem.Genre)</visible>
+			</item>
+			<item>
+				<label>Artist</label>
+				<onclick>noop</onclick>
+				<property name="ItemValue">$INFO[ListItem.Artist]</property>
+				<visible>!IsEmpty(ListItem.Artist)</visible>
+			</item>	
+			<item>
+				<label>Album Artist</label>
+				<onclick>noop</onclick>
+				<property name="ItemValue">$INFO[ListItem.AlbumArtist]</property>
+				<visible>!IsEmpty(ListItem.AlbumArtist)</visible>
+			</item>		
+			<item>
+				<label>Country</label>
+				<onclick>noop</onclick>
+				<property name="ItemValue">$INFO[ListItem.Country]</property>
+				<visible>!IsEmpty(ListItem.Country)</visible>
+			</item>
+			<item>
+				<label>Date</label>
+				<onclick>noop</onclick>
+				<property name="ItemValue">$INFO[ListItem.Date]</property>
+				<visible>!IsEmpty(ListItem.Date)</visible>
+			</item>	
+			<item>
+				<label>Date Added</label>
+				<onclick>noop</onclick>
+				<property name="ItemValue">$INFO[ListItem.DateAdded]</property>
+				<visible>!IsEmpty(ListItem.DateAdded)</visible>
+			</item>
+			<item>
+				<label>Size</label>
+				<onclick>noop</onclick>
+				<property name="ItemValue">$INFO[ListItem.Size]</property>
+				<visible>!IsEmpty(ListItem.Size)</visible>
+			</item>	
+			<item>
+				<label>User Rating</label>
+				<onclick>noop</onclick>
+				<property name="ItemValue">$INFO[ListItem.UserRating]</property>
+				<visible>!IsEmpty(ListItem.UserRating)</visible>
+			</item>		
+			<item>
+				<label>DBType</label>
+				<onclick>noop</onclick>
+				<property name="ItemValue">$INFO[ListItem.DBType]</property>
+				<visible>!IsEmpty(ListItem.DBType)</visible>
+			</item>	
+			<item>
+				<label>DBID</label>
+				<onclick>noop</onclick>
+				<property name="ItemValue">$INFO[ListItem.DBID]</property>
+				<visible>!IsEmpty(ListItem.DBID)</visible>
+			</item>			
+			<item>
+				<label>Born</label>
+				<onclick>noop</onclick>
+				<property name="ItemValue">$INFO[ListItem.Property(Artist_Born)]</property>
+				<visible>!IsEmpty(ListItem.Property(Artist_Born))</visible>
+			</item>	
+			<item>
+				<label>Died</label>
+				<onclick>noop</onclick>
+				<property name="ItemValue">$INFO[ListItem.Property(Artist_Died)]</property>
+				<visible>!IsEmpty(ListItem.Property(Artist_Died))</visible>
+			</item>	
+			<item>
+				<label>Artist Formed</label>
+				<onclick>noop</onclick>
+				<property name="ItemValue">$INFO[ListItem.Property(Artist_Formed)]</property>
+				<visible>!IsEmpty(ListItem.Property(Artist_Formed))</visible>
+			</item>
+			<item>
+				<label>Artist Disbanded</label>
+				<onclick>noop</onclick>
+				<property name="ItemValue">$INFO[ListItem.Property(Artist_Disbanded)]</property>
+				<visible>!IsEmpty(ListItem.Property(Artist_Disbanded))</visible>
+			</item>		
+			<item>
+				<label>Artist Years Active</label>
+				<onclick>noop</onclick>
+				<property name="ItemValue">$INFO[ListItem.Property(Artist_YearsActive)]</property>
+				<visible>!IsEmpty(ListItem.Property(Artist_YearsActive))</visible>
+			</item>			
+			<item>
+				<label>Artist Style</label>
+				<onclick>noop</onclick>
+				<property name="ItemValue">$INFO[ListItem.Property(Artist_Style)]</property>
+				<visible>!IsEmpty(ListItem.Property(Artist_Style))</visible>
+			</item>	
+			<item>
+				<label>Artist Genre</label>
+				<onclick>noop</onclick>
+				<property name="ItemValue">$INFO[ListItem.Property(Artist_Genre)]</property>
+				<visible>!IsEmpty(ListItem.Property(Artist_Genre))</visible>
+			</item>		
+			<item>
+				<label>Artist Instrument</label>
+				<onclick>noop</onclick>
+				<property name="ItemValue">$INFO[ListItem.Property(Artist_Instrument)]</property>
+				<visible>!IsEmpty(ListItem.Property(Artist_Instrument))</visible>
+			</item>		
+			<item>
+				<label>Artist Mood</label>
+				<onclick>noop</onclick>
+				<property name="ItemValue">$INFO[ListItem.Property(Artist_Mood)]</property>
+				<visible>!IsEmpty(ListItem.Property(Artist_Mood))</visible>
+			</item>		
+			<item>
+				<label>Album Mood</label>
+				<onclick>noop</onclick>
+				<property name="ItemValue">$INFO[ListItem.Property(Album_Mood)]</property>
+				<visible>!IsEmpty(ListItem.Property(Album_Mood))</visible>
+			</item>	
+			<item>
+				<label>Album Style</label>
+				<onclick>noop</onclick>
+				<property name="ItemValue">$INFO[ListItem.Property(Album_Style)]</property>
+				<visible>!IsEmpty(ListItem.Property(Album_Style))</visible>
+			</item>
+			<item>
+				<label>Album Theme</label>
+				<onclick>noop</onclick>
+				<property name="ItemValue">$INFO[ListItem.Property(Album_Theme)]</property>
+				<visible>!IsEmpty(ListItem.Property(Album_Theme))</visible>
+			</item>			
+			<item>
+				<label>Album Type</label>
+				<onclick>noop</onclick>
+				<property name="ItemValue">$INFO[ListItem.Property(Album_Type)]</property>
+				<visible>!IsEmpty(ListItem.Property(Album_Type))</visible>
+			</item>	
+			<item>
+				<label>Album Label</label>
+				<onclick>noop</onclick>
+				<property name="ItemValue">$INFO[ListItem.Property(Album_Label)]</property>
+				<visible>!IsEmpty(ListItem.Property(Album_Label))</visible>
+			</item>			
+			
+			<item>
+				<label>Audio Codec</label>
+				<onclick>noop</onclick>
+				<property name="ItemValue">$INFO[ListItem.AudioCodec]</property>
+				<visible>!IsEmpty(ListItem.AudioCodec)</visible>
+			</item>
+			<item>
+				<label>Audio Channels</label>
+				<onclick>noop</onclick>
+				<property name="ItemValue">$INFO[ListItem.AudioChannels]</property>
+				<visible>!IsEmpty(ListItem.AudioChannels)</visible>
+			</item>	
+			<item>
+				<label>Audio Language</label>
+				<onclick>noop</onclick>
+				<property name="ItemValue">$INFO[ListItem.AudioLanguage]</property>
+				<visible>!IsEmpty(ListItem.AudioLanguage)</visible>
+			</item>			
+			
+			<item>
+				<label>Composer</label>
+				<onclick>noop</onclick>
+				<property name="ItemValue">$INFO[ListItem.Property(Role.Composer)]</property>
+				<visible>!IsEmpty(ListItem.Property(Role.Composer))</visible>
+			</item>			
+			<item>
+				<label>Arranger</label>
+				<onclick>noop</onclick>
+				<property name="ItemValue">$INFO[ListItem.Property(Role.Arranger)]</property>
+				<visible>!IsEmpty(ListItem.Property(Role.Arranger))</visible>
+			</item>			
+			<item>
+				<label>Conductor</label>
+				<onclick>noop</onclick>
+				<property name="ItemValue">$INFO[ListItem.Property(Role.Conductor)]</property>
+				<visible>!IsEmpty(ListItem.Property(Role.Conductor))</visible>
+			</item>	
+			<item>
+				<label>DJ Mixer</label>
+				<onclick>noop</onclick>
+				<property name="ItemValue">$INFO[ListItem.Property(Role.DJMixer)]</property>
+				<visible>!IsEmpty(ListItem.Property(Role.DJMixer))</visible>
+			</item>			
+			<item>
+				<label>Engineer</label>
+				<onclick>noop</onclick>
+				<property name="ItemValue">$INFO[ListItem.Property(Role.Engineer)]</property>
+				<visible>!IsEmpty(ListItem.Property(Role.Engineer))</visible>
+			</item>	
+			<item>
+				<label>Lyricist</label>
+				<onclick>noop</onclick>
+				<property name="ItemValue">$INFO[ListItem.Property(Role.Lyricist)]</property>
+				<visible>!IsEmpty(ListItem.Property(Role.Lyricist))</visible>
+			</item>		
+			<item>
+				<label>Mixer</label>
+				<onclick>noop</onclick>
+				<property name="ItemValue">$INFO[ListItem.Property(Role.Mixer)]</property>
+				<visible>!IsEmpty(ListItem.Property(Role.Mixer))</visible>
+			</item>	
+			<item>
+				<label>Orchestra</label>
+				<onclick>noop</onclick>
+				<property name="ItemValue">$INFO[ListItem.Property(Role.Orchestra)]</property>
+				<visible>!IsEmpty(ListItem.Property(Role.Orchestra))</visible>
+			</item>		
+			<item>
+				<label>Producer</label>
+				<onclick>noop</onclick>
+				<property name="ItemValue">$INFO[ListItem.Property(Role.Producer)]</property>
+				<visible>!IsEmpty(ListItem.Property(Role.Producer))</visible>
+			</item>		
+			<item>
+				<label>Remixer</label>
+				<onclick>noop</onclick>
+				<property name="ItemValue">$INFO[ListItem.Property(Role.Remixer)]</property>
+				<visible>!IsEmpty(ListItem.Property(Role.Remixer))</visible>
+			</item>			
+			<item>
+				<label>Percent Played</label>
+				<onclick>noop</onclick>
+				<property name="ItemValue">$INFO[ListItem.PercentPlayed]</property>
+				<visible>!IsEmpty(ListItem.PercentPlayed)</visible>
+			</item>			
+			<item>
+				<label>Play Count</label>
+				<onclick>noop</onclick>
+				<property name="ItemValue">$INFO[ListItem.PlayCount]</property>
+				<visible>!IsEmpty(ListItem.PlayCount)</visible>
+			</item>	
+			<item>
+				<label>Last Played</label>
+				<onclick>noop</onclick>
+				<property name="ItemValue">$INFO[ListItem.LastPlayed]</property>
+				<visible>!IsEmpty(ListItem.LastPlayed)</visible>
+			</item>			
+		</content>
+	</include>
+	
 </includes>

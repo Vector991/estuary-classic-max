@@ -48,6 +48,89 @@
 					<texture border="0,0,0,20">overlays/frame2.png</texture>
 				</control>
 				
+				<!-- Extended Detail -->
+				<control type="group" id="888">
+					<width>510</width>
+					<height>1040</height>
+					<left>18</left>
+					<top>18</top>
+					
+					<control type="image">
+						<width>514</width>
+						<height>1040</height>
+						<texture colordiffuse="88ffffff">colors/black.png</texture>
+					</control>					
+					<control type="image">
+						<width>514</width>
+						<height>1040</height>
+						<texture border="4" colordiffuse="eeffffff">overlays/frame1.png</texture>
+					</control>
+					
+					<control type="panel" id="890">
+						<top>20</top>
+						<width>530</width>
+						<height>1000</height>
+						<orientation>vertical</orientation>
+						<onright>9000</onright>
+						
+						<itemlayout width="475" height="70" condition="true">
+							<control type="group">
+								<control type="label">
+									<left>20</left>
+									<width>475</width>
+									<height>30</height>
+									<font>font10</font>
+									<aligny>center</aligny>
+									<label>[COLOR button_focus]$INFO[ListItem.Label]:[/COLOR]</label>
+								</control>
+								<control type="label">
+									<left>20</left>
+									<top>30</top>
+									<width>475</width>
+									<height>30</height>
+									<font>font10</font>
+									<aligny>center</aligny>
+									<label>$INFO[ListItem.Property(ItemValue)]</label>
+								</control>
+							</control>
+						</itemlayout>
+						<focusedlayout width="475" height="70">
+							<control type="image">
+								<top>-20</top>
+								<left>-10</left>
+								<width>535</width>
+								<height>110</height>
+								<texture colordiffuse="button_focus" border="24">buttons/button-fo.png</texture>
+							</control>						
+							<control type="group">
+								<control type="label">
+									<left>20</left>
+									<width>475</width>
+									<height>30</height>
+									<font>font10</font>
+									<aligny>center</aligny>
+									<label>[COLOR button_focus]$INFO[ListItem.Label]:[/COLOR]</label>
+								</control>
+								<control type="label">
+									<left>20</left>
+									<top>30</top>
+									<width>475</width>
+									<height>30</height>
+									<font>font10</font>
+									<aligny>center</aligny>
+									<label>$INFO[ListItem.Property(ItemValue)]</label>
+									<scroll>true</scroll>
+								</control>
+							</control>							
+
+						</focusedlayout>
+						
+						<include content="MusicInfoDetailsContent" />
+					</control>
+
+					<visible allowhiddenfocus="true">Control.HasFocus(890)</visible>
+				</control>
+				
 			</control>
 			
 			<control type="group">
@@ -281,7 +364,7 @@
 					<top>130</top>
 					<width>100%</width>
 					<height>120</height>
-					<onleft>noop</onleft>
+					<onleft>890</onleft>
 					<onright>noop</onright>
 					<onup>noop</onup>
 					<ondown>130</ondown>
