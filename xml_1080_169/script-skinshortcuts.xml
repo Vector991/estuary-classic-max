@@ -3,15 +3,6 @@
 	<allowoverlay>no</allowoverlay>
 	<defaultcontrol always="true">300</defaultcontrol>
 	<include>Animation_DialogPopupOpenClose</include>
-
-	<animation type="WindowOpen" reversible="false">
-		<effect type="zoom" start="80" end="100" center="640,360" easing="out" tween="back" time="300" />
-		<effect type="fade" start="0" end="100" time="300" />
-	</animation>
-	<animation type="WindowClose" reversible="false">
-		<effect type="zoom" start="100" end="80" center="640,360" easing="in" tween="back" time="300" />
-		<effect type="fade" start="100" end="0" time="300" />
-	</animation>
 	
 	<controls>
 		<control type="group">
@@ -26,7 +17,7 @@
 
 			<control type="label" id="500">
 				<width>1500</width>
-				<height>60</height>
+				<height>65</height>
 				<aligny>center</aligny>
 				<align>center</align>
 				<font>font32_title</font>
@@ -339,15 +330,9 @@
 					<top>10</top>
 					<width>400</width>
 					<height>30</height>
+					<font>font13</font>
 				</control>
-				<control type="image">
-					<height>30</height>
-					<width>50</width>
-					<top>16</top>
-					<left>425</left>
-					<texture>overlays/arrowdown.png</texture>
-					<animation effect="rotate" end="180" center="auto" time="0" condition="true">conditional</animation>
-				</control>
+
 				<control type="button" id="102">
 					<left>400</left>
 					<top>-10</top>
@@ -363,9 +348,11 @@
 					<height>30</height>
 					<width>50</width>
 					<top>16</top>
-					<left>515</left>
-					<texture>overlays/arrowdown.png</texture>
-				</control>				
+					<left>425</left>
+					<texture colordiffuse="white">overlays/arrowdown.png</texture>
+					<animation effect="rotate" end="180" center="auto" time="0" condition="true">conditional</animation>
+				</control>
+				
 				<control type="button" id="103">
 					<left>490</left>
 					<top>-10</top>
@@ -376,7 +363,14 @@
 					<onleft>102</onleft>
 					<ondown>111</ondown>
 				</control>
-
+				<control type="image">
+					<height>30</height>
+					<width>50</width>
+					<top>16</top>
+					<left>515</left>
+					<texture colordiffuse="white">overlays/arrowdown.png</texture>
+				</control>
+				
 				<!-- id 111 - List of available plugins -->
 				<control type="list" id="111">
 					<top>80</top>

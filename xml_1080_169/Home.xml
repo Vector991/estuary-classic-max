@@ -1209,7 +1209,7 @@
 							</itemlayout>
 							
 							<content>
-								<include>skinshortcuts-mainmenu</include>
+								<include file="script-skinshortcuts-includes.xml" condition="System.HasAddon(script.skinshortcuts)">skinshortcuts-mainmenu</include>
 								<include file="includes_HomeMenu.xml" condition="!System.HasAddon(script.skinshortcuts)">HomeMenu</include>
 							</content>
 						</control>
