@@ -1006,10 +1006,10 @@
 	<include name="BreadcrumbsLabel">
 		<font>font13</font>
 		<shadowcolor>text_shadow</shadowcolor>
-		<top>7</top>
-		<height>100</height>
+		<height>55</height>
 		<width>auto</width>
 		<align>left</align>
+		<aligny>center</aligny>
 	</include>
 	
 	<include name="DefaultBackground">
@@ -1125,7 +1125,7 @@
 					<visible>!Window.IsActive(Home)</visible>
 					<animation effect="fade" start="0" end="100" time="300">WindowOpen</animation>
 					<animation effect="fade" start="100" end="0" time="200">WindowClose</animation>
-					<animation effect="slide" end="0,12" time="200" reversible="true" condition="String.IsEmpty(Container.SortMethod)">Conditional</animation>
+					<!-- <animation effect="slide" end="0,12" time="200" reversible="true" condition="String.IsEmpty(Container.SortMethod)">Conditional</animation> -->
 					
 					<control type="image">
 						<width>80</width>
@@ -1296,10 +1296,11 @@
 		<control type="group">
 			<animation effect="fade" start="0" end="100" time="400">WindowOpen</animation>
 			<animation effect="fade" start="100" end="0" time="300">WindowClose</animation>
+			
 			<control type="grouplist">
 				<orientation>horizontal</orientation>
 				<align>right</align>
-				<top>1015</top>
+				<top>1030</top>
 				<itemgap>10</itemgap>
 				<right>24</right>
 				<width>1200</width>
@@ -1329,10 +1330,11 @@
 					<texture colordiffuse="button_focus">frame/item-count.png</texture>
 				</control>
 			</control>
+			
 			<control type="grouplist">
 				<orientation>horizontal</orientation>
 				<align>left</align>
-				<top>1015</top>
+				<top>1030</top>
 				<left>24</left>
 				<width>1200</width>
 				<itemgap>10</itemgap>

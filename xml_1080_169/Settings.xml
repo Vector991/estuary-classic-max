@@ -3,6 +3,7 @@
 	<defaultcontrol always="true">9000</defaultcontrol>
 	<controls>
 		<include>DefaultBackground</include>
+		<!--
 		<control type="multiimage">
 			<depth>DepthBackground</depth>
 			<include>FullScreenDimensions</include>
@@ -15,15 +16,13 @@
 			<imagepath background="true" colordiffuse="35FFFFFF">$INFO[Skin.String(HomeFanart.path)]settings$INFO[Skin.String(HomeFanart.ext)]</imagepath>
 			<visible>!Player.HasMedia + !String.IsEmpty(Skin.String(HomeFanart.path))</visible>
 		</control>
-		
-		<include content="TopBar">
-			<param name="breadcrumbs_label" value="$LOCALIZE[5]" />
-			<param name="breadcrumbs_icon" value="icons/settings/settings.png" />
-		</include>
-		
+		-->
+		<include content="TopBar" />
+	
 		<control type="group">
 			<centerleft>50%</centerleft>
 			<width>1920</width>
+
 			<control type="panel" id="9000">
 				<left>92</left>
 				<top>140</top>
@@ -34,6 +33,7 @@
 				<onup>9000</onup>
 				<ondown>9000</ondown>
 				<include>OpenClose_Right</include>
+
 				<itemlayout height="270" width="440">
 					<control type="image">
 						<width>400</width>
@@ -66,6 +66,7 @@
 						<align>center</align>
 					</control>
 				</itemlayout>
+
 				<focusedlayout height="270" width="440">
 					<control type="group">
 						<depth>DepthContentPopout</depth>
@@ -73,8 +74,13 @@
 							<effect type="zoom" center="200,125" start="100" end="108" time="250" tween="sine" />
 						</animation>
 						<animation type="UnFocus" reversible="false">
-							<effect type="zoom" center="200,125" start="108" end="100" time="250" tween="sine" />
+							<effect type="zoom" center="200,125" start="108" end="100" time="150" tween="sine" />
 						</animation>
+						<control type="image">
+							<width>400</width>
+							<height>250</height>
+							<texture border="20">overlays/shadow.png</texture>
+						</control>						
 						<control type="image">
 							<width>400</width>
 							<height>250</height>
@@ -115,6 +121,7 @@
 						</control>
 					</control>
 				</focusedlayout>
+
 				<content>
 					<item>
 						<label>$LOCALIZE[14201]</label>
@@ -171,15 +178,16 @@
 						<onclick>ActivateWindow(filemanager)</onclick>
 						<icon>icons/settings/filemanager.png</icon>
 					</item>
-					<!-- 				<item>
-										<label>$LOCALIZE[24001]</label>
-										<onclick>ActivateWindow(addonbrowser)</onclick>
-										<icon>icons/settings/addons.png</icon>
-									</item> -->
 				</content>
+				
 			</control>
+			
 		</control>
 		
-		<include>BottomBar</include>
+		<include content="BottomBar">
+			<param name="breadcrumbs_label" value="$LOCALIZE[5]" />
+			<param name="breadcrumbs_icon" value="icons/settings/settings.png" />
+		</include>
+		
 	</controls>
 </window>
