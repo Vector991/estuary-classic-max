@@ -538,7 +538,7 @@
 				<top>78</top>
 				<width>584</width>
 				<height>584</height>
-				<aspectratio>scale</aspectratio>
+				<aspectratio>keep</aspectratio>
 				<texture fallback="DefaultFolder.png">$VAR[IconWallThumbVar]</texture>
 				<bordertexture border="22" colordiffuse="88ffffff">dialogs/dialog-bg.png</bordertexture>
 				<bordersize>22</bordersize>
