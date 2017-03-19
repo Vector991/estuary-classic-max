@@ -2,7 +2,8 @@
 <window>
 	<defaultcontrol>9000</defaultcontrol>
 	<backgroundcolor>background</backgroundcolor>
-	<onload>RunScript(script.skinshortcuts,type=buildxml&amp;mainmenuID=9000)</onload>
+	<onload>RunScript(script.skinshortcuts,type=buildxml&amp;mainmenuID=9000&amp;group=mainmenu)</onload>
+	<onload>SetFocus(9000)</onload>
 	
 	<controls>
 		<include>DefaultBackground</include>
@@ -26,7 +27,7 @@
 			<include>HiddenObject</include>
 			<animation effect="fade" time="300" start="100" end="0">Focus</animation>
 			
-			<onfocus>SetFocus(2000)</onfocus>
+			<onfocus>SetFocus(9000)</onfocus>
 			<onfocus condition="String.IsEqual(Container(9000).ListItem.Property(DefaultID), movies)">SetFocus(5900)</onfocus>
 			<onfocus condition="String.IsEqual(Container(9000).ListItem.Property(DefaultID), tvshows)">SetFocus(6900)</onfocus>
 			<onfocus condition="String.IsEqual(Container(9000).ListItem.Property(DefaultID), music)">SetFocus(7900)</onfocus>
@@ -36,13 +37,23 @@
 			<onfocus condition="String.IsEqual(Container(9000).ListItem.Property(DefaultID), radio)">SetFocus(13900)</onfocus>
 			<onfocus condition="String.IsEqual(Container(9000).ListItem.Property(DefaultID), weather)">SetFocus(15900)</onfocus>
 			
-			<onfocus condition="Container(5900).HasFocus(2) + Library.HasContent(movies)">SetFocus(5010)</onfocus>
-			<onfocus condition="Container(5900).HasFocus(3) + Library.HasContent(movies)">SetFocus(5020)</onfocus>
-			<onfocus condition="Container(5900).HasFocus(6) + Library.HasContent(movies)">SetFocus(5030)</onfocus>
-			<onfocus condition="Container(6900).HasFocus(2) + Library.HasContent(tvshows)">SetFocus(6010)</onfocus>
-			<onfocus condition="Container(6900).HasFocus(3) + Library.HasContent(tvshows)">SetFocus(6020)</onfocus>
-			<onfocus condition="Container(6900).HasFocus(5) + Library.HasContent(tvshows)">SetFocus(6030)</onfocus>
-			<onfocus condition="Container(7900).HasFocus(4) + Library.HasContent(music)">SetFocus(7010)</onfocus>
+			<onfocus condition="Control.IsVisible(5000) + String.IsEqual(Container(5900).ListItem.Property(subsub),genres)">SetFocus(5010)</onfocus>
+			<onfocus condition="Control.IsVisible(5000) + String.IsEqual(Container(5900).ListItem.Property(subsub),years)">SetFocus(5020)</onfocus>
+			<onfocus condition="Control.IsVisible(5000) + String.IsEqual(Container(5900).ListItem.Property(subsub),tags)">SetFocus(5030)</onfocus>
+			<onfocus condition="Control.IsVisible(5000) + String.IsEqual(Container(5900).ListItem.Property(subsub),shortcuts) + Control.IsVisible(5040)">SetFocus(5040)</onfocus>
+			
+			<onfocus condition="Control.IsVisible(6000) + String.IsEqual(Container(6900).ListItem.Property(subsub),genres)">SetFocus(6010)</onfocus>
+			<onfocus condition="Control.IsVisible(6000) + String.IsEqual(Container(6900).ListItem.Property(subsub),years)">SetFocus(6020)</onfocus>
+			<onfocus condition="Control.IsVisible(6000) + String.IsEqual(Container(6900).ListItem.Property(subsub),tags)">SetFocus(6030)</onfocus>
+			<onfocus condition="Control.IsVisible(6000) + String.IsEqual(Container(6900).ListItem.Property(subsub),shortcuts) + Control.IsVisible(6040)">SetFocus(6040)</onfocus>
+			
+			<onfocus condition="Control.IsVisible(7000) + String.IsEqual(Container(7900).ListItem.Property(subsub),genres)">SetFocus(7010)</onfocus>
+			<onfocus condition="Control.IsVisible(7000) + String.IsEqual(Container(7900).ListItem.Property(subsub),shortcuts) + Control.IsVisible(7020)">SetFocus(7020)</onfocus>
+			
+			<onfocus condition="Control.IsVisible(8000) + String.IsEqual(Container(8900).ListItem.Property(subsub),shortcuts) + Control.IsVisible(8010)">SetFocus(8010)</onfocus>			
+			<onfocus condition="Control.IsVisible(11000) + String.IsEqual(Container(11900).ListItem.Property(subsub),shortcuts) + Control.IsVisible(11010)">SetFocus(11010)</onfocus>
+			<onfocus condition="Control.IsVisible(12000) + String.IsEqual(Container(12900).ListItem.Property(subsub),shortcuts) + Control.IsVisible(12010)">SetFocus(12010)</onfocus>
+			<onfocus condition="Control.IsVisible(13000) + String.IsEqual(Container(13900).ListItem.Property(subsub),shortcuts) + Control.IsVisible(13010)">SetFocus(13010)</onfocus>
 			
 			<visible allowhiddenfocus="true">Control.HasFocus(1999)</visible>
 		</control>
@@ -151,6 +162,13 @@
 								<param name="panel_id" value="5030" />
 								<param name="content_path" value="videodb://movies/tags/" />
 								<param name="item_width" value="500" />
+								<param name="item_height" value="60" />
+								<param name="onback_id" value="5900" />
+							</include>
+							<include content="ShortcutsTopPanel">
+								<param name="panel_id" value="5040" />
+								<param name="content_include" value="skinshortcuts-group-movies" />
+								<param name="item_width" value="440" />
 								<param name="item_height" value="60" />
 								<param name="onback_id" value="5900" />
 							</include>
@@ -264,6 +282,13 @@
 								<param name="item_height" value="60" />
 								<param name="onback_id" value="6900" />
 							</include>
+							<include content="ShortcutsTopPanel">
+								<param name="panel_id" value="6040" />
+								<param name="content_include" value="skinshortcuts-group-tvshows" />
+								<param name="item_width" value="440" />
+								<param name="item_height" value="60" />
+								<param name="onback_id" value="6900" />
+							</include>
 							
 							<include content="SubMenu">
 								<param name="list_id" value="6900"/>
@@ -356,6 +381,13 @@
 								<param name="panel_id" value="7010" />
 								<param name="content_path" value="musicdb://genres/" />
 								<param name="item_width" value="250" />
+								<param name="item_height" value="60" />
+								<param name="onback_id" value="7900" />
+							</include>
+							<include content="ShortcutsTopPanel">
+								<param name="panel_id" value="7020" />
+								<param name="content_include" value="skinshortcuts-group-num-2" />
+								<param name="item_width" value="440" />
 								<param name="item_height" value="60" />
 								<param name="onback_id" value="7900" />
 							</include>
@@ -471,6 +503,14 @@
 							<scrolltime tween="cubic" easing="out">500</scrolltime>
 							<usecontrolcoords>true</usecontrolcoords>
 							<pagecontrol>2100</pagecontrol>
+							
+							<include content="ShortcutsTopPanel">
+								<param name="panel_id" value="8010" />
+								<param name="content_include" value="skinshortcuts-group-num-24001" />
+								<param name="item_width" value="440" />
+								<param name="item_height" value="60" />
+								<param name="onback_id" value="8900" />
+							</include>
 							
 							<include content="SubMenu">
 								<param name="list_id" value="8900"/>
@@ -595,6 +635,14 @@
 							<usecontrolcoords>true</usecontrolcoords>
 							<pagecontrol>2100</pagecontrol>
 							
+							<include content="ShortcutsTopPanel">
+								<param name="panel_id" value="11010" />
+								<param name="content_include" value="skinshortcuts-group-num-3" />
+								<param name="item_width" value="440" />
+								<param name="item_height" value="60" />
+								<param name="onback_id" value="11900" />
+							</include>
+							
 							<include content="SubMenu">
 								<param name="list_id" value="11900"/>
 								<param name="ondown_id" value="11100"/>
@@ -664,6 +712,14 @@
 							<scrolltime tween="cubic" easing="out">500</scrolltime>
 							<usecontrolcoords>true</usecontrolcoords>
 							<pagecontrol>2100</pagecontrol>
+							
+							<include content="ShortcutsTopPanel">
+								<param name="panel_id" value="12010" />
+								<param name="content_include" value="skinshortcuts-group-num-19020" />
+								<param name="item_width" value="440" />
+								<param name="item_height" value="60" />
+								<param name="onback_id" value="12900" />
+							</include>
 							
 							<include content="SubMenu">
 								<param name="list_id" value="12900"/>
@@ -766,6 +822,14 @@
 							<scrolltime tween="cubic" easing="out">500</scrolltime>
 							<usecontrolcoords>true</usecontrolcoords>
 							<pagecontrol>2100</pagecontrol>
+							
+							<include content="ShortcutsTopPanel">
+								<param name="panel_id" value="13010" />
+								<param name="content_include" value="skinshortcuts-group-num-19021" />
+								<param name="item_width" value="440" />
+								<param name="item_height" value="60" />
+								<param name="onback_id" value="13900" />
+							</include>
 							
 							<include content="SubMenu">
 								<param name="list_id" value="13900"/>

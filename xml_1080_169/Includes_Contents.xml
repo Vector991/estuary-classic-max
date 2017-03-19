@@ -9,6 +9,13 @@
 				<label>$LOCALIZE[20386]</label>
 				<property name="subsub"></property>
 			</item>
+			<item id="9">
+				<onclick>SetFocus(1999)</onclick>
+				<thumb>icons/submenu/shortcuts.png</thumb>
+				<label>Shortcuts</label>
+				<property name="subsub">shortcuts</property>
+				<visible>System.HasAddon(script.skinshortcuts)</visible>
+			</item>			
 			<item id="2">
 				<onclick>ActivateWindow(videos,videodb://movies/genres/,return)</onclick>
 				<thumb>icons/submenu/genres.png</thumb>
@@ -57,6 +64,13 @@
 				<thumb>icons/submenu/recentlyadded.png</thumb>
 				<label>$LOCALIZE[20387]</label>
 			</item>	
+			<item id="9">
+				<onclick>SetFocus(1999)</onclick>
+				<thumb>icons/submenu/shortcuts.png</thumb>
+				<label>Shortcuts</label>
+				<property name="subsub">shortcuts</property>
+				<visible>System.HasAddon(script.skinshortcuts)</visible>
+			</item>			
 			<item id="2">
 				<onclick>ActivateWindow(Videos,videodb://tvshows/genres/,return)</onclick>
 				<thumb>icons/submenu/genres.png</thumb>
@@ -100,6 +114,13 @@
 				<thumb>icons/submenu/recentlyadded.png</thumb>
 				<label>$LOCALIZE[359]</label>
 			</item>			
+			<item id="9">
+				<onclick>SetFocus(1999)</onclick>
+				<thumb>icons/submenu/shortcuts.png</thumb>
+				<label>Shortcuts</label>
+				<property name="subsub">shortcuts</property>
+				<visible>System.HasAddon(script.skinshortcuts)</visible>
+			</item>			
 			<item id="2">
 				<onclick>ActivateWindow(Music, Artists, return)</onclick>
 				<thumb>icons/submenu/artists.png</thumb>
@@ -141,6 +162,13 @@
 	
 	<include name="SubmenuAddons">
 		<content>
+			<item id="9">
+				<onclick>SetFocus(1999)</onclick>
+				<thumb>icons/submenu/shortcuts.png</thumb>
+				<label>Shortcuts</label>
+				<property name="subsub">shortcuts</property>
+				<visible>System.HasAddon(script.skinshortcuts)</visible>
+			</item>		
 			<item id="1">
 				<onclick>ActivateWindow(videos,addons://sources/video/,return)</onclick>
 				<thumb>icons/submenu/videos.png</thumb>
@@ -183,6 +211,13 @@
 	
 	<include name="SubmenuVideos">
 		<content>
+			<item id="9">
+				<onclick>SetFocus(1999)</onclick>
+				<thumb>icons/submenu/shortcuts.png</thumb>
+				<label>Shortcuts</label>
+				<property name="subsub">shortcuts</property>
+				<visible>System.HasAddon(script.skinshortcuts)</visible>
+			</item>		
 			<item id="1">
 				<onclick>ActivateWindow(Videos,Files,return)</onclick>
 				<thumb>icons/submenu/files.png</thumb>
@@ -198,6 +233,13 @@
 	
 	<include name="SubmenuTV">
 		<content>
+			<item id="9">
+				<onclick>SetFocus(1999)</onclick>
+				<thumb>icons/submenu/shortcuts.png</thumb>
+				<label>Shortcuts</label>
+				<property name="subsub">shortcuts</property>
+				<visible>System.HasAddon(script.skinshortcuts)</visible>
+			</item>		
 			<item id="1">
 				<onclick>ActivateWindow(TVChannels)"</onclick>
 				<thumb>icons/submenu/channels.png</thumb>
@@ -233,6 +275,13 @@
 	
 	<include name="SubmenuRadio">
 		<content>
+			<item id="9">
+				<onclick>SetFocus(1999)</onclick>
+				<thumb>icons/submenu/shortcuts.png</thumb>
+				<label>Shortcuts</label>
+				<property name="subsub">shortcuts</property>
+				<visible>System.HasAddon(script.skinshortcuts)</visible>
+			</item>		
 			<item id="1">
 				<onclick>ActivateWindow(RadioChannels)"</onclick>
 				<thumb>icons/submenu/channels.png</thumb>
@@ -268,23 +317,6 @@
 	
 	<include name="SubmenuWeather">
 		<content>
-			<!--
-			<item id="1">
-				<onclick>Action(Weather.Refresh)</onclick>
-				<thumb>icons/submenu/updatelibrary.png</thumb>
-				<label>$LOCALIZE[184]</label>
-			</item>
-			<item id="2">
-				<onclick>Action(Weather.LocationPrevious)</onclick>
-				<thumb>icons/submenu/location-previous.png</thumb>
-				<label>$LOCALIZE[31077]</label>
-			</item>
-			<item id="3">
-				<onclick>Weather.LocationNext</onclick>
-				<thumb>icons/submenu/location-next.png</thumb>
-				<label>$LOCALIZE[31078]</label>
-			</item>		
-			-->
 			<item id="4">
 				<onclick>ActivateWindow(servicesettings,weather)</onclick>
 				<thumb>icons/submenu/weather-settings.png</thumb>

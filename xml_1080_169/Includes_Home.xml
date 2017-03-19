@@ -40,12 +40,12 @@
 	
 	<!-- Submenu top panel -->
 	<include name="SubMenuTopPanel">
-		<control type="group">
+		<control type="group" id="$PARAM[panel_id]99">
 			<animation type="Focus">
 				<effect type="slide" end="0,-300" time="0" />
 				<effect type="slide" end="0, 300" time="200" />
 			</animation>
-			<visible>Control.HasFocus($PARAM[panel_id])</visible>
+			<visible allowhiddenfocus="true">ControlGroup($PARAM[panel_id]99).HasFocus</visible>
 			<height>300</height>
 			<left>340</left>
 			
@@ -89,6 +89,76 @@
 		</control>
 	</include>
 
+	<include name="ShortcutsTopPanel">
+		<control type="group" id="$PARAM[panel_id]99">
+			<animation type="Focus">
+				<effect type="slide" end="0,-300" time="0" />
+				<effect type="slide" end="0, 300" time="200" />
+			</animation>
+			<visible>Control.IsVisible($PARAM[panel_id]) + ControlGroup($PARAM[panel_id]99).HasFocus</visible>
+			<height>300</height>
+			<left>340</left>
+			<width>1580</width>
+			
+			<control type="image">
+				<width>220</width>
+				<height>220</height>
+				<texture>$INFO[Container($PARAM[panel_id]).ListItem.Icon]</texture>
+				<aspectratio align="center" aligny="top">keep</aspectratio>
+			</control>		
+			
+			<control type="button">
+				<width>240</width>
+				<height>220</height>
+				<texturefocus></texturefocus>
+				<texturenofocus></texturenofocus>
+			</control>
+			
+			<control type="panel" id="$PARAM[panel_id]">
+				<left>240</left>
+				<onup>noop</onup>
+				<ondown>$PARAM[onback_id]</ondown>
+				<onback>$PARAM[onback_id]</onback>
+				<width>1340</width>
+				<height>300</height>
+				<autoscroll>false</autoscroll>
+				<!-- <onunfocus>$PARAM[onback_id]</onunfocus> -->
+				<visible>Integer.IsGreater(Container($PARAM[panel_id]).NumItems,0)</visible>
+				
+				<itemlayout width="$PARAM[item_width]" height="$PARAM[item_height]">
+					<control type="label">
+						<left>5%</left>
+						<width>90%</width>
+						<height>100%</height>
+						<aligny>center</aligny>
+						<font>Font12</font>
+						<info>ListItem.label</info>
+					</control>
+				</itemlayout>
+				<focusedlayout width="$PARAM[item_width]" height="$PARAM[item_height]">
+					<control type="image">
+						<width>100%</width>
+						<height>100%</height>
+						<texture colordiffuse="button_focus">colors/white.png</texture>
+					</control>				
+					<control type="label">
+						<left>5%</left>
+						<width>90%</width>
+						<height>100%</height>
+						<aligny>center</aligny>
+						<font>Font12</font>
+						<info>ListItem.label</info>
+					</control>
+				</focusedlayout>					
+				
+				<content sortby="label" sortorder="ascending" target="">
+					<include file="script-skinshortcuts-includes.xml" condition="System.HasAddon(script.skinshortcuts)">$PARAM[content_include]</include>
+				</content>
+			</control>
+
+		</control>
+	</include>
+	
 	<!-- Submenu icon navigation bar-->
 	<include name="SubMenu">
 		<param name="onup_id">1999</param>
@@ -150,10 +220,10 @@
 								<width>$PARAM[menu_item_width]</width>
 								<height>$PARAM[menu_item_height]</height>
 								<aspectratio>center</aspectratio>
-								<texture>frame/menu-nofo.png</texture>
+								<texture>icons/submenu/up.png</texture>
 								<!-- note the center..needs change -->
 								<animation effect="slide" end="24,0" time="200">Focus</animation>
-								<animation effect="rotate" end="-90" time="0" center="75,55" condition="true">conditional</animation>
+
 								<visible>!String.IsEmpty(ListItem.Property(subsub))</visible>
 							</control>
 						</control>

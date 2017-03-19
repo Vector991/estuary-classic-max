@@ -2,7 +2,7 @@
 <window>
 	<defaultcontrol>9000</defaultcontrol>
 	<backgroundcolor>background</backgroundcolor>
-	<onunload>RunScript(script.skinshortcuts,type=buildxml&amp;mainmenuID=9000)</onunload>
+	<onunload>RunScript(script.skinshortcuts,type=buildxml&amp;mainmenuID=9000&amp;group=mainmenu)</onunload>
 	
 	<controls>
 		<include>DefaultBackground</include>
@@ -190,7 +190,7 @@
 						<height>100</height>
 						<align>center</align>
 						<aligny>center</aligny>
-						<label>Customize</label>
+						<label>Main Menu</label>
 						<onclick>RunScript(script.skinshortcuts,type=manage&amp;group=mainmenu)</onclick>
 						<visible>System.HasAddon(script.skinshortcuts)</visible>
 					</control>
@@ -199,10 +199,74 @@
 						<height>100</height>
 						<align>center</align>
 						<aligny>center</aligny>
-						<label>Reset</label>
+						<label>$LOCALIZE[342]</label>
+						<onclick>RunScript(script.skinshortcuts,type=manage&amp;group=movies)</onclick>
+						<visible>System.HasAddon(script.skinshortcuts)</visible>
+					</control>					
+					<control type="button" id="632">
+						<width>400</width>
+						<height>100</height>
+						<align>center</align>
+						<aligny>center</aligny>
+						<label>$LOCALIZE[20343]</label>
+						<onclick>RunScript(script.skinshortcuts,type=manage&amp;group=tvshows)</onclick>
+						<visible>System.HasAddon(script.skinshortcuts)</visible>
+					</control>
+					<control type="button" id="633">
+						<width>400</width>
+						<height>100</height>
+						<align>center</align>
+						<aligny>center</aligny>
+						<label>$LOCALIZE[2]</label>
+						<onclick>RunScript(script.skinshortcuts,type=manage&amp;group=2)</onclick>
+						<visible>System.HasAddon(script.skinshortcuts)</visible>
+					</control>	
+					<control type="button" id="634">
+						<width>400</width>
+						<height>100</height>
+						<align>center</align>
+						<aligny>center</aligny>
+						<label>$LOCALIZE[19020]</label>
+						<onclick>RunScript(script.skinshortcuts,type=manage&amp;group=19020)</onclick>
+						<visible>System.HasAddon(script.skinshortcuts)</visible>
+					</control>			
+					<control type="button" id="635">
+						<width>400</width>
+						<height>100</height>
+						<align>center</align>
+						<aligny>center</aligny>
+						<label>$LOCALIZE[19021]</label>
+						<onclick>RunScript(script.skinshortcuts,type=manage&amp;group=19021)</onclick>
+						<visible>System.HasAddon(script.skinshortcuts)</visible>
+					</control>					
+					<control type="button" id="636">
+						<width>400</width>
+						<height>100</height>
+						<align>center</align>
+						<aligny>center</aligny>
+						<label>$LOCALIZE[24001]</label>
+						<onclick>RunScript(script.skinshortcuts,type=manage&amp;group=24001)</onclick>
+						<visible>System.HasAddon(script.skinshortcuts)</visible>
+					</control>	
+					<control type="button" id="637">
+						<width>400</width>
+						<height>100</height>
+						<align>center</align>
+						<aligny>center</aligny>
+						<label>$LOCALIZE[3]</label>
+						<onclick>RunScript(script.skinshortcuts,type=manage&amp;group=3)</onclick>
+						<visible>System.HasAddon(script.skinshortcuts)</visible>
+					</control>					
+					<control type="button" id="639">
+						<width>400</width>
+						<height>100</height>
+						<align>center</align>
+						<aligny>center</aligny>
+						<label>Reset ALL</label>
 						<onclick>RunScript(script.skinshortcuts,type=resetall)</onclick>
 						<visible>System.HasAddon(script.skinshortcuts)</visible>
 					</control>					
+					
 					<control type="radiobutton" id="611">
 						<label>$LOCALIZE[342]</label>
 						<width>1256</width>

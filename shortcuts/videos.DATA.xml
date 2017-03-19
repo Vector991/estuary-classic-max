@@ -1,0 +1,9 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<shortcuts>
+    <shortcut>
+        <label>zzzz</label>
+        <label2>Common Shortcut</label2>
+        <icon>special://skin/extras/icons/recentlyadded.png</icon>
+        <action>ActivateWindow(Videos,videodb://recentlyaddedmovies/,return)</action>
+    </shortcut>
+</shortcuts>
