@@ -1,5 +1,5 @@
 ﻿<?xml version="1.0" encoding="UTF-8"?>
-<addon id="skin.estuary.classic.max" version="0.5.7" name="Estuary Classic MAX" provider-name="Vector991">
+<addon id="skin.estuary.classic.max" version="0.6.0" name="Estuary Classic MAX" provider-name="Vector991">
 	<requires>
 		<import addon="xbmc.gui" version="5.12.0"/>
 	</requires>
