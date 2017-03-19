@@ -92,10 +92,10 @@
 				<height>714</height>
 				<fadetime>200</fadetime>
 				<aspectratio>scale</aspectratio>
-				<texture background="true" fallback="DefaultVideoCover.png">$VAR[PosterVar]</texture>
+				<texture background="true">$VAR[PosterVar]</texture>
 				<bordertexture border="22">dialogs/dialog-bg.png</bordertexture>
 				<bordersize>22</bordersize>				
-				<visible>[!ListItem.IsParentFolder + !String.IsEqual(ListItem.DBType,season)] | [String.IsEqual(ListItem.DBType,season) + !IsEmpty(ListItem.Season)]</visible>
+				<visible>!ListItem.IsParentFolder</visible>
 			</control>
 			<control type="label">
 				<left>1454</left>
