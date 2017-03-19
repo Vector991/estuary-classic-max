@@ -297,7 +297,7 @@
 						<texture fallback="DefaultVideo.png" background="true">$VAR[PosterVar]</texture>
 						<bordertexture border="22">dialogs/dialog-bg.png</bordertexture>
 						<bordersize>22</bordersize>
-						<visible>!ListItem.IsParentFolder</visible>
+						<visible>[!ListItem.IsParentFolder + !String.IsEqual(ListItem.DBType,season)] | [String.IsEqual(ListItem.DBType,season) + !IsEmpty(ListItem.Season)]</visible>
 					</control>			
 					
 					<control type="grouplist">
