@@ -26,15 +26,25 @@
 				</control>
 				
 				<control type="image">
+					<left>916</left>
+					<top>20</top>
+					<width>988</width>
+					<height>500</height>
+					<texture>DefaultFolderBack.png</texture>
+					<aspectratio aligny="center">keep</aspectratio>
+					<visible>ListItem.IsParentFolder</visible>
+				</control>				
+				<control type="image">
 					<left>892</left>
 					<top>-4</top>
 					<width>1032</width>
 					<height>543</height>
 					<fadetime>300</fadetime>
-					<texture fallback="DefaultVideo.png" background="true">$VAR[FanartImageVar]</texture>
+					<texture fallback="DefaultNoPreview.png" background="true">$VAR[FanartImageVar]</texture>
 					<bordertexture border="22">dialogs/dialog-bg.png</bordertexture>
 					<bordersize>24</bordersize>
 					<aspectratio aligny="bottom">scale</aspectratio>
+					<visible>[!ListItem.IsParentFolder + !String.IsEqual(ListItem.DBType,season)] | [String.IsEqual(ListItem.DBType,season) + !IsEmpty(ListItem.Season)]</visible>
 				</control>
 				<control type="image">
 					<top>20</top>
