@@ -159,6 +159,39 @@
 		</control>
 	</include>
 	
+	<include name="WidgetsTopPanel">
+		<param name="widget"></param>
+		<param name="widget_content"></param>
+		<param name="widget_target"></param>
+		<param name="height"></param>
+		<param name="widget_header"></param>
+		
+		<definition>
+			<control type="group" id="$PARAM[list_id]99">
+				<animation type="Focus">
+					<effect type="slide" end="0,-$PARAM[height]" time="0" />
+					<effect type="slide" end="0, $PARAM[height]" time="200" />
+				</animation>
+				<onback>$PARAM[onback_id]</onback>				
+				<visible>Control.IsVisible($PARAM[list_id]) + ControlGroup($PARAM[list_id]99).HasFocus</visible>
+				<height>$PARAM[height]</height>
+				<width>1580</width>
+				
+				<include content="$PARAM[widget]">
+					<param name="content_path" value="$PARAM[widget_content]"/>
+					<param name="widget_header" value="$PARAM[widget_header]"/>
+					<param name="item_image" value="$INFO[ListItem.Art(thumb)]" />
+					<param name="widget_target" value="$PARAM[videos]"/>
+					<param name="second_label" value="" />
+					<param name="list_id" value="$PARAM[list_id]"/>
+					<param name="onup_id" value="noop"/>
+					<param name="ondown_id" value="$PARAM[onback_id]"/>
+					<visible>Integer.IsGreater(Container($PARAM[list_id]).NumItems,0)</visible>
+				</include>				
+			</control>
+		</definition>
+	</include>
+	
 	<!-- Submenu icon navigation bar-->
 	<include name="SubMenu">
 		<param name="onup_id">1999</param>
@@ -177,7 +210,9 @@
 					<top>$PARAM[menu_top]</top>
 					<height>$PARAM[menu_item_height]</height>
 					<width>$PARAM[menu_width]</width>
-					<onup>$PARAM[onup_id]</onup>
+					<!-- <onup>noop</onup> -->
+					<onup condition="!String.IsEqual(Container($PARAM[list_id]).ListItem.Property(subsub),recentlyadded)">$PARAM[onup_id]</onup>
+					<onup condition="String.IsEqual(Container($PARAM[list_id]).ListItem.Property(subsub),recentlyadded) + Skin.HasSetting(hide_recentlyadded)">SetFocus($PARAM[onup_id])</onup>
 					<ondown>$PARAM[ondown_id]</ondown>
 					<onleft>$PARAM[onleft_id]</onleft>
 					<onright>noop</onright>
@@ -214,7 +249,7 @@
 								<height>$PARAM[menu_item_height]</height>
 								<aspectratio>center</aspectratio>
 								<texture>$INFO[ListItem.Art(thumb)]</texture>
-								<animation effect="slide" end="-24,0" time="200" condition="!String.IsEmpty(ListItem.Property(subsub))">conditional</animation>
+								<animation effect="slide" end="-24,0" time="200" condition="[!String.IsEmpty(ListItem.Property(subsub)) + !String.IsEqual(ListItem.Property(subsub),recentlyadded)] | [String.IsEqual(ListItem.Property(subsub),recentlyadded) + Skin.HasSetting(hide_recentlyadded)]">conditional</animation>
 							</control>
 							<control type="image">
 								<width>$PARAM[menu_item_width]</width>
@@ -224,7 +259,7 @@
 								<!-- note the center..needs change -->
 								<animation effect="slide" end="24,0" time="200">Focus</animation>
 
-								<visible>!String.IsEmpty(ListItem.Property(subsub))</visible>
+								<visible>[!String.IsEmpty(ListItem.Property(subsub)) + !String.IsEqual(ListItem.Property(subsub),recentlyadded)] | [String.IsEqual(ListItem.Property(subsub),recentlyadded) + Skin.HasSetting(hide_recentlyadded)]</visible>
 							</control>
 						</control>
 					</focusedlayout>
@@ -254,10 +289,11 @@
 		<param name="item_limit">25</param>
 		<param name="panel_width">1580</param>
 		<param name="panel_left">340</param>
+		<param name="visible">true</param>
 		
 		<definition>
 			<control type="group">
-				<visible>Integer.IsGreater(Container($PARAM[list_id]).NumItems,0) | Container($PARAM[list_id]).IsUpdating</visible>
+				<visible>$PARAM[visible] + [Integer.IsGreater(Container($PARAM[list_id]).NumItems,0) | Container($PARAM[list_id]).IsUpdating]</visible>
 				<left>$PARAM[panel_left]</left>
 				<height>400</height>
 				
@@ -531,13 +567,14 @@
 	<include name="WidgetListEpisodes">
 		<param name="sortby"></param>
 		<param name="sortorder">ascending</param>
+		<param name="visible">true</param>
 		
 		<definition>
 			<control type="group">
 				<description>Episode Widget including header and arrows</description>
 				<height>405</height>
 				<left>340</left>
-				<visible>Integer.IsGreater(Container($PARAM[list_id]).NumItems,0) | Container($PARAM[list_id]).IsUpdating</visible>
+				<visible>$PARAM[visible] + [Integer.IsGreater(Container($PARAM[list_id]).NumItems,0) | Container($PARAM[list_id]).IsUpdating]</visible>
 				
 				<include content="LeftRightArrows">
 					<param name="posy" value="180" />
@@ -801,8 +838,7 @@
 				<height>$PARAM[height]</height>
 				<left>340</left>
 				<height>$PARAM[height]</height>
-				<visible>$PARAM[visible]</visible>
-				<visible>Integer.IsGreater(Container($PARAM[list_id]).NumItems,0) | Container($PARAM[list_id]).IsUpdating</visible>
+				<visible>$PARAM[visible] + [Integer.IsGreater(Container($PARAM[list_id]).NumItems,0) | Container($PARAM[list_id]).IsUpdating]</visible>
 
 				<include content="LeftRightArrows">
 					<param name="posy" value="180" />

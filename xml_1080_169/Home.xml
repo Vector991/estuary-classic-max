@@ -37,16 +37,19 @@
 			<onfocus condition="String.IsEqual(Container(9000).ListItem.Property(DefaultID), radio)">SetFocus(13900)</onfocus>
 			<onfocus condition="String.IsEqual(Container(9000).ListItem.Property(DefaultID), weather)">SetFocus(15900)</onfocus>
 			
+			<onfocus condition="Control.IsVisible(5000) + String.IsEqual(Container(5900).ListItem.Property(subsub),recentlyadded)">SetFocus(5090)</onfocus>
 			<onfocus condition="Control.IsVisible(5000) + String.IsEqual(Container(5900).ListItem.Property(subsub),genres)">SetFocus(5010)</onfocus>
 			<onfocus condition="Control.IsVisible(5000) + String.IsEqual(Container(5900).ListItem.Property(subsub),years)">SetFocus(5020)</onfocus>
 			<onfocus condition="Control.IsVisible(5000) + String.IsEqual(Container(5900).ListItem.Property(subsub),tags)">SetFocus(5030)</onfocus>
 			<onfocus condition="Control.IsVisible(5000) + String.IsEqual(Container(5900).ListItem.Property(subsub),shortcuts) + Control.IsVisible(5040)">SetFocus(5040)</onfocus>
-			
+
+			<onfocus condition="Control.IsVisible(6000) + String.IsEqual(Container(6900).ListItem.Property(subsub),recentlyadded)">SetFocus(6090)</onfocus>
 			<onfocus condition="Control.IsVisible(6000) + String.IsEqual(Container(6900).ListItem.Property(subsub),genres)">SetFocus(6010)</onfocus>
 			<onfocus condition="Control.IsVisible(6000) + String.IsEqual(Container(6900).ListItem.Property(subsub),years)">SetFocus(6020)</onfocus>
 			<onfocus condition="Control.IsVisible(6000) + String.IsEqual(Container(6900).ListItem.Property(subsub),tags)">SetFocus(6030)</onfocus>
 			<onfocus condition="Control.IsVisible(6000) + String.IsEqual(Container(6900).ListItem.Property(subsub),shortcuts) + Control.IsVisible(6040)">SetFocus(6040)</onfocus>
 			
+			<onfocus condition="Control.IsVisible(7000) + String.IsEqual(Container(7900).ListItem.Property(subsub),recentlyadded)">SetFocus(7090)</onfocus>			
 			<onfocus condition="Control.IsVisible(7000) + String.IsEqual(Container(7900).ListItem.Property(subsub),genres)">SetFocus(7010)</onfocus>
 			<onfocus condition="Control.IsVisible(7000) + String.IsEqual(Container(7900).ListItem.Property(subsub),shortcuts) + Control.IsVisible(7020)">SetFocus(7020)</onfocus>
 			
@@ -133,7 +136,7 @@
 							<include>HiddenObject</include>
 							<onfocus>SetFocus(5900)</onfocus>
 							<onfocus condition="Integer.IsGreater(Container(5200).NumItems,0)">SetFocus(5200)</onfocus>
-							<onfocus condition="Integer.IsGreater(Container(5100).NumItems,0)">SetFocus(5100)</onfocus>
+							<onfocus condition="Integer.IsGreater(Container(5100).NumItems,0) + !Skin.HasSetting(hide_recentlyadded)">SetFocus(5100)</onfocus>
 							<visible allowhiddenfocus="true">Control.HasFocus(5001)</visible>
 						</control>
 						
@@ -172,6 +175,15 @@
 								<param name="item_height" value="60" />
 								<param name="onback_id" value="5900" />
 							</include>
+							<include content="WidgetsTopPanel">
+								<param name="list_id" value="5090" />
+								<param name="widget" value="WidgetListMovies" />
+								<param name="widget_content" value="videodb://recentlyaddedmovies/" />
+								<param name="widget_target" value="videos" />
+								<param name="height" value="400" />
+								<param name="onback_id" value="5900" />
+								<param name="widget_header" value="$LOCALIZE[20386]" />
+							</include>
 							
 							<include content="SubMenu">
 								<param name="list_id" value="5900"/>
@@ -194,6 +206,7 @@
 								<param name="list_id" value="5100"/>
 								<param name="onup_id" value="5900"/>
 								<param name="ondown_id" value="5200"/>
+								<param name="visible" value="!Skin.HasSetting(hide_recentlyadded)" />
 							</include>
 							<include content="WidgetListMovies">
 								<param name="content_path" value="special://skin/playlists/inprogress_movies.xsp"/>
@@ -242,6 +255,7 @@
 					
 					<!-- TV Shows Widgets -->
 					<control type="group" id="6000">
+						<defaultcontrol>6001</defaultcontrol>
 						<visible>String.IsEqual(Container(9000).ListItem.Property(DefaultID), tvshows)</visible>
 						<include>Visible_Right_Delayed</include>
 						
@@ -250,7 +264,7 @@
 							<include content="HiddenObject" />
 							<onfocus>SetFocus(6900)</onfocus>
 							<onfocus condition="Integer.IsGreater(Container(6200).NumItems,0)">SetFocus(6200)</onfocus>
-							<onfocus condition="Integer.IsGreater(Container(6100).NumItems,0)">SetFocus(6100)</onfocus>
+							<onfocus condition="Integer.IsGreater(Container(6100).NumItems,0) + !Skin.HasSetting(hide_recentlyadded)">SetFocus(6100)</onfocus>
 							<visible allowhiddenfocus="true">Control.HasFocus(6001)</visible>
 						</control>
 						
@@ -289,7 +303,16 @@
 								<param name="item_height" value="60" />
 								<param name="onback_id" value="6900" />
 							</include>
-							
+							<include content="WidgetsTopPanel">
+								<param name="list_id" value="6090" />
+								<param name="widget" value="WidgetListEpisodes" />
+								<param name="widget_content" value="videodb://recentlyaddedepisodes/" />
+								<param name="widget_target" value="videos" />
+								<param name="height" value="405" />
+								<param name="onback_id" value="6900" />
+								<param name="widget_header" value="$LOCALIZE[20387]" />
+							</include>
+
 							<include content="SubMenu">
 								<param name="list_id" value="6900"/>
 								<param name="ondown_id" value="6100"/>
@@ -313,6 +336,7 @@
 								<param name="list_id" value="6100"/>
 								<param name="onup_id" value="6900"/>
 								<param name="ondown_id" value="6200"/>
+								<param name="visible" value="!Skin.HasSetting(hide_recentlyadded)" />
 							</include>
 							<include content="WidgetListEpisodes">
 								<param name="content_path" value="videodb://inprogresstvshows"/>
@@ -359,6 +383,7 @@
 
 					<!-- Music Widgets -->
 					<control type="group" id="7000">
+						<defaultcontrol>7001</defaultcontrol>
 						<visible>String.IsEqual(Container(9000).ListItem.Property(DefaultID),music)</visible>
 						<include>Visible_Right_Delayed</include>
 						
@@ -366,7 +391,7 @@
 							<include content="HiddenObject" />
 							<onfocus>SetFocus(7900)</onfocus>
 							<onfocus condition="Integer.IsGreater(Container(7200).NumItems,0)">SetFocus(7200)</onfocus>
-							<onfocus condition="Integer.IsGreater(Container(7100).NumItems,0)">SetFocus(7100)</onfocus>
+							<onfocus condition="Integer.IsGreater(Container(7100).NumItems,0) + !Skin.HasSetting(hide_recentlyadded)">SetFocus(7100)</onfocus>
 							<visible allowhiddenfocus="true">Control.HasFocus(7001)</visible>
 						</control>
 						
@@ -391,6 +416,15 @@
 								<param name="item_height" value="60" />
 								<param name="onback_id" value="7900" />
 							</include>
+							<include content="WidgetsTopPanel">
+								<param name="list_id" value="7090" />
+								<param name="widget" value="WidgetListSquare" />
+								<param name="widget_content" value="musicdb://recentlyaddedalbums/" />
+								<param name="widget_target" value="music" />
+								<param name="height" value="400" />
+								<param name="onback_id" value="7900" />
+								<param name="widget_header" value="$LOCALIZE[359]" />
+							</include>
 							
 							<include content="SubMenu">
 								<param name="list_id" value="7900"/>
@@ -414,6 +448,7 @@
 								<param name="onup_id" value="7900"/>
 								<param name="ondown_id" value="7200"/>
 								<param name="widget_limit" value="25"/>
+								<param name="visible" value="!Skin.HasSetting(hide_recentlyadded)" />
 							</include>
 							<include content="WidgetListSquare">
 								<param name="content_path" value="musicdb://recentlyplayedalbums"/>
@@ -487,6 +522,7 @@
 					
 					<!-- Addon widgets -->
 					<control type="group" id="8000">
+						<defaultcontrol>8001</defaultcontrol>
 						<visible>String.IsEqual(Container(9000).ListItem.Property(DefaultID),addons)</visible>
 						<include>Visible_Right_Delayed</include>
 						
@@ -618,6 +654,7 @@
 					
 					<!-- Videos Widgets -->
 					<control type="group" id="11000">
+						<defaultcontrol>11001</defaultcontrol>
 						<visible>String.IsEqual(Container(9000).ListItem.Property(DefaultID),video)</visible>
 						<include>Visible_Right_Delayed</include>
 						
@@ -692,6 +729,7 @@
 					
 					<!-- TV Widgets -->
 					<control type="group" id="12000">
+						<defaultcontrol>12001</defaultcontrol>
 						<visible>String.IsEqual(Container(9000).ListItem.Property(DefaultID),livetv)</visible>
 						<include>Visible_Right_Delayed</include>
 						
@@ -806,6 +844,7 @@
 					
 					<!-- Radio Widgets -->
 					<control type="group" id="13000">
+						<defaultcontrol>13001</defaultcontrol>
 						<visible>String.IsEqual(Container(9000).ListItem.Property(DefaultID),radio)</visible>
 						<include>Visible_Right_Delayed</include>
 						
@@ -916,6 +955,7 @@
 					
 					<!-- Weather Widgets -->
 					<control type="group" id="15000">
+						<defaultcontrol>15001</defaultcontrol>
 						<visible>String.IsEqual(Container(9000).ListItem.Property(DefaultID),weather)</visible>
 						<include>Visible_Right_Delayed</include>
 						

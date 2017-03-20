@@ -97,9 +97,15 @@
 					<ondown>600</ondown>
 					<visible>Container(9000).HasFocus(1)</visible>
 
-					
 					<control type="radiobutton" id="620">
-						<label>Hide home screen plot summary slider</label>
+						<label>$LOCALIZE[31205]</label>
+						<width>1256</width>
+						<include>DefaultSettingButton</include>
+						<selected>Skin.HasSetting(hide_recentlyadded)</selected>
+						<onclick>Skin.ToggleSetting(hide_recentlyadded)</onclick>
+					</control>					
+					<control type="radiobutton" id="621">
+						<label>$LOCALIZE[31204]</label>
 						<width>1256</width>
 						<include>DefaultSettingButton</include>
 						<selected>Skin.HasSetting(no_plot_summary_slider)</selected>

@@ -7,7 +7,7 @@
 				<onclick>ActivateWindow(videos,videodb://recentlyaddedmovies/,return)</onclick>
 				<thumb>icons/submenu/recentlyadded.png</thumb>
 				<label>$LOCALIZE[20386]</label>
-				<property name="subsub"></property>
+				<property name="subsub">recentlyadded</property>
 			</item>
 			<item id="9">
 				<onclick>SetFocus(1999)</onclick>
@@ -63,6 +63,7 @@
 				<onclick>ActivateWindow(Videos,videodb://recentlyaddedepisodes/,return)</onclick>
 				<thumb>icons/submenu/recentlyadded.png</thumb>
 				<label>$LOCALIZE[20387]</label>
+				<property name="subsub">recentlyadded</property>
 			</item>	
 			<item id="9">
 				<onclick>SetFocus(1999)</onclick>
@@ -113,6 +114,7 @@
 				<onclick>ActivateWindow(Music, RecentlyAddedAlbums, return)</onclick>
 				<thumb>icons/submenu/recentlyadded.png</thumb>
 				<label>$LOCALIZE[359]</label>
+				<property name="subsub">recentlyadded</property>
 			</item>			
 			<item id="9">
 				<onclick>SetFocus(1999)</onclick>

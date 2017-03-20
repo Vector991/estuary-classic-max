@@ -779,3 +779,11 @@ msgstr ""
 msgctxt "#31203"
 msgid "Retrieving..."
 msgstr ""
+
+msgctxt "#31204"
+msgid "Hide home screen plot summary slider"
+msgstr ""
+
+msgctxt "#31205"
+msgid "Hide recently added homescreen widgets"
+msgstr ""
