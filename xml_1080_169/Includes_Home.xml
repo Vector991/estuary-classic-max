@@ -101,12 +101,21 @@
 			<width>1580</width>
 			
 			<control type="image">
-				<width>220</width>
-				<height>220</height>
+				<top>10</top>
+				<left>10</left>
+				<width>210</width>
+				<height>260</height>
 				<texture>$INFO[Container($PARAM[panel_id]).ListItem.Icon]</texture>
 				<aspectratio align="center" aligny="top">keep</aspectratio>
 			</control>		
 			
+			<control type="image">
+				<width>230</width>
+				<height>280</height>
+				<texture colordiffuse="44ffffff" flipy="true" border="2">overlays/frame1.png</texture>
+				<aspectratio aligny="top">scale</aspectratio>
+			</control>		
+
 			<control type="button">
 				<width>240</width>
 				<height>220</height>
