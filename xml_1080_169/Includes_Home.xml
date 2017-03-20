@@ -104,21 +104,32 @@
 				<top>10</top>
 				<left>10</left>
 				<width>210</width>
-				<height>260</height>
+				<height>230</height>
 				<texture>$INFO[Container($PARAM[panel_id]).ListItem.Icon]</texture>
 				<aspectratio align="center" aligny="top">keep</aspectratio>
 			</control>		
 			
 			<control type="image">
 				<width>230</width>
-				<height>280</height>
+				<height>290</height>
 				<texture colordiffuse="44ffffff" flipy="true" border="2">overlays/frame1.png</texture>
 				<aspectratio aligny="top">scale</aspectratio>
 			</control>		
 
+			<control type="label">
+				<left>10</left>
+				<width>210</width>
+				<height>30</height>
+				<top>250</top>
+				<label>[COLOR button_focus]$INFO[Container($PARAM[panel_id]).ListItem.Label][/COLOR]$INFO[Container($PARAM[panel_id]).ListItem.Property(list), - ]</label>
+				<scroll>true</scroll>
+				<font>font10</font>
+				<aligny>bottom</aligny>
+			</control>
+			
 			<control type="button">
 				<width>240</width>
-				<height>220</height>
+				<height>230</height>
 				<texturefocus></texturefocus>
 				<texturenofocus></texturenofocus>
 			</control>
@@ -131,7 +142,6 @@
 				<width>1340</width>
 				<height>300</height>
 				<autoscroll>false</autoscroll>
-				<!-- <onunfocus>$PARAM[onback_id]</onunfocus> -->
 				<visible>Integer.IsGreater(Container($PARAM[panel_id]).NumItems,0)</visible>
 				
 				<itemlayout width="$PARAM[item_width]" height="$PARAM[item_height]">
@@ -156,7 +166,8 @@
 						<height>100%</height>
 						<aligny>center</aligny>
 						<font>Font12</font>
-						<info>ListItem.label</info>
+						<label>$INFO[ListItem.label]</label>
+						<scroll>true</scroll>
 					</control>
 				</focusedlayout>					
 				
