@@ -3,6 +3,9 @@
 	<defaultcontrol>9000</defaultcontrol>
 	<backgroundcolor>background</backgroundcolor>
 	<onload>RunScript(script.skinshortcuts,type=buildxml&amp;mainmenuID=9000&amp;group=mainmenu)</onload>
+	<include file="includes.xml" condition="System.HasAddon(script.skin.helper.service)">UseSkinHelperOnLoad</include>
+	<onunload>ClearProperty(SkinHelper.WidgetContainer,home)</onunload>
+	
 	<onload>SetFocus(9000)</onload>
 	
 	<controls>

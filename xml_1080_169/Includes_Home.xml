@@ -339,6 +339,7 @@
 					<onunfocus>SetProperty(listposition,$INFO[Container($PARAM[list_id]).Position],home)</onunfocus>
 					<onfocus>Control.Move($PARAM[list_id],-$INFO[Container($PARAM[list_id]).Position])</onfocus>
 					<onfocus>Control.Move($PARAM[list_id],$INFO[Window(home).Property(listposition)])</onfocus>
+					<onfocus>SetProperty(SkinHelper.WidgetContainer,$PARAM[list_id],Home)</onfocus>
 					<onup>$PARAM[onup_id]</onup>
 					<ondown>$PARAM[ondown_id]</ondown>
 					<onback>PageUp</onback>
@@ -618,6 +619,7 @@
 					<onunfocus>SetProperty(listposition,$INFO[Container($PARAM[list_id]).Position],home)</onunfocus>
 					<onfocus>Control.Move($PARAM[list_id],-$INFO[Container($PARAM[list_id]).Position])</onfocus>
 					<onfocus>Control.Move($PARAM[list_id],$INFO[Window(home).Property(listposition)])</onfocus>
+					<onfocus>SetProperty(SkinHelper.WidgetContainer,$PARAM[list_id],Home)</onfocus>
 					<onup>$PARAM[onup_id]</onup>
 					<ondown>$PARAM[ondown_id]</ondown>
 					<onback>PageUp</onback>

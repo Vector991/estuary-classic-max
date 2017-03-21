@@ -1461,5 +1461,9 @@
 		</definition>
 	</include>
 	
-
+	<include name="UseSkinHelperOnLoad">
+		<definition>
+			<onload>Skin.SetBool(SkinHelper.EnableExtendedArt)</onload>
+		</definition>
+	</include>
 </includes>

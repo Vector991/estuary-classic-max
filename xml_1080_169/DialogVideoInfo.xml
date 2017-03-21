@@ -4,7 +4,7 @@
 	<onload>SetProperty(infobackground,$ESCINFO[ListItem.Art(fanart)],home)</onload>
 	<onload>SetFocus(8)</onload>
 	<onunload>ClearProperty(infobackground,home)</onunload>
-
+	
 	<controls>
 		<include content="DefaultBackground" />
 		
@@ -83,6 +83,28 @@
 					</control>
 
 				</control>
+				
+				<control type="image">
+					<visible>System.HasAddon(script.skin.helper.service) + !String.IsEqual(ListItem.DBType,episode) + !String.IsEqual(ListItem.DBType,video) + !String.IsEqual(ListItem.DBType,musicvideo)</visible>
+					<top>840</top>
+					<width>530</width>
+					<height>200</height>
+					<texture background="true">$VAR[ClearLogoArt]</texture>
+					<aspectratio align="center" aligny="center">keep</aspectratio>
+				</control>				
+				<!--
+				<control type="multiimage">
+					<visible>System.HasAddon(script.skin.helper.service) + !String.IsEqual(ListItem.DBType,episode) + !String.IsEqual(ListItem.DBType,video) + !String.IsEqual(ListItem.DBType,musicvideo)</visible>
+					<animation type="WindowOpen">
+						<effect type="fade" start="0" end="100" time="1000" delay="7000"/>
+					</animation>					
+					<top>840</top>
+					<width>530</width>
+					<height>200</height>
+					<imagepath>$VAR[ClearLogosArt]</imagepath>
+					<aspectratio align="center" aligny="center">keep</aspectratio>
+				</control>
+				-->
 				
 				<control type="image">
 					<left>550</left>

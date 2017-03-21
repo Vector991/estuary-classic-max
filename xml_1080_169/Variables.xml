@@ -442,5 +442,13 @@
 		<value condition="Integer.IsGreater(ListItem.PlayCount,1)"> - $INFO[ListItem.PlayCount]x</value>
 		<value></value>		
 	</variable>	
-
+	
+	<variable name="ClearLogoArt">
+		<value condition="!String.IsEmpty(ListItem.Art(Clearlogo))">$INFO[ListItem.Art(Clearlogo)]</value>
+		<value condition="!String.IsEmpty(Window(Home).Property(SkinHelper.ListItem.Art.Clearlogo))">$INFO[Window(Home).Property(SkinHelper.ListItem.Art.Clearlogo)]</value>
+	</variable>
+	<variable name="ClearLogosArt">
+		<!-- <value condition="!String.IsEmpty(ListItem.Art(Clearlogo))">$INFO[ListItem.Art(Clearlogo)]</value> -->
+		<value condition="!String.IsEmpty(Window(Home).Property(SkinHelper.ListItem.Art.Clearlogos))">$INFO[Window(Home).Property(SkinHelper.ListItem.Art.Clearlogos)]</value>
+	</variable>
 </includes>
