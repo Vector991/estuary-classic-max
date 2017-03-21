@@ -176,7 +176,7 @@
 					<right>40</right>
 					<width>160</width>
 					<height>130</height>
-					<texture fallback="DefaultStudios.png">$INFO[ListItem.Studio,resource://resource.images.studios.coloured/,.png]</texture>
+					<texture fallback="">$VAR[StudioLogoArt]</texture>
 					<aspectratio align="right" aligny="bottom">keep</aspectratio>						
 					<visible>!String.IsEmpty(ListItem.Studio) + System.HasAddon(resource.images.studios.coloured)</visible>
 				</control>

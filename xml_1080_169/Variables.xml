@@ -451,4 +451,10 @@
 		<!-- <value condition="!String.IsEmpty(ListItem.Art(Clearlogo))">$INFO[ListItem.Art(Clearlogo)]</value> -->
 		<value condition="!String.IsEmpty(Window(Home).Property(SkinHelper.ListItem.Art.Clearlogos))">$INFO[Window(Home).Property(SkinHelper.ListItem.Art.Clearlogos)]</value>
 	</variable>
+	
+	<variable name="StudioLogoArt">
+		<value condition="System.HasAddon(script.skin.helper.service) + System.HasAddon(resource.images.studios.coloured)">$INFO[Window(Home).Property(SkinHelper.ListItem.StudioLogo)]</value>
+		<value condition="!System.HasAddon(script.skin.helper.service) + System.HasAddon(resource.images.studios.coloured)">$INFO[ListItem.Studio,resource://resource.images.studios.coloured/,.png]</value>
+		<value></value>
+	</variable>
 </includes>

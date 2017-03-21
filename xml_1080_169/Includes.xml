@@ -1464,6 +1464,7 @@
 	<include name="UseSkinHelperOnLoad">
 		<definition>
 			<onload>Skin.SetBool(SkinHelper.EnableExtendedArt)</onload>
+			<onload>Skin.SetString(SkinHelper.StudioLogos.Path,resource://resource.images.studios.coloured/)</onload>
 		</definition>
 	</include>
 </includes>
