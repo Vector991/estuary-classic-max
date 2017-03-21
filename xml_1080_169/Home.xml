@@ -37,19 +37,19 @@
 			<onfocus condition="String.IsEqual(Container(9000).ListItem.Property(DefaultID), radio)">SetFocus(13900)</onfocus>
 			<onfocus condition="String.IsEqual(Container(9000).ListItem.Property(DefaultID), weather)">SetFocus(15900)</onfocus>
 			
-			<onfocus condition="Control.IsVisible(5000) + String.IsEqual(Container(5900).ListItem.Property(subsub),recentlyadded)">SetFocus(5090)</onfocus>
+			<onfocus condition="Control.IsVisible(5000) + String.IsEqual(Container(5900).ListItem.Property(subsub),recentlyadded) + Skin.HasSetting(hide_recentlyadded)">SetFocus(5090)</onfocus>
 			<onfocus condition="Control.IsVisible(5000) + String.IsEqual(Container(5900).ListItem.Property(subsub),genres)">SetFocus(5010)</onfocus>
 			<onfocus condition="Control.IsVisible(5000) + String.IsEqual(Container(5900).ListItem.Property(subsub),years)">SetFocus(5020)</onfocus>
 			<onfocus condition="Control.IsVisible(5000) + String.IsEqual(Container(5900).ListItem.Property(subsub),tags)">SetFocus(5030)</onfocus>
 			<onfocus condition="Control.IsVisible(5000) + String.IsEqual(Container(5900).ListItem.Property(subsub),shortcuts) + Control.IsVisible(5040)">SetFocus(5040)</onfocus>
 
-			<onfocus condition="Control.IsVisible(6000) + String.IsEqual(Container(6900).ListItem.Property(subsub),recentlyadded)">SetFocus(6090)</onfocus>
+			<onfocus condition="Control.IsVisible(6000) + String.IsEqual(Container(6900).ListItem.Property(subsub),recentlyadded) + Skin.HasSetting(hide_recentlyadded)">SetFocus(6090)</onfocus>
 			<onfocus condition="Control.IsVisible(6000) + String.IsEqual(Container(6900).ListItem.Property(subsub),genres)">SetFocus(6010)</onfocus>
 			<onfocus condition="Control.IsVisible(6000) + String.IsEqual(Container(6900).ListItem.Property(subsub),years)">SetFocus(6020)</onfocus>
 			<onfocus condition="Control.IsVisible(6000) + String.IsEqual(Container(6900).ListItem.Property(subsub),tags)">SetFocus(6030)</onfocus>
 			<onfocus condition="Control.IsVisible(6000) + String.IsEqual(Container(6900).ListItem.Property(subsub),shortcuts) + Control.IsVisible(6040)">SetFocus(6040)</onfocus>
 			
-			<onfocus condition="Control.IsVisible(7000) + String.IsEqual(Container(7900).ListItem.Property(subsub),recentlyadded)">SetFocus(7090)</onfocus>			
+			<onfocus condition="Control.IsVisible(7000) + String.IsEqual(Container(7900).ListItem.Property(subsub),recentlyadded) + Skin.HasSetting(hide_recentlyadded)">SetFocus(7090)</onfocus>			
 			<onfocus condition="Control.IsVisible(7000) + String.IsEqual(Container(7900).ListItem.Property(subsub),genres)">SetFocus(7010)</onfocus>
 			<onfocus condition="Control.IsVisible(7000) + String.IsEqual(Container(7900).ListItem.Property(subsub),shortcuts) + Control.IsVisible(7020)">SetFocus(7020)</onfocus>
 			

@@ -101,21 +101,21 @@
 			<width>1580</width>
 			
 			<control type="image">
-				<top>10</top>
-				<left>10</left>
-				<width>210</width>
-				<height>230</height>
-				<texture>$INFO[Container($PARAM[panel_id]).ListItem.Icon]</texture>
-				<aspectratio align="center" aligny="top">keep</aspectratio>
-			</control>		
-			
-			<control type="image">
 				<width>230</width>
 				<height>290</height>
 				<texture colordiffuse="44ffffff" flipy="true" border="2">overlays/frame1.png</texture>
 				<aspectratio aligny="top">scale</aspectratio>
 			</control>		
 
+			<control type="image">
+				<top>10</top>
+				<left>10</left>
+				<width>210</width>
+				<height>230</height>
+				<texture>$INFO[Container($PARAM[panel_id]).ListItem.Icon]</texture>
+				<aspectratio align="center" aligny="top">keep</aspectratio>
+			</control>
+			
 			<control type="label">
 				<left>10</left>
 				<width>210</width>
@@ -230,9 +230,7 @@
 					<top>$PARAM[menu_top]</top>
 					<height>$PARAM[menu_item_height]</height>
 					<width>$PARAM[menu_width]</width>
-					<!-- <onup>noop</onup> -->
-					<onup condition="!String.IsEqual(Container($PARAM[list_id]).ListItem.Property(subsub),recentlyadded)">$PARAM[onup_id]</onup>
-					<onup condition="String.IsEqual(Container($PARAM[list_id]).ListItem.Property(subsub),recentlyadded) + Skin.HasSetting(hide_recentlyadded)">SetFocus($PARAM[onup_id])</onup>
+					<onup>$PARAM[onup_id]</onup>
 					<ondown>$PARAM[ondown_id]</ondown>
 					<onleft>$PARAM[onleft_id]</onleft>
 					<onright>noop</onright>
