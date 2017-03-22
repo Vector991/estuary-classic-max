@@ -4,6 +4,8 @@
 	<onload>SetProperty(infobackground,$ESCINFO[ListItem.Art(fanart)],home)</onload>
 	<onload>SetFocus(8)</onload>
 	<onunload>ClearProperty(infobackground,home)</onunload>
+	<onload>SetProperty(info_tab,1)</onload>
+	<onunload>ClearProperty(info_tab)</onunload>
 	
 	<controls>
 		<include content="DefaultBackground" />
@@ -568,7 +570,8 @@
 						<onclick condition="!String.IsEmpty(ListItem.Plot)">ActivateWindow(1102)</onclick>
 						<onup>5000</onup>
 						<onleft>138</onleft>
-						<onright>138</onright>
+						<onright condition="System.HasAddon(script.skin.helper.service) + String.IsEqual(Window.Property(info_tab),1)">SetProperty(info_tab,2)</onright>
+						<onright condition="String.IsEqual(Window.Property(info_tab),2)">SetProperty(info_tab,1)</onright>
 						<ondown>50</ondown>
 						<texturenofocus></texturenofocus>
 						<visible>Integer.IsGreater(Container(4000).NumItems,0)</visible>
@@ -587,8 +590,19 @@
 						<width>714</width>
 						<height>460</height>
 						<texture border="4" colordiffuse="eeffffff">overlays/frame1.png</texture>
-					</control>					
+					</control>				
+					<control type="image">
+						<left>670</left>
+						<top>430</top>
+						<width>40</width>
+						<height>40</height>
+						<texture colordiffuse="88ffffff">icons/submenu/up.png</texture>
+						<animation effect="rotate" end="-90" time="0" condition="true" center="auto">conditional</animation>
+					</control>				
+					
+					<!-- Tab 1 -->
 					<control type="textbox">
+						<animation effect="fade" start="0" end="100" time="300">VisibleChange</animation>
 						<left>20</left>
 						<top>40</top>
 						<width>674</width>
@@ -596,7 +610,139 @@
 						<font>font13</font>
 						<label fallback="19055">$INFO[ListItem.Plot]</label>
 						<autoscroll delay="5000" time="1500" repeat="3000">Skin.HasSetting(AutoScroll)</autoscroll>
-						<visible>Integer.IsGreater(Container(4000).NumItems,0)</visible>
+						<visible>String.IsEqual(Window.Property(info_tab),1)</visible>
+					</control>
+					
+					<!-- Tab 2 -->
+					<control type="group">
+						<left>20</left>
+						<width>674</width>
+						<top>40</top>
+						<height>420</height>
+						<visible>String.IsEqual(Window.Property(info_tab),2)</visible>
+						<animation effect="fade" start="0" end="100" time="300">VisibleChange</animation>
+						
+						<control type="list">
+							<orientation>vertical</orientation>
+							<width>674</width>
+							<height>420</height>
+							
+							<itemlayout width="674" height="80">
+									<control type="label">
+										<width>335</width>
+										<height>30</height>
+										<label>$INFO[ListItem.Property(label_1a)]</label>
+										<font>font10</font>
+										<textcolor>button_focus</textcolor>
+									</control>
+									<control type="label">
+										<left>335</left>
+										<width>335</width>
+										<height>30</height>
+										<label>$INFO[ListItem.Property(label_2a)]</label>
+										<font>font10</font>
+										<textcolor>button_focus</textcolor>
+									</control>							
+									<control type="label">
+										<top>30</top>
+										<width>335</width>
+										<height>30</height>
+										<label>$INFO[ListItem.Property(label_1b)]</label>
+										<font>font10</font>
+									</control>
+									<control type="label">
+										<top>30</top>
+										<left>335</left>
+										<width>335</width>
+										<height>30</height>
+										<label>$INFO[ListItem.Property(label_2b)]</label>
+										<font>font10</font>
+										<scroll>true</scroll>
+									</control>							
+							</itemlayout>
+							<focusedlayout width="674" height="80">
+								<control type="group">
+									<control type="group">
+										<control type="label">
+											<width>335</width>
+											<height>30</height>
+											<label>$INFO[ListItem.Property(label_1a)]</label>
+											<font>font10</font>
+											<textcolor>button_focus</textcolor>
+										</control>
+										<control type="label">
+											<left>335</left>
+											<width>335</width>
+											<height>30</height>
+											<label>$INFO[ListItem.Property(label_2a)]</label>
+											<font>font10</font>
+											<textcolor>button_focus</textcolor>
+										</control>							
+									</control>			
+									<control type="group">
+										<control type="label">
+											<top>30</top>
+											<width>335</width>
+											<height>30</height>
+											<label>$INFO[ListItem.Property(label_1b)]</label>
+											<font>font10</font>
+										</control>
+										<control type="label">
+											<top>30</top>
+											<left>335</left>
+											<width>335</width>
+											<height>30</height>
+											<label>$INFO[ListItem.Property(label_2b)]</label>
+											<font>font10</font>
+											<scroll>true</scroll>
+										</control>							
+									</control>									
+								</control>
+							</focusedlayout>
+							<content>
+								<item>
+									<onclick>noop</onclick>
+									<property name="label_1a">IMDB Rating :</property>
+									<property name="label_1b">$INFO[Window(home).Property(SkinHelper.ListItem.Rating.percent.IMDB)]%$INFO[Window(home).Property(SkinHelper.ListItem.Votes.IMDB),  - ]</property>
+									<property name="label_2a">Metacritic Rating :</property>
+									<property name="label_2b">$INFO[Window(home).Property(SkinHelper.ListItem.Rating.MC)]%</property>
+									<visible>true</visible>
+								</item>
+								<item>
+									<onclick>noop</onclick>
+									<property name="label_1a">TMDB Rating :</property>
+									<property name="label_1b">$INFO[Window(home).Property(SkinHelper.ListItem.Rating.TMDB)]$INFO[Window(home).Property(SkinHelper.ListItem.Votes.TMDB),  - ]</property>
+									<property name="label_2a">TMDB Popularity :</property>
+									<property name="label_2b">$INFO[Window(home).Property(SkinHelper.ListItem.Popularity)]</property>
+									<visible>true</visible>
+								</item>		
+								<item>
+									<onclick>noop</onclick>
+									<property name="label_1a">Status :</property>
+									<property name="label_1b">$INFO[Window(home).Property(SkinHelper.ListItem.Status)]</property>
+									<property name="label_2a">DVD Release :</property>
+									<property name="label_2b">$INFO[Window(home).Property(SkinHelper.ListItem.DVDRelease)]</property>
+									<visible>true</visible>
+								</item>		
+								<item>
+									<onclick>noop</onclick>
+									<property name="label_1a">Budget :</property>
+									<property name="label_1b">$INFO[Window(home).Property(SkinHelper.ListItem.Budget.formatted)]</property>
+									<property name="label_2a">Revenue :</property>
+									<property name="label_2b">$INFO[Window(home).Property(SkinHelper.ListItem.Revenue.formatted)]</property>
+									<visible>true</visible>
+								</item>			
+								<item>
+									<onclick>noop</onclick>
+									<property name="label_1a">Box Office :</property>
+									<property name="label_1b">$INFO[Window(home).Property(SkinHelper.ListItem.BoxOffice)]</property>
+									<property name="label_2a">Awards :</property>
+									<property name="label_2b">$INFO[Window(home).Property(SkinHelper.ListItem.Awards)]</property>
+									<visible>true</visible>
+								</item>									
+							</content>
+						</control>
+						
 					</control>
 				</control>
 				
@@ -624,57 +770,6 @@
 					</control>		
 				</control>				
 				
-			</control>
-
-			
-			<control type="group">
-				<animation effect="fade" start="0" end="100" time="300" delay="300">WindowOpen</animation>
-				<animation effect="fade" start="100" end="0" time="200">WindowClose</animation>
-				<top>980</top>
-
-				<!-- 
-				OPTIONS: Press up for actor info
-				
-				<control type="group">
-					<visible>Control.HasFocus(50)</visible>
-					<animation effect="fade" time="200">VisibleChange</animation>
-					<top>19</top>
-					<left>700</left>
-					<control type="image">
-						<left>17</left>
-						<width>44</width>
-						<height>44</height>
-						<animation effect="rotate" end="-90" center="40,23" time="0" condition="true">Conditional</animation>
-						<texture colordiffuse="button_focus">frame/menu-nofo.png</texture>
-					</control>
-					<control type="label">
-						<left>74</left>
-						<width>500</width>
-						<height>44</height>
-						<shadowcolor>text_shadow</shadowcolor>
-						<label>$LOCALIZE[31125]</label>
-					</control>
-				</control>
-				<control type="group">
-					<visible>Control.HasFocus(138)</visible>
-					<animation effect="fade" time="200">VisibleChange</animation>
-					<top>19</top>
-					<left>700</left>
-					<control type="image">
-						<left>17</left>
-						<width>44</width>
-						<height>44</height>
-						<texture colordiffuse="button_focus">frame/menu-fo.png</texture>
-					</control>
-					<control type="label">
-						<left>74</left>
-						<width>500</width>
-						<height>44</height>
-						<shadowcolor>text_shadow</shadowcolor>
-						<label>$LOCALIZE[31126]</label>
-					</control>
-				</control>
-				-->
 			</control>
 			
 		</control>
