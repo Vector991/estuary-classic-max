@@ -571,3 +571,43 @@ msgstr ""
 msgctxt "#31205"
 msgid "Hide recently added homescreen widgets"
 msgstr ""
+
+msgctxt "#31206"
+msgid "IMDB Rating"
+msgstr ""
+
+msgctxt "#31207"
+msgid "Metacritic Rating"
+msgstr ""
+
+msgctxt "#31208"
+msgid "TMDB Rating"
+msgstr 
+
+msgctxt "#31209"
+msgid "TMDB Popularity"
+msgstr 
+
+msgctxt "#31210"
+msgid "Status"
+msgstr 
+
+msgctxt "#31211"
+msgid "DVD Release"
+msgstr 
+
+msgctxt "#31212"
+msgid "Budget"
+msgstr 
+
+msgctxt "#31213"
+msgid "Revenue"
+msgstr 
+
+msgctxt "#31214"
+msgid "Box Office"
+msgstr 
+
+msgctxt "#31215"
+msgid "Awards"
+msgstr 

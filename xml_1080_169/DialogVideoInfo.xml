@@ -702,41 +702,41 @@
 							<content>
 								<item>
 									<onclick>noop</onclick>
-									<property name="label_1a">IMDB Rating :</property>
+									<property name="label_1a">$LOCALIZE[31206] :</property>
 									<property name="label_1b">$INFO[Window(home).Property(SkinHelper.ListItem.Rating.percent.IMDB)]%$INFO[Window(home).Property(SkinHelper.ListItem.Votes.IMDB),  - ]</property>
-									<property name="label_2a">Metacritic Rating :</property>
+									<property name="label_2a">$LOCALIZE[31207] :</property>
 									<property name="label_2b">$INFO[Window(home).Property(SkinHelper.ListItem.Rating.MC)]%</property>
 									<visible>true</visible>
 								</item>
 								<item>
 									<onclick>noop</onclick>
-									<property name="label_1a">TMDB Rating :</property>
+									<property name="label_1a">$LOCALIZE[31208] :</property>
 									<property name="label_1b">$INFO[Window(home).Property(SkinHelper.ListItem.Rating.TMDB)]$INFO[Window(home).Property(SkinHelper.ListItem.Votes.TMDB),  - ]</property>
-									<property name="label_2a">TMDB Popularity :</property>
+									<property name="label_2a">$LOCALIZE[31209] :</property>
 									<property name="label_2b">$INFO[Window(home).Property(SkinHelper.ListItem.Popularity)]</property>
 									<visible>true</visible>
 								</item>		
 								<item>
 									<onclick>noop</onclick>
-									<property name="label_1a">Status :</property>
+									<property name="label_1a">$LOCALIZE[31210] :</property>
 									<property name="label_1b">$INFO[Window(home).Property(SkinHelper.ListItem.Status)]</property>
-									<property name="label_2a">DVD Release :</property>
+									<property name="label_2a">$LOCALIZE[31211] :</property>
 									<property name="label_2b">$INFO[Window(home).Property(SkinHelper.ListItem.DVDRelease)]</property>
 									<visible>true</visible>
 								</item>		
 								<item>
 									<onclick>noop</onclick>
-									<property name="label_1a">Budget :</property>
+									<property name="label_1a">$LOCALIZE[31212] :</property>
 									<property name="label_1b">$INFO[Window(home).Property(SkinHelper.ListItem.Budget.formatted)]</property>
-									<property name="label_2a">Revenue :</property>
+									<property name="label_2a">$LOCALIZE[31213] :</property>
 									<property name="label_2b">$INFO[Window(home).Property(SkinHelper.ListItem.Revenue.formatted)]</property>
 									<visible>true</visible>
 								</item>			
 								<item>
 									<onclick>noop</onclick>
-									<property name="label_1a">Box Office :</property>
+									<property name="label_1a">$LOCALIZE[31214] :</property>
 									<property name="label_1b">$INFO[Window(home).Property(SkinHelper.ListItem.BoxOffice)]</property>
-									<property name="label_2a">Awards :</property>
+									<property name="label_2a">$LOCALIZE[31215] :</property>
 									<property name="label_2b">$INFO[Window(home).Property(SkinHelper.ListItem.Awards)]</property>
 									<visible>true</visible>
 								</item>									
