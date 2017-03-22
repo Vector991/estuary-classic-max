@@ -86,15 +86,13 @@
 
 				</control>
 				
-				<control type="image">
+				<control type="image" id="888333">
 					<visible>System.HasAddon(script.skin.helper.service) + !String.IsEqual(ListItem.DBType,episode) + !String.IsEqual(ListItem.DBType,video) + !String.IsEqual(ListItem.DBType,musicvideo)</visible>
-					<animation type="WindowOpen">
-						<effect type="fade" start="0" end="100" time="300" />
-					</animation>
 					<top>840</top>
 					<width>530</width>
 					<height>200</height>
-					<texture background="true">$VAR[ClearLogoArt]</texture>
+					<fadetime>500</fadetime>
+					<texture>$VAR[ClearLogoArt]</texture>
 					<aspectratio align="center" aligny="center">keep</aspectratio>
 				</control>				
 				<!--
@@ -116,7 +114,7 @@
 					<top>-20</top>
 					<width>2</width>
 					<height>1080</height>
-					<texture colordiffuse="88888888">colors/white.png</texture>
+					<texture colordiffuse="ff999999">overlays/overlayfadewhite.png</texture>
 				</control>
 				
 				<!-- Extended Detail -->
@@ -229,7 +227,7 @@
 					<orientation>vertical</orientation>
 					
 					<control type="label">
-						<width>100%</width>
+						<width>75%</width>
 						<height>80</height>
 						<label>$VAR[VideoInfoMainLabelVar]</label>
 						<textcolor>button_focus</textcolor>
@@ -240,7 +238,7 @@
 					<control type="label">
 						<label>$VAR[VideoInfoSubLabelVar]</label>
 						<font>font13</font>
-						<width>50%</width>
+						<width>75%</width>
 						<height>60</height>						
 						<shadowcolor>text_shadow</shadowcolor>
 						<aligny>top</aligny>
@@ -389,10 +387,10 @@
 								<label>$INFO[ListItem.Label2]</label>
 							</control>
 							<control type="image">
-								<left>18</left>
-								<top>20</top>
-								<width>230</width>
-								<height>280</height>
+								<left>16</left>
+								<top>16</top>
+								<width>232</width>
+								<height>285</height>
 								<texture border="8" colordiffuse="button_focus">buttons/thumbnail_focused.png</texture>
 								<visible>Control.HasFocus(50)</visible>
 							</control>

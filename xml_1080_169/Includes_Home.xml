@@ -343,7 +343,7 @@
 					<onup>$PARAM[onup_id]</onup>
 					<ondown>$PARAM[ondown_id]</ondown>
 					<onback>PageUp</onback>
-					<preloaditems>1</preloaditems>
+					<preloaditems>2</preloaditems>
 					
 					<itemlayout width="240" height="340">
 						<control type="group">
