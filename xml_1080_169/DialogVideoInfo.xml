@@ -87,7 +87,6 @@
 				</control>
 				
 				<control type="image" id="888333">
-					<visible>System.HasAddon(script.skin.helper.service) + !String.IsEqual(ListItem.DBType,episode) + !String.IsEqual(ListItem.DBType,video) + !String.IsEqual(ListItem.DBType,musicvideo)</visible>
 					<top>840</top>
 					<width>530</width>
 					<height>200</height>
@@ -204,6 +203,35 @@
 				<include>OpenClose_Right</include>
 				<left>600</left>
 			
+				<!-- Title -->
+				<control type="grouplist">
+					<left>0</left>
+					<top>0</top>
+					<width>100%</width>
+					<height>150</height>
+					<itemgap>0</itemgap>
+					<orientation>vertical</orientation>
+					
+					<control type="label">
+						<width>auto</width>
+						<height>80</height>
+						<label>$VAR[VideoInfoMainLabelVar]</label>
+						<textcolor>button_focus</textcolor>
+						<font>font45_title</font>
+						<shadowcolor>text_shadow</shadowcolor>
+						<aligny>center</aligny>
+					</control>
+					<control type="label">
+						<label>$VAR[VideoInfoSubLabelVar]</label>
+						<font>font13</font>
+						<width>auto</width>
+						<height>60</height>						
+						<shadowcolor>text_shadow</shadowcolor>
+						<aligny>top</aligny>
+					</control>
+					
+				</control>
+
 				<!-- Studio -->
 				<control type="group">
 					<control type="image">
@@ -215,35 +243,6 @@
 						<aspectratio align="right" aligny="top">keep</aspectratio>						
 						<visible>!String.IsEmpty(ListItem.Studio) + System.HasAddon(resource.images.studios.coloured)</visible>
 					</control>	
-				</control>
-				
-				<!-- Title -->
-				<control type="grouplist">
-					<left>0</left>
-					<top>0</top>
-					<width>100%</width>
-					<height>150</height>
-					<itemgap>0</itemgap>
-					<orientation>vertical</orientation>
-					
-					<control type="label">
-						<width>75%</width>
-						<height>80</height>
-						<label>$VAR[VideoInfoMainLabelVar]</label>
-						<textcolor>button_focus</textcolor>
-						<font>font45_title</font>
-						<shadowcolor>text_shadow</shadowcolor>
-						<aligny>center</aligny>
-					</control>
-					<control type="label">
-						<label>$VAR[VideoInfoSubLabelVar]</label>
-						<font>font13</font>
-						<width>75%</width>
-						<height>60</height>						
-						<shadowcolor>text_shadow</shadowcolor>
-						<aligny>top</aligny>
-					</control>
-					
 				</control>
 				
 				<!-- Navigation label -->
