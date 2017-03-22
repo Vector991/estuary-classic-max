@@ -48,6 +48,16 @@
 					<texture border="0,0,0,20">overlays/frame2.png</texture>
 				</control>
 				
+				<control type="image">
+					<top>880</top>
+					<left>20</left>
+					<width>510</width>
+					<height>140</height>
+					<texture>$INFO[ListItem.Property(Album_Label),resource://resource.images.recordlabels.white/,.png]</texture>
+					<aspectratio align="center" aligny="center">keep</aspectratio>						
+					<visible>!String.IsEmpty(ListItem.Property(Album_Label)) + System.HasAddon(resource.images.recordlabels.white)</visible>
+				</control>
+				
 				<!-- Extended Detail -->
 				<control type="group" id="888">
 					<width>510</width>
@@ -139,6 +149,16 @@
 				<left>570</left>
 				<visible>![Window.Is(songinformation) + Window.IsActive(musicinformation)]</visible>
 				
+				<control type="image">
+					<right>20</right>
+					<top>0</top>
+					<width>400</width>
+					<height>200</height>
+					<aspectratio align="right" aligny="top">keep</aspectratio>
+					<texture background="true" fallback="">$INFO[Window(Home).Property(SkinHelper.ListItem.Art.ClearLogo)]</texture>
+					<visible>String.IsEqual(ListItem.DBType,artist) + System.HasAddon(script.skin.helper.service)</visible>
+				</control>	
+				
 				<control type="label">
 					<label>$INFO[Window.property(VideoNavLabel)]</label>
 					<top>230</top>
@@ -149,16 +169,6 @@
 					<aligny>top</aligny>
 					<visible>ControlGroup(9000).HasFocus</visible>
 				</control>	
-				
-				<control type="image">
-					<top>20</top>
-					<right>20</right>
-					<width>160</width>
-					<height>130</height>
-					<texture>$INFO[ListItem.Property(Album_Label),resource://resource.images.recordlabels.white/,.png]</texture>
-					<aspectratio align="right" aligny="top">keep</aspectratio>						
-					<visible>!String.IsEmpty(ListItem.Property(Album_Label)) + System.HasAddon(resource.images.recordlabels.white)</visible>
-				</control>				
 				
 				<!-- Title -->
 				<control type="grouplist">
@@ -242,7 +252,7 @@
 						<onright>50</onright>
 						<left>-20</left>
 						<width>754</width>
-						<height>795</height>
+						<height>540</height>
 						<label></label>
 						<texturenofocus></texturenofocus>
 						<onclick>SetProperty(TextViewer_Header,$LOCALIZE[21821],home)</onclick>
@@ -253,14 +263,14 @@
 					<control type="image">
 						<top>20</top>
 						<width>714</width>
-						<height>755</height>					
+						<height>500</height>					
 						<texture border="4" colordiffuse="eeffffff">overlays/frame1.png</texture>
 					</control>
 					<control type="textbox" id="400">
 						<left>20</left>
 						<top>40</top>
 						<width>674</width>
-						<height>715</height>
+						<height>460</height>
 						<wrapmultiline>true</wrapmultiline>
 						<font>font13</font>
 						<label>$VAR[MusicInfoTextboxVar]</label>
@@ -281,7 +291,7 @@
 					<left>740</left>
 					<top>270</top>
 					<width>590</width>
-					<height>775</height>
+					<height>490</height>
 					<ondown>50</ondown>
 					<onup>50</onup>
 					<onright>noop</onright>
@@ -356,6 +366,16 @@
 						</control>					
 					</focusedlayout>						
 
+				</control>
+				
+				<!-- Artist Banner -->
+				<control type="image">
+					<bottom>20</bottom>
+					<width>1330</width>
+					<height>270</height>
+					<aspectratio>scale</aspectratio>
+					<texture background="true">$INFO[Window(Home).Property(SkinHelper.ListItem.Art.Banner)]</texture>
+					<visible>System.HasAddon(script.skin.helper.service)</visible>
 				</control>
 				
 				<!-- Navigation bar -->
