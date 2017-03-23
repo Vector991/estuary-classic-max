@@ -327,6 +327,21 @@
 		</content>
 	</include>
 	
+	<include name="SubmenuMyShorts">
+		<content>
+			<item id="1">
+				<onclick>RunScript(script.skinshortcuts,type=manage&amp;group=31300)</onclick>
+				<thumb>icons/submenu/settings.png</thumb>
+				<label>$LOCALIZE[1390]</label>
+			</item>			
+			<item id="1">
+				<onclick>RunScript(script.skinshortcuts,type=buildxml&amp;mainmenuID=9000&amp;group=mainmenu)</onclick>
+				<thumb>icons/submenu/updatelibrary.png</thumb>
+				<label>$LOCALIZE[31301]</label>
+			</item>						
+		</content>
+	</include>	
+	
 	<include name="SubmenuSystem">
 		<content>
 			<item id="804">

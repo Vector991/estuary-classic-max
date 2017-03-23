@@ -64,5 +64,11 @@
         <action condition="!String.IsEmpty(Weather.Plugin)">ActivateWindow(Weather)</action>
 		<action condition="String.IsEmpty(Weather.Plugin)">ReplaceWindow(servicesettings,weather)</action>
     </shortcut>	
-
+    <shortcut>
+        <label>31300</label>
+        <label2></label2>
+        <defaultID>myshorts</defaultID>
+        <icon>icons/home/myshorts.png</icon>
+        <action>noop</action>
+    </shortcut>	
 </shortcuts>

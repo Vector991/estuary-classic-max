@@ -39,6 +39,7 @@
 			<onfocus condition="String.IsEqual(Container(9000).ListItem.Property(DefaultID), livetv)">SetFocus(12900)</onfocus>
 			<onfocus condition="String.IsEqual(Container(9000).ListItem.Property(DefaultID), radio)">SetFocus(13900)</onfocus>
 			<onfocus condition="String.IsEqual(Container(9000).ListItem.Property(DefaultID), weather)">SetFocus(15900)</onfocus>
+			<onfocus condition="String.IsEqual(Container(9000).ListItem.Property(DefaultID), myshorts)">SetFocus(16900)</onfocus>
 			
 			<onfocus condition="Control.IsVisible(5000) + String.IsEqual(Container(5900).ListItem.Property(subsub),recentlyadded) + Skin.HasSetting(hide_recentlyadded)">SetFocus(5090)</onfocus>
 			<onfocus condition="Control.IsVisible(5000) + String.IsEqual(Container(5900).ListItem.Property(subsub),genres)">SetFocus(5010)</onfocus>
@@ -107,6 +108,7 @@
 				ID 12000:	TV
 				ID 13000:	Radio
 				ID 15000:	Weather
+				ID 16000:	My Shorts
 				-->
 				
 				<control type="group" id="2000">
@@ -1198,6 +1200,49 @@
 							</include>
 						</control>
 					</control>
+					
+					<control type="group" id="16000">
+						<defaultcontrol>16001</defaultcontrol>
+						<visible>String.IsEqual(Container(9000).ListItem.Property(DefaultID), myshorts)</visible>
+						<include>Visible_Right_Delayed</include>
+						<left>340</left>
+						
+						<control type="button" id="16001">
+							<include>HiddenObject</include>
+							<onfocus>SetFocus(16900)</onfocus>
+							<onfocus condition="Integer.IsGreater(Container(16100).NumItems,0)">SetFocus(16100)</onfocus>
+							<visible allowhiddenfocus="true">Control.HasFocus(16001)</visible>
+						</control>
+
+						<include content="SubMenu">
+							<param name="list_id" value="16900"/>
+							<param name="ondown_id" value="16100" />
+							<param name="visible" value="true"/>
+							<param name="content_name" value="SubmenuMyShorts" />
+							<param name="menu_top" value="-20" />
+							<param name="menu_left" value="-20" />
+							<param name="menu_width" value="1200" />
+							<param name="menu_item_width" value="150" />
+							<param name="menu_item_height" value="113" />
+							<param name="menu_item_spacing" value="130" />
+							<param name="show_nav_label" value="true" />								
+						</include>						
+							
+						<control type="group">
+							<top>110</top>
+							<height>795</height>
+							
+							<include content="WidgetListMyShorts">
+								<param name="content_path" value="skinshortcuts-group-num-31300"/>
+								<param name="widget_header" value="$LOCALIZE[31300]"/>
+								<param name="list_id" value="16100"/>
+								<param name="onup_id" value="16900"/>
+								<param name="onleft_id" value="9000"/>
+							</include> 						
+						</control>
+						
+					</control>
+					
 				</control>
 				
 				<control type="group">
@@ -1237,6 +1282,7 @@
 							<onright condition="String.IsEqual(Container(9000).ListItem.Property(DefaultID),livetv) + Control.IsVisible(12000)">12000</onright>
 							<onright condition="String.IsEqual(Container(9000).ListItem.Property(DefaultID),radio) + Control.IsVisible(13000)">13000</onright>
 							<onright condition="String.IsEqual(Container(9000).ListItem.Property(DefaultID),weather) + Control.IsVisible(15000)">15000</onright>
+							<onright condition="String.IsEqual(Container(9000).ListItem.Property(DefaultID),myshorts) + Control.IsVisible(16000)">16000</onright>
 							
 							<onleft condition="String.IsEqual(Container(9000).ListItem.Property(DefaultID), movies)">ActivateWindow(1120)</onleft>
 							<onup>701</onup>
