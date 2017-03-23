@@ -611,3 +611,12 @@ msgstr
 msgctxt "#31215"
 msgid "Awards"
 msgstr
+
+msgctxt "#31300"
+msgid "My Shorts"
+msgstr 
+
+msgctxt "#31301"
+msgid "Refresh Shortcuts"
+msgstr 
+
