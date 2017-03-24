@@ -28,12 +28,16 @@
 				<top>920</top>
 				
 				<control type="image">
-					<left>0</left>
-					<top>-100</top>
+					<animation effect="fade" end="80" time="0" condition="true">conditional</animation>
 					<width>100%</width>
-					<height>260</height>
-					<texture colordiffuse="ffcccccc">overlays/overlayfadewhite.png</texture>
-				</control>					
+					<height>160</height>
+					<texture colordiffuse="button_focus">colors/white.png</texture>
+				</control>
+				<control type="image">
+					<width>100%</width>
+					<height>160</height>
+					<texture colordiffuse="aaffffff">colors/black.png</texture>
+				</control>				
 				
 				<!-- Chapter -->
 				<control type="label">
@@ -44,7 +48,7 @@
 					<align>right</align>
 					<aligny>center</aligny>
 					<font>font13</font>
-					<textcolor>black</textcolor>
+					<textcolor>aaffffff</textcolor>
 					<label>$LOCALIZE[21396]: $INFO[player.chapter]$INFO[player.chaptercount, / ]</label>
 					<visible>player.chaptercount + Window.IsVisible(FullScreenVideo)</visible>
 				</control>
@@ -57,7 +61,7 @@
 					<height>40</height>
 					<font>Font45</font>
 					<aligny>center</aligny>
-					<textcolor>black</textcolor>
+					<textcolor>aaffffff</textcolor>
 					<label>$VAR[SeekTimeLabelVar]</label>
 				</control>
 				<control type="progress">
@@ -79,7 +83,7 @@
 					<align>center</align>
 					<aligny>center</aligny>
 					<font>Font45</font>
-					<textcolor>black</textcolor>
+					<textcolor>aaffffff</textcolor>
 					<label>$LOCALIZE[31134]: $INFO[Player.TimeRemaining]</label>
 				</control>
 				
@@ -92,7 +96,7 @@
 					<aligny>center</aligny>
 					<align>right</align>
 					<font>Font45</font>
-					<textcolor>black</textcolor>
+					<textcolor>aaffffff</textcolor>
 					<label>$LOCALIZE[31080]: $INFO[Player.FinishTime]</label>
 				</control>				
 				
@@ -112,8 +116,8 @@
 					<width>1880</width>
 					<height>40</height>
 					<texturesliderbar colordiffuse="00FFFFFF">osd/progress/nub_leftright.png</texturesliderbar>
-					<textureslidernib colordiffuse="white">osd/progress/nub_leftright.png</textureslidernib>
-					<textureslidernibfocus colordiffuse="white">osd/progress/nub_leftright.png</textureslidernibfocus>
+					<textureslidernib colordiffuse="button_focus">osd/progress/nub_leftright.png</textureslidernib>
+					<textureslidernibfocus colordiffuse="button_focus">osd/progress/nub_leftright.png</textureslidernibfocus>
 					<info>Player.Progress</info>
 					<onup>8010</onup>
 					<ondown>650</ondown>

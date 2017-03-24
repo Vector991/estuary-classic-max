@@ -1,10 +1,10 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <includes>
 	<include name="OSDButton">
-		<param name="color_on_focus">white</param>
-		<param name="color_off_focus">white</param>
-		<param name="color_on_nofocus">black</param>
-		<param name="color_off_nofocus">black</param>
+		<param name="color_on_focus">button_focus</param>
+		<param name="color_off_focus">button_focus</param>
+		<param name="color_on_nofocus">ff666666</param>
+		<param name="color_off_nofocus">ff666666</param>
 		
 		<definition>
 			<textureradioonfocus colordiffuse="$PARAM[color_on_focus]">$PARAM[texture]</textureradioonfocus>

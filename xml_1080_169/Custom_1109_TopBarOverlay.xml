@@ -15,12 +15,22 @@
 				<texture flipy="true">overlays/overlayfade.png</texture>
 			</control>			
 
+			<control type="image">
+				<visible>!String.IsEmpty(Window(Home).Property(SkinHelper.Player.Art.Clearlogo))</visible> 
+				<top>20</top>
+				<left>830</left>
+				<width>260</width>
+				<height>100</height>
+				<aspectratio align="center" aligny="top">keep</aspectratio>
+				<texture>$INFO[Window(Home).Property(SkinHelper.Player.Art.Clearlogo)]</texture>
+			</control>
+			
 			<control type="label">
 				<top>0</top>
 				<left>20</left>
-				<width>800</width>
+				<width>auto</width>
 				<height>80</height>
-				<font>font37</font>
+				<font>font45</font>
 				<textcolor>white</textcolor>
 				<aligny>center</aligny>
 				<label>$INFO[VideoPlayer.Title]$INFO[VideoPlayer.Year, ([COLOR button_focus],[/COLOR])]</label>
@@ -32,8 +42,8 @@
 				<font>font27</font>
 				<left>20</left>
 				<shadowcolor>text_shadow</shadowcolor>
-				<height>100</height>
-				<width>1400</width>
+				<height>40</height>
+				<width>auto</width>
 			</control>
 			
 			<control type="group">
@@ -41,7 +51,7 @@
 				<animation effect="fade" time="150">VisibleChange</animation>
 				
 				<control type="label">
-					<font>font37</font>
+					<font>font45</font>
 					<right>20</right>
 					<height>80</height>
 					<width>300</width>
@@ -52,12 +62,13 @@
 				</control>
 				
 				<control type="label">
-					<top>0</top>
+					<top>60</top>
+					<right>20</right>
 					<label>$INFO[Player.FinishTime,$LOCALIZE[31080]: ]</label>
-					<font>font37</font>
-					<height>80</height>
+					<font>font27</font>
+					<height>40</height>
 					<width>100%</width>
-					<align>center</align>
+					<align>right</align>
 					<aligny>center</aligny>
 					<visible>!VideoPlayer.Content(LiveTV) | VideoPlayer.HasEpg</visible>
 				</control>
