@@ -1468,4 +1468,59 @@
 			<onload>Skin.SetString(SkinHelper.StudioLogos.Path,resource://resource.images.studios.coloured/)</onload>
 		</definition>
 	</include>
+	
+	<include name="StarStrip">
+		<param name="rating">0</param>
+		<param name="scale">100</param>
+		<param name="color">button_focus</param>
+		
+		<definition>
+			<control type="group">
+				<width>400</width>
+				<height>32</height>
+				<visible>!IsEmpty(Window(Home).Property(SkinHelper.ListItem.Rating.IMDB))</visible>
+				<animation effect="zoom" end="$PARAM[scale],$PARAM[scale]" time="0" center="auto" condition="true">conditional</animation>
+
+				<control type="image">
+					<top>0</top>
+					<left>0</left>
+					<width>256</width>
+					<height>32</height>
+					<texture colordiffuse="$PARAM[color]">$VAR[StarStripTexture]</texture>
+				</control>			
+				<control type="label">
+					<height>32</height>
+					<width>auto</width>
+					<aligny>center</aligny>
+					<left>280</left>
+					<label>IMDb - $INFO[Window(Home).Property(SkinHelper.ListItem.Rating.IMDB)] ($INFO[Window(Home).Property(SkinHelper.ListItem.Votes.IMDB)])</label>
+					<font>font12</font>
+				</control>				
+			</control>
+		</definition>
+	</include>
+	
+	<variable name="StarStripTexture">
+		<value condition="Integer.IsEqual(Window(Home).Property(SkinHelper.ListItem.Rating.percent.IMDB),100)">flags/starrating/10.png</value>
+		<value condition="Integer.IsGreater(Window(Home).Property(SkinHelper.ListItem.Rating.percent.IMDB),94)">flags/starrating/9_5.png</value>
+		<value condition="Integer.IsGreater(Window(Home).Property(SkinHelper.ListItem.Rating.percent.IMDB),89)">flags/starrating/9.png</value>
+		<value condition="Integer.IsGreater(Window(Home).Property(SkinHelper.ListItem.Rating.percent.IMDB),84)">flags/starrating/8_5.png</value>
+		<value condition="Integer.IsGreater(Window(Home).Property(SkinHelper.ListItem.Rating.percent.IMDB),79)">flags/starrating/8.png</value>
+		<value condition="Integer.IsGreater(Window(Home).Property(SkinHelper.ListItem.Rating.percent.IMDB),74)">flags/starrating/7_5.png</value>
+		<value condition="Integer.IsGreater(Window(Home).Property(SkinHelper.ListItem.Rating.percent.IMDB),69)">flags/starrating/7.png</value>
+		<value condition="Integer.IsGreater(Window(Home).Property(SkinHelper.ListItem.Rating.percent.IMDB),64)">flags/starrating/6_5.png</value>
+		<value condition="Integer.IsGreater(Window(Home).Property(SkinHelper.ListItem.Rating.percent.IMDB),59)">flags/starrating/6.png</value>
+		<value condition="Integer.IsGreater(Window(Home).Property(SkinHelper.ListItem.Rating.percent.IMDB),54)">flags/starrating/5_5.png</value>
+		<value condition="Integer.IsGreater(Window(Home).Property(SkinHelper.ListItem.Rating.percent.IMDB),49)">flags/starrating/5.png</value>
+		<value condition="Integer.IsGreater(Window(Home).Property(SkinHelper.ListItem.Rating.percent.IMDB),44)">flags/starrating/4_5.png</value>
+		<value condition="Integer.IsGreater(Window(Home).Property(SkinHelper.ListItem.Rating.percent.IMDB),39)">flags/starrating/4.png</value>
+		<value condition="Integer.IsGreater(Window(Home).Property(SkinHelper.ListItem.Rating.percent.IMDB),34)">flags/starrating/3_5.png</value>
+		<value condition="Integer.IsGreater(Window(Home).Property(SkinHelper.ListItem.Rating.percent.IMDB),29)">flags/starrating/3.png</value>
+		<value condition="Integer.IsGreater(Window(Home).Property(SkinHelper.ListItem.Rating.percent.IMDB),24)">flags/starrating/2_5.png</value>
+		<value condition="Integer.IsGreater(Window(Home).Property(SkinHelper.ListItem.Rating.percent.IMDB),19)">flags/starrating/2.png</value>
+		<value condition="Integer.IsGreater(Window(Home).Property(SkinHelper.ListItem.Rating.percent.IMDB),14)">flags/starrating/1_5.png</value>
+		<value condition="Integer.IsGreater(Window(Home).Property(SkinHelper.ListItem.Rating.percent.IMDB),9)">flags/starrating/1.png</value>
+		<value condition="Integer.IsGreater(Window(Home).Property(SkinHelper.ListItem.Rating.percent.IMDB),4)">flags/starrating/0_5.png</value>
+		<value condition="Integer.IsEqual(Window(Home).Property(SkinHelper.ListItem.Rating.percent.IMDB),0)">flags/starrating/0.png</value>
+	</variable>
 </includes>

@@ -21,15 +21,19 @@
 			
 			<!-- Left poster panel -->
 			<control type="group">
-				<top>20</top>
+				<top>0</top>
 				<left>20</left>
 				<include>OpenClose_Left</include>
 				
 				<control type="grouplist">
 					<orientation>vertical</orientation>
-					<itemgap>16</itemgap>
 					
 					 <!-- Thumbnail if exists, for shows -->
+					<control type="group">
+						<height>20</height>
+						<width>1</width>
+					</control>
+					
 					<control type="group">
 						<height>260</height>
 						<visible>String.IsEqual(ListItem.DBType,episode) | String.IsEqual(ListItem.DBType,video) | String.IsEqual(ListItem.DBType,musicvideo)</visible>
@@ -203,34 +207,33 @@
 				<include>OpenClose_Right</include>
 				<left>600</left>
 			
-				<!-- Title -->
-				<control type="grouplist">
-					<left>0</left>
-					<top>0</top>
-					<width>100%</width>
-					<height>150</height>
-					<itemgap>0</itemgap>
-					<orientation>vertical</orientation>
-					
-					<control type="label">
-						<width>auto</width>
-						<height>80</height>
-						<label>$VAR[VideoInfoMainLabelVar]</label>
-						<textcolor>button_focus</textcolor>
-						<font>font45_title</font>
-						<shadowcolor>text_shadow</shadowcolor>
-						<aligny>center</aligny>
-					</control>
-					<control type="label">
-						<label>$VAR[VideoInfoSubLabelVar]</label>
-						<font>font13</font>
-						<width>auto</width>
-						<height>60</height>						
-						<shadowcolor>text_shadow</shadowcolor>
-						<aligny>top</aligny>
-					</control>
-					
+				<control type="label">
+					<top>10</top>
+					<width>auto</width>
+					<height>50</height>
+					<label>$VAR[VideoInfoMainLabelVar]</label>
+					<textcolor>button_focus</textcolor>
+					<font>font45_title</font>
+					<shadowcolor>text_shadow</shadowcolor>
+					<aligny>center</aligny>
 				</control>
+				<control type="label">
+					<left>2</left>
+					<top>60</top>
+					<label>$VAR[VideoInfoSubLabelVar]</label>
+					<font>font13</font>
+					<width>auto</width>
+					<height>40</height>						
+					<shadowcolor>text_shadow</shadowcolor>
+					<aligny>top</aligny>
+				</control>
+				<control type="group">
+					<top>105</top>
+					<include content="StarStrip">
+						<param name="scale" value="100" />
+					</include>
+				</control>					
+
 
 				<!-- Studio -->
 				<control type="group">
@@ -501,7 +504,7 @@
 					<include content="InfoDialogMetadata">
 						<param name="control_id" value="149" />
 						<param name="label" value="[COLOR button_focus]$LOCALIZE[563]: [/COLOR]$INFO[ListItem.RatingAndVotes]" />
-						<param name="visible" value="!String.IsEmpty(ListItem.RatingAndVotes)" />
+						<param name="visible" value="!String.IsEmpty(ListItem.RatingAndVotes) + IsEmpty(Window(home).Property(SkinHelper.ListItem.Rating.IMDB))" />
 					</include>
 					<include content="InfoDialogMetadata">
 						<param name="control_id" value="150" />
