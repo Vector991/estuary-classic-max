@@ -4,6 +4,9 @@
 	<onload condition="VideoPlayer.Content(LiveTV) + !Player.PauseEnabled">SetFocus(604)</onload>
 	<depth>DepthOSD</depth>
 	<defaultcontrol always="true">603</defaultcontrol>
+	<onload condition="!VideoPlayer.content(livetv)">SetProperty(info_tab,1)</onload>
+	<onload condition="VideoPlayer.content(livetv)">SetProperty(info_tab,3)</onload>
+	<onunload>ClearProperty(info_tab)</onunload>
 	
 	<controls>
 		<control type="button" id="22001">
@@ -193,7 +196,10 @@
 							<include content="OSDButton">
 								<param name="texture" value="osd/fullscreen/buttons/information.png"/>
 							</include>
-							<onclick>ActivateWindow(fullscreeninfo)</onclick>
+							<!-- <onclick>ActivateWindow(fullscreeninfo)</onclick> -->
+							<onclick condition="String.IsEqual(Window.Property(info_tab),1)">SetProperty(info_tab,2)</onclick>
+							<onclick condition="String.IsEqual(Window.Property(info_tab),2)">SetProperty(info_tab,3)</onclick>
+							<onclick condition="String.IsEqual(Window.Property(info_tab),3)">SetProperty(info_tab,1)</onclick>
 						</control>						
 						<control type="radiobutton" id="701">
 							<include content="OSDButton">
@@ -338,6 +344,7 @@
 				<bordersize>20</bordersize>
 			</control>
 			
+			<include file="Includes_OSDInfo.xml" condition="true">VideoOSDInfoPanel</include>
 		</control>
 	</controls>
 </window>

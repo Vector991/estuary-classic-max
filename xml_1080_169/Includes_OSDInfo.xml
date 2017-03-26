@@ -1,0 +1,228 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<includes>
+	<include name="VideoOSDInfoPanel">
+		<definition>
+		
+			<control type="group">
+				<left>1520</left>
+				<visible>Control.HasFocus(700)</visible>
+				
+				<animation type="VisibleChange">
+					<effect type="fade" start="0" end="100" time="300" tween="sine" easing="out" />
+					<effect type="slide" start="400,0" end="0,0" time="300" tween="cubic" easing="out" />
+				</animation>
+				
+				<control type="image">
+					<top>0</top>
+					<width>400</width>
+					<height>1080</height>
+					<texture>colors/black.png</texture>
+				</control>
+				
+				<control type="group">
+					<top>130</top>
+					<left>20</left>
+					<width>360</width>
+					<height>930</height>
+					
+					<control type="image">
+						<width>360</width>
+						<height>40</height>
+						<texture colordiffuse="button_focus">colors/white.png</texture>
+					</control>
+					
+					<control type="label">
+						<height>40</height>
+						<width>auto</width>
+						<font>font25_title</font>
+						<align>center</align>
+						<textcolor>white</textcolor>
+						<label>$LOCALIZE[203]</label>
+						<visible>String.IsEqual(Window.Property(info_tab),1)</visible>
+					</control>
+					<control type="label">
+						<height>40</height>
+						<width>auto</width>
+						<font>font25_title</font>
+						<align>center</align>
+						<textcolor>white</textcolor>
+						<label>$LOCALIZE[206]</label>
+						<visible>String.IsEqual(Window.Property(info_tab),2)</visible>
+					</control>			
+					<control type="label">
+						<height>40</height>
+						<width>auto</width>
+						<font>font25_title</font>
+						<align>center</align>
+						<textcolor>white</textcolor>
+						<label>$LOCALIZE[14241]</label>
+						<visible>String.IsEqual(Window.Property(info_tab),3)</visible>
+					</control>	
+					
+					<control type="group">
+						<top>60</top>
+						<height>870</height>
+						
+						<include content="tab_1" />
+						<include content="tab_2" />
+						<include content="tab_3" />
+					</control>
+				</control>
+			</control>		
+			
+		</definition>
+	</include>
+	
+	<include name="tab_1">
+		<control type="textbox">
+			<visible>String.IsEqual(Window.Property(info_tab),1)</visible>
+			<width>100%</width>
+			<height>100%</height>
+			<font>font12</font>
+			<label>$INFO[VideoPlayer.Plot]</label>
+			<autoscroll delay="10000" time="1500" repeat="10000">true</autoscroll>
+		</control>
+	</include>
+	
+	<include name="tab_2">
+		<control type="textbox">
+			<visible>String.IsEqual(Window.Property(info_tab),2)</visible>
+			<width>100%</width>
+			<height>100%</height>
+			<font>font12</font>
+			<label>$INFO[VideoPlayer.CastAndRole]</label>
+			<autoscroll delay="10000" time="1500" repeat="10000">true</autoscroll>
+		</control>
+	</include>	
+	
+	<include name="tab_3">
+		<control type="grouplist">
+			<visible>String.IsEqual(Window.Property(info_tab),3) + VideoPlayer.content(livetv)</visible>
+			<height>100%</height>
+			<width>100%</width>
+
+			<control type="label">
+				<height>80</height>
+				<width>auto</width>
+				<label>[COLOR button_focus]$LOCALIZE[19029][/COLOR][CR]$INFO[VideoPlayer.ChannelNumberLabel]$INFO[VideoPlayer.ChannelName, - ]</label>
+				<font>font12</font>
+			</control>
+			<control type="label">
+				<height>80</height>
+				<width>auto</width>
+				<label>[COLOR button_focus]$LOCALIZE[19141][/COLOR][CR]$INFO[VideoPlayer.ChannelGroup]</label>
+				<font>font12</font>
+			</control>			
+			
+			<control type="label">
+				<height>60</height>
+				<width>auto</width>
+				<label></label>
+				<font>font12</font>
+			</control>			
+			<control type="label">
+				<height>40</height>
+				<width>auto</width>
+				<label>[COLOR button_focus]$LOCALIZE[19031][/COLOR]</label>
+				<font>font12</font>
+			</control>	
+			<control type="image">
+				<height>1</height>
+				<width>360</width>
+				<texture colordiffuse="88ffffff">colors/white.png</texture>
+			</control>
+			<control type="label">
+				<height>20</height>
+				<width>auto</width>
+				<label></label>
+				<font>font12</font>
+			</control>				
+			<control type="label">
+				<height>80</height>
+				<width>auto</width>
+				<label>[COLOR button_focus]$LOCALIZE[369][/COLOR][CR]$INFO[VideoPlayer.NextTitle]</label>
+				<font>font12</font>
+			</control>	
+			<control type="label">
+				<height>80</height>
+				<width>auto</width>
+				<label>[COLOR button_focus]$LOCALIZE[515][/COLOR][CR]$INFO[VideoPlayer.NextGenre]</label>
+				<font>font12</font>
+			</control>			
+			<control type="label">
+				<height>80</height>
+				<width>auto</width>
+				<label>[COLOR button_focus]$LOCALIZE[19126] - $LOCALIZE[19127][/COLOR][CR]$INFO[VideoPlayer.NextStartTime]$INFO[VideoPlayer.NextEndTime, - ]</label>
+				<font>font12</font>
+			</control>			
+			<control type="label">
+				<height>80</height>
+				<width>auto</width>
+				<label>[COLOR button_focus]$LOCALIZE[180][/COLOR][CR]$INFO[VideoPlayer.NextDuration]</label>
+				<font>font12</font>
+			</control>		
+			<control type="label">
+				<height>280</height>
+				<width>auto</width>
+				<label>[COLOR button_focus]$LOCALIZE[203][/COLOR][CR]$INFO[VideoPlayer.NextPlotOutline]</label>
+				<font>font12</font>
+			</control>				
+		</control>
+		
+		<control type="grouplist">
+			<visible>String.IsEqual(Window.Property(info_tab),3) + !VideoPlayer.content(livetv)</visible>
+			<height>100%</height>
+			<width>100%</width>
+
+			<control type="label">
+				<height>80</height>
+				<width>auto</width>
+				<label>[COLOR button_focus]$LOCALIZE[20074][/COLOR][CR]$INFO[VideoPlayer.MPAA]</label>
+				<font>font12</font>
+			</control>
+			<control type="label">
+				<height>80</height>
+				<width>auto</width>
+				<label>[COLOR button_focus]$LOCALIZE[515][/COLOR][CR]$INFO[VideoPlayer.Genre]</label>
+				<font>font12</font>
+			</control>
+			<control type="label">
+				<height>80</height>
+				<width>auto</width>
+				<label>[COLOR button_focus]$LOCALIZE[563][/COLOR][CR]$INFO[VideoPlayer.RatingAndVotes]</label>
+				<font>font12</font>
+			</control>
+			<control type="label">
+				<height>80</height>
+				<width>auto</width>
+				<label>[COLOR button_focus]$LOCALIZE[20339][/COLOR][CR]$INFO[VideoPlayer.Director]</label>
+				<font>font12</font>
+			</control>	
+			<control type="label">
+				<height>80</height>
+				<width>auto</width>
+				<label>[COLOR button_focus]$LOCALIZE[552][/COLOR][CR]$INFO[Window(Home).Property(SkinHelper.Player.Premiered)]$INFO[VideoPlayer.Country, - ]</label>
+				<font>font12</font>
+			</control>			
+			<control type="label">
+				<height>80</height>
+				<width>auto</width>
+				<label>[COLOR button_focus]$LOCALIZE[21445][/COLOR][CR]$INFO[VideoPlayer.VideoCodec] - $INFO[VideoPlayer.VideoResolution]$INFO[VideoPlayer.VideoAspect, - ]</label>
+				<font>font12</font>
+			</control>			
+			<control type="label">
+				<height>80</height>
+				<width>auto</width>
+				<label>[COLOR button_focus]$LOCALIZE[21446][/COLOR][CR]$INFO[VideoPlayer.AudioCodec]$INFO[VideoPlayer.AudioChannels, - ] $LOCALIZE[14301]</label>
+				<font>font12</font>
+			</control>			
+			<control type="label">
+				<height>80</height>
+				<width>auto</width>
+				<label>[COLOR button_focus]$LOCALIZE[31139][/COLOR][CR]$INFO[Player.Process(videodecoder)] - $VAR[VideoHWDecoder, (,)]</label>
+				<font>font12</font>
+			</control>			
+
+		</control>
+	</include>	
+</includes>
