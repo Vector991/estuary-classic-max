@@ -34,8 +34,9 @@
 					<control type="label">
 						<height>40</height>
 						<width>auto</width>
-						<font>font25_title</font>
+						<font>font30_title</font>
 						<align>center</align>
+						<aligny>center</aligny>
 						<textcolor>white</textcolor>
 						<label>$LOCALIZE[203]</label>
 						<visible>String.IsEqual(Window.Property(info_tab),1)</visible>
@@ -43,8 +44,9 @@
 					<control type="label">
 						<height>40</height>
 						<width>auto</width>
-						<font>font25_title</font>
+						<font>font30_title</font>
 						<align>center</align>
+						<aligny>center</aligny>
 						<textcolor>white</textcolor>
 						<label>$LOCALIZE[206]</label>
 						<visible>String.IsEqual(Window.Property(info_tab),2)</visible>
@@ -52,8 +54,9 @@
 					<control type="label">
 						<height>40</height>
 						<width>auto</width>
-						<font>font25_title</font>
+						<font>font30_title</font>
 						<align>center</align>
+						<aligny>center</aligny>
 						<textcolor>white</textcolor>
 						<label>$LOCALIZE[14241]</label>
 						<visible>String.IsEqual(Window.Property(info_tab),3)</visible>
@@ -78,9 +81,9 @@
 			<visible>String.IsEqual(Window.Property(info_tab),1)</visible>
 			<width>100%</width>
 			<height>100%</height>
-			<font>font12</font>
+			<font>font13</font>
 			<label>$INFO[VideoPlayer.Plot]</label>
-			<autoscroll delay="10000" time="1500" repeat="10000">true</autoscroll>
+			<autoscroll delay="10000" time="1700" repeat="10000">true</autoscroll>
 		</control>
 	</include>
 	
