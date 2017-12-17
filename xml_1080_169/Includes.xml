@@ -1493,7 +1493,7 @@
 					<width>auto</width>
 					<aligny>center</aligny>
 					<left>280</left>
-					<label>IMDb - $INFO[ListItem.RatingAndVotess]</label>
+					<label>IMDb - $INFO[ListItem.RatingAndVotes]</label>
 					<font>font12</font>
 				</control>				
 			</control>
