@@ -1478,7 +1478,7 @@
 			<control type="group">
 				<width>400</width>
 				<height>32</height>
-				<visible>!IsEmpty(Window(Home).Property(SkinHelper.ListItem.Rating.IMDB))</visible>
+				<visible>!String.IsEmpty(ListItem.Rating(imdb))</visible>
 				<animation effect="zoom" end="$PARAM[scale],$PARAM[scale]" time="0" center="auto" condition="true">conditional</animation>
 
 				<control type="image">
@@ -1493,7 +1493,7 @@
 					<width>auto</width>
 					<aligny>center</aligny>
 					<left>280</left>
-					<label>IMDb - $INFO[Window(Home).Property(SkinHelper.ListItem.Rating.IMDB)] ($INFO[Window(Home).Property(SkinHelper.ListItem.Votes.IMDB)])</label>
+					<label>IMDb - $INFO[ListItem.RatingAndVotess]</label>
 					<font>font12</font>
 				</control>				
 			</control>
@@ -1501,6 +1501,8 @@
 	</include>
 	
 	<variable name="StarStripTexture">
+		<!-- Skinhelper.ListItem.Rating.percent.IMDB no longer working
+		
 		<value condition="Integer.IsEqual(Window(Home).Property(SkinHelper.ListItem.Rating.percent.IMDB),100)">flags/starrating/10.png</value>
 		<value condition="Integer.IsGreater(Window(Home).Property(SkinHelper.ListItem.Rating.percent.IMDB),94)">flags/starrating/9_5.png</value>
 		<value condition="Integer.IsGreater(Window(Home).Property(SkinHelper.ListItem.Rating.percent.IMDB),89)">flags/starrating/9.png</value>
@@ -1522,5 +1524,18 @@
 		<value condition="Integer.IsGreater(Window(Home).Property(SkinHelper.ListItem.Rating.percent.IMDB),9)">flags/starrating/1.png</value>
 		<value condition="Integer.IsGreater(Window(Home).Property(SkinHelper.ListItem.Rating.percent.IMDB),4)">flags/starrating/0_5.png</value>
 		<value condition="Integer.IsEqual(Window(Home).Property(SkinHelper.ListItem.Rating.percent.IMDB),0)">flags/starrating/0.png</value>
+		-->
+		<value condition="Integer.IsGreater(ListItem.Rating,9)">flags/starrating/10.png</value>
+		<value condition="Integer.IsGreater(ListItem.Rating,8)">flags/starrating/9.png</value>
+		<value condition="Integer.IsGreater(ListItem.Rating,7)">flags/starrating/8.png</value>
+		<value condition="Integer.IsGreater(ListItem.Rating,6)">flags/starrating/7.png</value>
+		<value condition="Integer.IsGreater(ListItem.Rating,5)">flags/starrating/6.png</value>
+		<value condition="Integer.IsGreater(ListItem.Rating,4)">flags/starrating/5.png</value>
+		<value condition="Integer.IsGreater(ListItem.Rating,3)">flags/starrating/4.png</value>
+		<value condition="Integer.IsGreater(ListItem.Rating,2)">flags/starrating/3.png</value>
+		<value condition="Integer.IsGreater(ListItem.Rating,1)">flags/starrating/2.png</value>
+		<value condition="Integer.IsGreater(ListItem.Rating,0)">flags/starrating/1.png</value>
+		<value condition="Integer.IsEqual(ListItem.Rating,0)">flags/starrating/0.png</value>
+		
 	</variable>
 </includes>
