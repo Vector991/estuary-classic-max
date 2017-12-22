@@ -3,6 +3,7 @@
 	<defaultcontrol always="true">5000</defaultcontrol>
 	<onload>SetProperty(infobackground,$ESCINFO[ListItem.Art(fanart)],home)</onload>
 	<onload>SetFocus(8)</onload>
+	<onload condition="ListItem.IsFolder + System.hasAddon(plugin.video.emby) + String.IsEqual(ListItem.DBType,tvshow)">SetFocus(430)</onload>
 	<onunload>ClearProperty(infobackground,home)</onunload>
 	<onload>SetProperty(info_tab,1)</onload>
 	<onunload>ClearProperty(info_tab)</onunload>
@@ -421,7 +422,16 @@
 						<param name="id" value="8" />
 						<param name="icon" value="icons/infodialogs/play.png" />
 						<param name="label" value="$LOCALIZE[208]" />
+						<param name="visible" value="!ListItem.IsFolder + !String.IsEqual(ListItem.DBType,tvshow)" />
 					</include>
+					<include content="VideoInfoButton">
+						<param name="id" value="430" />
+						<param name="icon" value="icons/infodialogs/play.png" />
+						<param name="label" value="$LOCALIZE[208]" />
+						<param name="visible" value="ListItem.IsFolder + String.IsEqual(ListItem.DBType,tvshow)" />
+						<param name="onclick_1" value="Dialog.Close(MovieInformation)" />
+						<param name="onclick_2" value="ActivateWindow(videos,$INFO[ListItem.DBID,videodb://tvshows/titles/,/],return)" />
+					</include>					
 					<include content="VideoInfoButton">
 						<param name="id" value="11" />
 						<param name="icon" value="icons/infodialogs/trailer.png" />
