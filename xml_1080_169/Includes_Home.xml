@@ -479,7 +479,7 @@
 								<bordertexture border="2">colors/black.png</bordertexture>
 								<bordersize>2</bordersize>
 							</control>
-							<control type="textbox">
+							<control type="label">
 								<left>30</left>
 								<top>210</top>
 								<width>180</width>
@@ -489,6 +489,8 @@
 								<shadowcolor>text_shadow</shadowcolor>
 								<align>center</align>
 								<aligny>center</aligny>
+								<scroll>true</scroll>
+								<wrapmultiline>true</wrapmultiline>
 								<visible>String.IsEmpty(ListItem.Art(poster))</visible>
 							</control>
 							
@@ -539,7 +541,7 @@
 								<bordersize>2</bordersize>							
 							</control>
 									
-							<control type="textbox">
+							<control type="label">
 								<left>30</left>
 								<top>210</top>
 								<width>180</width>
@@ -549,6 +551,8 @@
 								<shadowcolor>text_shadow</shadowcolor>
 								<align>center</align>
 								<aligny>center</aligny>
+								<scroll>true</scroll>
+								<wrapmultiline>true</wrapmultiline>								
 								<visible>String.IsEmpty(ListItem.Art(poster))</visible>
 							</control>								
 							
